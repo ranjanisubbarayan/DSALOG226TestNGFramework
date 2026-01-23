@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+  <meta charset='utf-8'>
+  <title>TestNG reports</title>
+
+    <link type="text/css" href="testng-reports1.css" rel="stylesheet" id="ultra" />
+    <link type="text/css" href="testng-reports.css" rel="stylesheet" id="retro" disabled="false"/>
+    <script type="text/javascript" src="jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="testng-reports.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type='text/javascript'>
+      google.load('visualization', '1', {packages:['table']});
+      google.setOnLoadCallback(drawTable);
+      var suiteTableInitFunctions = new Array();
+      var suiteTableData = new Array();
+    </script>
+    <!--
+      <script type="text/javascript" src="jquery-ui/js/jquery-ui-1.8.16.custom.min.js"></script>
+     -->
+  </head>
+
+  <body>    <div class="top-banner-root">
+      <span class="top-banner-title-font">Test results</span>
+      <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
+      <br/>
+      <span class="top-banner-font-1">1 suite</span>
+    </div> <!-- top-banner-root -->
+    <div class="navigator-root">
+      <div class="navigator-suite-header">
+        <span>All suites</span>
+        <a href="#" title="Collapse/expand all the suites" class="collapse-all-link">
+          <img src="collapseall.gif" class="collapse-all-icon">
+          </img> <!-- collapse-all-icon -->
+        </a> <!-- collapse-all-link -->
+      </div> <!-- navigator-suite-header -->
+      <div class="suite">
+        <div class="rounded-window">
+          <div class="suite-header light-rounded-window-top">
+            <a href="#" panel-name="suite-Surefire_suite" class="navigator-link">
+              <span class="suite-name border-skipped">Surefire suite</span>
+            </a> <!-- navigator-link -->
+          </div> <!-- suite-header light-rounded-window-top -->
+          <div class="navigator-suite-content">
+            <div class="suite-section-title">
+              <span>Info</span>
+            </div> <!-- suite-section-title -->
+            <div class="suite-section-content">
+              <ul>
+                <li>
+                  <a href="#" panel-name="test-xml-Surefire_suite" class="navigator-link ">
+                    <span>[unset file name]</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="testlist-Surefire_suite" class="navigator-link ">
+                    <span class="test-stats">1 test</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="group-Surefire_suite" class="navigator-link ">
+                    <span>0 groups</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="times-Surefire_suite" class="navigator-link ">
+                    <span>Times</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="reporter-Surefire_suite" class="navigator-link ">
+                    <span>Reporter output</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="ignored-methods-Surefire_suite" class="navigator-link ">
+                    <span>Ignored methods</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="chronological-Surefire_suite" class="navigator-link ">
+                    <span>Chronological view</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+              </ul>
+            </div> <!-- suite-section-content -->
+            <div class="result-section">
+              <div class="suite-section-title">
+                <span>Results</span>
+              </div> <!-- suite-section-title -->
+              <div class="suite-section-content">
+                <ul>
+                  <li>
+                    <span class="method-stats">23 methods,  23 skipped,  </span>
+                  </li>
+                  <li>
+                    <span class="method-list-title skipped">Skipped methods</span>
+                    <span class="show-or-hide-methods skipped">
+                      <a href="#" panel-name="suite-Surefire_suite" class="hide-methods skipped suite-Surefire_suite"> (hide)</a> <!-- hide-methods skipped suite-Surefire_suite -->
+                      <a href="#" panel-name="suite-Surefire_suite" class="show-methods skipped suite-Surefire_suite"> (show)</a> <!-- show-methods skipped suite-Surefire_suite -->
+                    </span>
+                    <div class="method-list-content skipped suite-Surefire_suite">
+                      <span>
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-Surefire_suite" title="suite.LoginTest" class="method navigator-link" hash-for-method="captureScreenshotAfterLogin">captureScreenshotAfterLogin</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-Surefire_suite" title="suite.ArraysListTest" class="method navigator-link" hash-for-method="clickArraysInPythonLink">clickArraysInPythonLink</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-Surefire_suite" title="suite.ArraysListTest" class="method navigator-link" hash-for-method="clickGetStartedArrayPanel">clickGetStartedArrayPanel</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-Surefire_suite" title="suite.ArraysListTest" class="method navigator-link" hash-for-method="clickTryHereButton">clickTryHereButton</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-Surefire_suite" title="suite.GraphListTest" class="method navigator-link" hash-for-method="loginToDsAlgo">loginToDsAlgo</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-Surefire_suite" title="suite.LoginTest" class="method navigator-link" hash-for-method="loginUsingExcelData">loginUsingExcelData</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-Surefire_suite" title="suite.LoginTest" class="method navigator-link" hash-for-method="loginWithEmptyCredentials">loginWithEmptyCredentials</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-Surefire_suite" title="suite.LoginTest" class="method navigator-link" hash-for-method="loginWithInvalidCredentials">loginWithInvalidCredentials</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-Surefire_suite" title="suite.LoginTest" class="method navigator-link" hash-for-method="loginWithValidCredentials">loginWithValidCredentials</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-Surefire_suite" title="suite.GraphListTest" class="method navigator-link" hash-for-method="navigateToGraphSection">navigateToGraphSection</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-Surefire_suite" title="suite.LoginTest" class="method navigator-link" hash-for-method="navigateToLoginPage">navigateToLoginPage</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-Surefire_suite" title="suite.GraphListTest" class="method navigator-link" hash-for-method="openGraphRepresentationsPage">openGraphRepresentationsPage</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-Surefire_suite" title="suite.GraphListTest" class="method navigator-link" hash-for-method="openGraphRepresentationsTryEditor">openGraphRepresentationsTryEditor</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-Surefire_suite" title="suite.GraphListTest" class="method navigator-link" hash-for-method="openGraphTopicPage">openGraphTopicPage</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-Surefire_suite" title="suite.GraphListTest" class="method navigator-link" hash-for-method="openGraphTopicTryEditor">openGraphTopicTryEditor</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-Surefire_suite" title="suite.ArraysListTest" class="method navigator-link" hash-for-method="runCodeUsingDataDriven">runCodeUsingDataDriven</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-Surefire_suite" title="suite.ArraysListTest" class="method navigator-link" hash-for-method="runInvalidCodeAndVerifyAlert">runInvalidCodeAndVerifyAlert</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-Surefire_suite" title="suite.GraphListTest" class="method navigator-link" hash-for-method="runInvalidGraphRepresentationsCode">runInvalidGraphRepresentationsCode</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-Surefire_suite" title="suite.GraphListTest" class="method navigator-link" hash-for-method="runInvalidGraphTopicCode">runInvalidGraphTopicCode</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-Surefire_suite" title="suite.ArraysListTest" class="method navigator-link" hash-for-method="runValidCodeAndVerifyOutput">runValidCodeAndVerifyOutput</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-Surefire_suite" title="suite.GraphListTest" class="method navigator-link" hash-for-method="runValidGraphCodeUsingDataDriven">runValidGraphCodeUsingDataDriven</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-Surefire_suite" title="suite.ArraysListTest" class="method navigator-link" hash-for-method="userLoginToDsAlgo">userLoginToDsAlgo</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-Surefire_suite" title="suite.ArraysListTest" class="method navigator-link" hash-for-method="verifyArrayPageNavigation">verifyArrayPageNavigation</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content skipped suite-Surefire_suite -->
+                  </li>
+                </ul>
+              </div> <!-- suite-section-content -->
+            </div> <!-- result-section -->
+          </div> <!-- navigator-suite-content -->
+        </div> <!-- rounded-window -->
+      </div> <!-- suite -->
+    </div> <!-- navigator-root -->
+    <div class="wrapper">
+      <div class="main-panel-root">
+        <div panel-name="suite-Surefire_suite" class="panel Surefire_suite">
+          <div class="suite-Surefire_suite-class-skipped">
+            <div class="main-panel-header rounded-window-top">
+              <img src="skipped.png"/>
+              <span class="class-name">suite.GraphListTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="loginToDsAlgo">
+                  </a> <!-- loginToDsAlgo -->
+                  <span class="method-name">loginToDsAlgo</span>
+                  <div class="stack-trace">java.lang.NullPointerException: Cannot invoke &quot;String.toLowerCase()&quot; because &quot;browser&quot; is null
+	at driver.DriverFactory.createDriver(DriverFactory.java:30)
+	at driver.DriverFactory.getDriver(DriverFactory.java:22)
+	at suite.GraphListTest.setUp(GraphListTest.java:33)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+... Removed 28 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="navigateToGraphSection">
+                  </a> <!-- navigateToGraphSection -->
+                  <span class="method-name">navigateToGraphSection</span>
+                  <div class="stack-trace">java.lang.NullPointerException: Cannot invoke &quot;String.toLowerCase()&quot; because &quot;browser&quot; is null
+	at driver.DriverFactory.createDriver(DriverFactory.java:30)
+	at driver.DriverFactory.getDriver(DriverFactory.java:22)
+	at suite.GraphListTest.setUp(GraphListTest.java:33)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+... Removed 28 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="openGraphRepresentationsPage">
+                  </a> <!-- openGraphRepresentationsPage -->
+                  <span class="method-name">openGraphRepresentationsPage</span>
+                  <div class="stack-trace">java.lang.NullPointerException: Cannot invoke &quot;String.toLowerCase()&quot; because &quot;browser&quot; is null
+	at driver.DriverFactory.createDriver(DriverFactory.java:30)
+	at driver.DriverFactory.getDriver(DriverFactory.java:22)
+	at suite.GraphListTest.setUp(GraphListTest.java:33)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+... Removed 28 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="openGraphRepresentationsTryEditor">
+                  </a> <!-- openGraphRepresentationsTryEditor -->
+                  <span class="method-name">openGraphRepresentationsTryEditor</span>
+                  <div class="stack-trace">java.lang.NullPointerException: Cannot invoke &quot;String.toLowerCase()&quot; because &quot;browser&quot; is null
+	at driver.DriverFactory.createDriver(DriverFactory.java:30)
+	at driver.DriverFactory.getDriver(DriverFactory.java:22)
+	at suite.GraphListTest.setUp(GraphListTest.java:33)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+... Removed 28 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="openGraphTopicPage">
+                  </a> <!-- openGraphTopicPage -->
+                  <span class="method-name">openGraphTopicPage</span>
+                  <div class="stack-trace">java.lang.NullPointerException: Cannot invoke &quot;String.toLowerCase()&quot; because &quot;browser&quot; is null
+	at driver.DriverFactory.createDriver(DriverFactory.java:30)
+	at driver.DriverFactory.getDriver(DriverFactory.java:22)
+	at suite.GraphListTest.setUp(GraphListTest.java:33)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+... Removed 28 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="openGraphTopicTryEditor">
+                  </a> <!-- openGraphTopicTryEditor -->
+                  <span class="method-name">openGraphTopicTryEditor</span>
+                  <div class="stack-trace">java.lang.NullPointerException: Cannot invoke &quot;String.toLowerCase()&quot; because &quot;browser&quot; is null
+	at driver.DriverFactory.createDriver(DriverFactory.java:30)
+	at driver.DriverFactory.getDriver(DriverFactory.java:22)
+	at suite.GraphListTest.setUp(GraphListTest.java:33)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+... Removed 28 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="runInvalidGraphRepresentationsCode">
+                  </a> <!-- runInvalidGraphRepresentationsCode -->
+                  <span class="method-name">runInvalidGraphRepresentationsCode</span>
+                  <div class="stack-trace">java.lang.NullPointerException: Cannot invoke &quot;String.toLowerCase()&quot; because &quot;browser&quot; is null
+	at driver.DriverFactory.createDriver(DriverFactory.java:30)
+	at driver.DriverFactory.getDriver(DriverFactory.java:22)
+	at suite.GraphListTest.setUp(GraphListTest.java:33)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+... Removed 28 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="runInvalidGraphTopicCode">
+                  </a> <!-- runInvalidGraphTopicCode -->
+                  <span class="method-name">runInvalidGraphTopicCode</span>
+                  <div class="stack-trace">java.lang.NullPointerException: Cannot invoke &quot;String.toLowerCase()&quot; because &quot;browser&quot; is null
+	at driver.DriverFactory.createDriver(DriverFactory.java:30)
+	at driver.DriverFactory.getDriver(DriverFactory.java:22)
+	at suite.GraphListTest.setUp(GraphListTest.java:33)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+... Removed 28 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="runValidGraphCodeUsingDataDriven">
+                  </a> <!-- runValidGraphCodeUsingDataDriven -->
+                  <span class="method-name">runValidGraphCodeUsingDataDriven</span>
+                  <div class="stack-trace">java.lang.NullPointerException: Cannot invoke &quot;String.toLowerCase()&quot; because &quot;browser&quot; is null
+	at driver.DriverFactory.createDriver(DriverFactory.java:30)
+	at driver.DriverFactory.getDriver(DriverFactory.java:22)
+	at suite.GraphListTest.setUp(GraphListTest.java:33)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+... Removed 28 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Surefire_suite-class-skipped -->
+          <div class="suite-Surefire_suite-class-skipped">
+            <div class="main-panel-header rounded-window-top">
+              <img src="skipped.png"/>
+              <span class="class-name">suite.ArraysListTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="clickArraysInPythonLink">
+                  </a> <!-- clickArraysInPythonLink -->
+                  <span class="method-name">clickArraysInPythonLink</span>
+                  <div class="stack-trace">java.lang.NullPointerException: Cannot invoke &quot;String.toLowerCase()&quot; because &quot;browser&quot; is null
+	at driver.DriverFactory.createDriver(DriverFactory.java:30)
+	at driver.DriverFactory.getDriver(DriverFactory.java:22)
+	at suite.ArraysListTest.setUp(ArraysListTest.java:33)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+... Removed 28 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="clickGetStartedArrayPanel">
+                  </a> <!-- clickGetStartedArrayPanel -->
+                  <span class="method-name">clickGetStartedArrayPanel</span>
+                  <div class="stack-trace">java.lang.NullPointerException: Cannot invoke &quot;String.toLowerCase()&quot; because &quot;browser&quot; is null
+	at driver.DriverFactory.createDriver(DriverFactory.java:30)
+	at driver.DriverFactory.getDriver(DriverFactory.java:22)
+	at suite.ArraysListTest.setUp(ArraysListTest.java:33)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+... Removed 28 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="clickTryHereButton">
+                  </a> <!-- clickTryHereButton -->
+                  <span class="method-name">clickTryHereButton</span>
+                  <div class="stack-trace">java.lang.NullPointerException: Cannot invoke &quot;String.toLowerCase()&quot; because &quot;browser&quot; is null
+	at driver.DriverFactory.createDriver(DriverFactory.java:30)
+	at driver.DriverFactory.getDriver(DriverFactory.java:22)
+	at suite.ArraysListTest.setUp(ArraysListTest.java:33)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+... Removed 28 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="runCodeUsingDataDriven">
+                  </a> <!-- runCodeUsingDataDriven -->
+                  <span class="method-name">runCodeUsingDataDriven</span>
+                  <div class="stack-trace">java.lang.NullPointerException: Cannot invoke &quot;String.toLowerCase()&quot; because &quot;browser&quot; is null
+	at driver.DriverFactory.createDriver(DriverFactory.java:30)
+	at driver.DriverFactory.getDriver(DriverFactory.java:22)
+	at suite.ArraysListTest.setUp(ArraysListTest.java:33)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+... Removed 28 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="runInvalidCodeAndVerifyAlert">
+                  </a> <!-- runInvalidCodeAndVerifyAlert -->
+                  <span class="method-name">runInvalidCodeAndVerifyAlert</span>
+                  <div class="stack-trace">java.lang.NullPointerException: Cannot invoke &quot;String.toLowerCase()&quot; because &quot;browser&quot; is null
+	at driver.DriverFactory.createDriver(DriverFactory.java:30)
+	at driver.DriverFactory.getDriver(DriverFactory.java:22)
+	at suite.ArraysListTest.setUp(ArraysListTest.java:33)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+... Removed 28 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="runValidCodeAndVerifyOutput">
+                  </a> <!-- runValidCodeAndVerifyOutput -->
+                  <span class="method-name">runValidCodeAndVerifyOutput</span>
+                  <div class="stack-trace">java.lang.NullPointerException: Cannot invoke &quot;String.toLowerCase()&quot; because &quot;browser&quot; is null
+	at driver.DriverFactory.createDriver(DriverFactory.java:30)
+	at driver.DriverFactory.getDriver(DriverFactory.java:22)
+	at suite.ArraysListTest.setUp(ArraysListTest.java:33)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+... Removed 28 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="userLoginToDsAlgo">
+                  </a> <!-- userLoginToDsAlgo -->
+                  <span class="method-name">userLoginToDsAlgo</span>
+                  <div class="stack-trace">java.lang.NullPointerException: Cannot invoke &quot;String.toLowerCase()&quot; because &quot;browser&quot; is null
+	at driver.DriverFactory.createDriver(DriverFactory.java:30)
+	at driver.DriverFactory.getDriver(DriverFactory.java:22)
+	at suite.ArraysListTest.setUp(ArraysListTest.java:33)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+... Removed 28 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyArrayPageNavigation">
+                  </a> <!-- verifyArrayPageNavigation -->
+                  <span class="method-name">verifyArrayPageNavigation</span>
+                  <div class="stack-trace">java.lang.NullPointerException: Cannot invoke &quot;String.toLowerCase()&quot; because &quot;browser&quot; is null
+	at driver.DriverFactory.createDriver(DriverFactory.java:30)
+	at driver.DriverFactory.getDriver(DriverFactory.java:22)
+	at suite.ArraysListTest.setUp(ArraysListTest.java:33)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+... Removed 28 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Surefire_suite-class-skipped -->
+          <div class="suite-Surefire_suite-class-skipped">
+            <div class="main-panel-header rounded-window-top">
+              <img src="skipped.png"/>
+              <span class="class-name">suite.LoginTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="captureScreenshotAfterLogin">
+                  </a> <!-- captureScreenshotAfterLogin -->
+                  <span class="method-name">captureScreenshotAfterLogin</span>
+                  <div class="stack-trace">java.lang.NullPointerException: Cannot invoke &quot;String.toLowerCase()&quot; because &quot;browser&quot; is null
+	at driver.DriverFactory.createDriver(DriverFactory.java:30)
+	at driver.DriverFactory.getDriver(DriverFactory.java:22)
+	at suite.LoginTest.setUp(LoginTest.java:22)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+... Removed 28 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="loginUsingExcelData">
+                  </a> <!-- loginUsingExcelData -->
+                  <span class="method-name">loginUsingExcelData</span>
+                  <div class="stack-trace">java.lang.NullPointerException: Cannot invoke &quot;String.toLowerCase()&quot; because &quot;browser&quot; is null
+	at driver.DriverFactory.createDriver(DriverFactory.java:30)
+	at driver.DriverFactory.getDriver(DriverFactory.java:22)
+	at suite.LoginTest.setUp(LoginTest.java:22)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+... Removed 28 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="loginWithEmptyCredentials">
+                  </a> <!-- loginWithEmptyCredentials -->
+                  <span class="method-name">loginWithEmptyCredentials</span>
+                  <div class="stack-trace">java.lang.NullPointerException: Cannot invoke &quot;String.toLowerCase()&quot; because &quot;browser&quot; is null
+	at driver.DriverFactory.createDriver(DriverFactory.java:30)
+	at driver.DriverFactory.getDriver(DriverFactory.java:22)
+	at suite.LoginTest.setUp(LoginTest.java:22)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+... Removed 28 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="loginWithInvalidCredentials">
+                  </a> <!-- loginWithInvalidCredentials -->
+                  <span class="method-name">loginWithInvalidCredentials</span>
+                  <div class="stack-trace">java.lang.NullPointerException: Cannot invoke &quot;String.toLowerCase()&quot; because &quot;browser&quot; is null
+	at driver.DriverFactory.createDriver(DriverFactory.java:30)
+	at driver.DriverFactory.getDriver(DriverFactory.java:22)
+	at suite.LoginTest.setUp(LoginTest.java:22)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+... Removed 28 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="loginWithValidCredentials">
+                  </a> <!-- loginWithValidCredentials -->
+                  <span class="method-name">loginWithValidCredentials</span>
+                  <div class="stack-trace">java.lang.NullPointerException: Cannot invoke &quot;String.toLowerCase()&quot; because &quot;browser&quot; is null
+	at driver.DriverFactory.createDriver(DriverFactory.java:30)
+	at driver.DriverFactory.getDriver(DriverFactory.java:22)
+	at suite.LoginTest.setUp(LoginTest.java:22)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+... Removed 28 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="navigateToLoginPage">
+                  </a> <!-- navigateToLoginPage -->
+                  <span class="method-name">navigateToLoginPage</span>
+                  <div class="stack-trace">java.lang.NullPointerException: Cannot invoke &quot;String.toLowerCase()&quot; because &quot;browser&quot; is null
+	at driver.DriverFactory.createDriver(DriverFactory.java:30)
+	at driver.DriverFactory.getDriver(DriverFactory.java:22)
+	at suite.LoginTest.setUp(LoginTest.java:22)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+... Removed 28 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Surefire_suite-class-skipped -->
+        </div> <!-- panel Surefire_suite -->
+        <div panel-name="test-xml-Surefire_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
+&lt;suite name=&quot;Surefire suite&quot; verbose=&quot;0&quot;&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;Surefire test&quot; verbose=&quot;0&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;suite.ArraysListTest&quot;/&gt;
+      &lt;class name=&quot;suite.GraphListTest&quot;/&gt;
+      &lt;class name=&quot;suite.LoginTest&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- Surefire test --&gt;
+&lt;/suite&gt; &lt;!-- Surefire suite --&gt;
+            </pre>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="testlist-Surefire_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Tests for Surefire suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <ul>
+              <li>
+                <span class="test-name">Surefire test (3 classes)</span>
+              </li>
+            </ul>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="group-Surefire_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Groups for Surefire suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="times-Surefire_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Times for Surefire suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="times-div">
+              <script type="text/javascript">
+suiteTableInitFunctions.push('tableData_Surefire_suite');
+function tableData_Surefire_suite() {
+var data = new google.visualization.DataTable();
+data.addColumn('number', 'Number');
+data.addColumn('string', 'Method');
+data.addColumn('string', 'Class');
+data.addColumn('number', 'Time (ms)');
+data.addRows(23);
+data.setCell(0, 0, 0)
+data.setCell(0, 1, 'navigateToGraphSection')
+data.setCell(0, 2, 'suite.GraphListTest')
+data.setCell(0, 3, 1);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'runCodeUsingDataDriven')
+data.setCell(1, 2, 'suite.ArraysListTest')
+data.setCell(1, 3, 0);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'openGraphRepresentationsTryEditor')
+data.setCell(2, 2, 'suite.GraphListTest')
+data.setCell(2, 3, 0);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'navigateToLoginPage')
+data.setCell(3, 2, 'suite.LoginTest')
+data.setCell(3, 3, 0);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'runInvalidGraphTopicCode')
+data.setCell(4, 2, 'suite.GraphListTest')
+data.setCell(4, 3, 0);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'clickTryHereButton')
+data.setCell(5, 2, 'suite.ArraysListTest')
+data.setCell(5, 3, 0);
+data.setCell(6, 0, 6)
+data.setCell(6, 1, 'loginWithInvalidCredentials')
+data.setCell(6, 2, 'suite.LoginTest')
+data.setCell(6, 3, 0);
+data.setCell(7, 0, 7)
+data.setCell(7, 1, 'loginUsingExcelData')
+data.setCell(7, 2, 'suite.LoginTest')
+data.setCell(7, 3, 0);
+data.setCell(8, 0, 8)
+data.setCell(8, 1, 'clickGetStartedArrayPanel')
+data.setCell(8, 2, 'suite.ArraysListTest')
+data.setCell(8, 3, 0);
+data.setCell(9, 0, 9)
+data.setCell(9, 1, 'verifyArrayPageNavigation')
+data.setCell(9, 2, 'suite.ArraysListTest')
+data.setCell(9, 3, 0);
+data.setCell(10, 0, 10)
+data.setCell(10, 1, 'openGraphTopicPage')
+data.setCell(10, 2, 'suite.GraphListTest')
+data.setCell(10, 3, 0);
+data.setCell(11, 0, 11)
+data.setCell(11, 1, 'userLoginToDsAlgo')
+data.setCell(11, 2, 'suite.ArraysListTest')
+data.setCell(11, 3, 0);
+data.setCell(12, 0, 12)
+data.setCell(12, 1, 'loginToDsAlgo')
+data.setCell(12, 2, 'suite.GraphListTest')
+data.setCell(12, 3, 0);
+data.setCell(13, 0, 13)
+data.setCell(13, 1, 'captureScreenshotAfterLogin')
+data.setCell(13, 2, 'suite.LoginTest')
+data.setCell(13, 3, 0);
+data.setCell(14, 0, 14)
+data.setCell(14, 1, 'runValidCodeAndVerifyOutput')
+data.setCell(14, 2, 'suite.ArraysListTest')
+data.setCell(14, 3, 0);
+data.setCell(15, 0, 15)
+data.setCell(15, 1, 'openGraphTopicTryEditor')
+data.setCell(15, 2, 'suite.GraphListTest')
+data.setCell(15, 3, 0);
+data.setCell(16, 0, 16)
+data.setCell(16, 1, 'runInvalidCodeAndVerifyAlert')
+data.setCell(16, 2, 'suite.ArraysListTest')
+data.setCell(16, 3, 0);
+data.setCell(17, 0, 17)
+data.setCell(17, 1, 'openGraphRepresentationsPage')
+data.setCell(17, 2, 'suite.GraphListTest')
+data.setCell(17, 3, 0);
+data.setCell(18, 0, 18)
+data.setCell(18, 1, 'loginWithEmptyCredentials')
+data.setCell(18, 2, 'suite.LoginTest')
+data.setCell(18, 3, 0);
+data.setCell(19, 0, 19)
+data.setCell(19, 1, 'clickArraysInPythonLink')
+data.setCell(19, 2, 'suite.ArraysListTest')
+data.setCell(19, 3, 0);
+data.setCell(20, 0, 20)
+data.setCell(20, 1, 'runInvalidGraphRepresentationsCode')
+data.setCell(20, 2, 'suite.GraphListTest')
+data.setCell(20, 3, 0);
+data.setCell(21, 0, 21)
+data.setCell(21, 1, 'runValidGraphCodeUsingDataDriven')
+data.setCell(21, 2, 'suite.GraphListTest')
+data.setCell(21, 3, 0);
+data.setCell(22, 0, 22)
+data.setCell(22, 1, 'loginWithValidCredentials')
+data.setCell(22, 2, 'suite.LoginTest')
+data.setCell(22, 3, 0);
+window.suiteTableData['Surefire_suite']= { tableData: data, tableDiv: 'times-div-Surefire_suite'}
+return data;
+}
+              </script>
+              <span class="suite-total-time">Total running time: 1 ms</span>
+              <div id="times-div-Surefire_suite">
+              </div> <!-- times-div-Surefire_suite -->
+            </div> <!-- times-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="reporter-Surefire_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Reporter output for Surefire suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="ignored-methods-Surefire_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">0 ignored methods</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="chronological-Surefire_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Methods in chronological order</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="chronological-class">
+              <div class="chronological-class-name">suite.ArraysListTest</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">setUp</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-class before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">suite.GraphListTest</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">setUp</span>
+                <span class="method-start">66 ms</span>
+              </div> <!-- configuration-class before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">suite.LoginTest</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">setUp</span>
+                <span class="method-start">84 ms</span>
+              </div> <!-- configuration-class before -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+      </div> <!-- main-panel-root -->
+    </div> <!-- wrapper -->
+  </body>
+<script type="text/javascript" src="testng-reports2.js"></script>
+</html>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Surefire suite]" verbose="0">
+  <test thread-count="5" name="Surefire test(failed)" verbose="0">
+    <classes>
+      <class name="suite.GraphListTest">
+        <methods>
+          <include name="runInvalidGraphTopicCode"/>
+          <include name="openGraphTopicPage"/>
+          <include name="navigateToGraphSection"/>
+          <include name="runValidGraphCodeUsingDataDriven"/>
+          <include name="openGraphRepresentationsTryEditor"/>
+          <include name="runInvalidGraphRepresentationsCode"/>
+          <include name="openGraphTopicTryEditor"/>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="loginToDsAlgo"/>
+          <include name="openGraphRepresentationsPage"/>
+        </methods>
+      </class> <!-- suite.GraphListTest -->
+      <class name="suite.ArraysListTest">
+        <methods>
+          <include name="clickGetStartedArrayPanel"/>
+          <include name="verifyArrayPageNavigation"/>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="runValidCodeAndVerifyOutput"/>
+          <include name="userLoginToDsAlgo"/>
+          <include name="clickArraysInPythonLink"/>
+          <include name="runInvalidCodeAndVerifyAlert"/>
+          <include name="runCodeUsingDataDriven"/>
+          <include name="clickTryHereButton"/>
+        </methods>
+      </class> <!-- suite.ArraysListTest -->
+      <class name="suite.LoginTest">
+        <methods>
+          <include name="loginWithEmptyCredentials"/>
+          <include name="tearDown"/>
+          <include name="loginWithInvalidCredentials"/>
+          <include name="captureScreenshotAfterLogin"/>
+          <include name="loginUsingExcelData"/>
+          <include name="navigateToLoginPage"/>
+          <include name="loginWithValidCredentials"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- suite.LoginTest -->
+    </classes>
+  </test> <!-- Surefire test(failed) -->
+</suite> <!-- Failed suite [Surefire suite] -->
