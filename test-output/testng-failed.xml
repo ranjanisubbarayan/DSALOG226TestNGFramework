@@ -3,21 +3,17 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="suite.GraphListTest">
+      <class name="suite.LoginTest">
         <methods>
-          <include name="runInvalidGraphTopicCode"/>
-          <include name="openGraphTopicPage"/>
-          <include name="navigateToGraphSection"/>
-          <include name="runInvalidGraphRepresentationsCode"/>
-          <include name="openGraphTopicTryEditor"/>
-          <include name="runValidGraphCodeUsingDataDriven"/>
-          <include name="openGraphRepresentationsTryEditor"/>
-          <include name="setUp"/>
-          <include name="openGraphRepresentationsPage"/>
-          <include name="loginToDsAlgo"/>
+          <include name="loginWithEmptyCredentials"/>
           <include name="tearDown"/>
+          <include name="loginWithInvalidCredentials"/>
+          <include name="loginUsingExcelData"/>
+          <include name="navigateToLoginPage"/>
+          <include name="loginWithValidCredentials"/>
+          <include name="setUp"/>
         </methods>
-      </class> <!-- suite.GraphListTest -->
+      </class> <!-- suite.LoginTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

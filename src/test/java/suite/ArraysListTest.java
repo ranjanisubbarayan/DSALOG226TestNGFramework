@@ -3,19 +3,17 @@ package suite;
 import static driver.DriverFactory.getDriver;
 
 import java.io.IOException;
-import java.util.ArrayList;
-
+import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.*;
-
 import pageObjects.ArrayListPage;
 import pageObjects.LaunchPage;
 import pageObjects.LoginPage;
 import pageObjects.homePage;
-import utilities.DataDriven;
-
+import utilities.ConfigReader;
+import utilities.ExcelSheetHandling;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -108,10 +106,17 @@ public class ArraysListTest {
 
     @Test(priority = 8)
     public void runCodeUsingDataDriven() throws IOException {
-        DataDriven d = new DataDriven();
-        ArrayList<String> data = d.getData("ArrayList");
+    	String excelPath = ConfigReader.getProperty("excelPath");
 
-        arrayListPage.writeAndRunLinkedListCode(data.get(1));
+    	ExcelSheetHandling excel = new ExcelSheetHandling(excelPath);
+
+		List<String> data = excel.getCodeByColumn("testdata","Graph");
+	
+				for (int i = 0; i < data.size(); i++) {
+		    String line = data.get(i);
+            arrayListPage.writeAndRunLinkedListCode(line);
+		}
+
 
         String output = driver.findElement(By.xpath("//pre[@id='output']")).getText();
         Assert.assertFalse(output.isEmpty(), "No output displayed");
