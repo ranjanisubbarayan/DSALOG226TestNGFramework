@@ -1,8 +1,9 @@
+
 package utilities;
 
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
@@ -85,4 +86,95 @@ public class ExcelSheetHandling {
         }
         return value;
     }
+    
+    public List<String> getCodeLines(String sheetName, String testCaseName) {
+    	 List<String> codeLines = new ArrayList<>();
+    	 List<Map<String, String>> allRows = getSheetData(sheetName);
+    	 for (Map<String, String> row : allRows) {
+    		 String testcaseValue = row.get("testcase");
+    		 if (testCaseName.equalsIgnoreCase(testcaseValue)) {
+    			 for (Map.Entry<String, String> cell : row.entrySet()) {
+
+    	                String columnName = cell.getKey(); 
+    	                String cellValue  = cell.getValue();
+    	                if (!columnName.equalsIgnoreCase("testcase") && !cellValue.isBlank()) {
+    	                    codeLines.add(cellValue);
+    	                }
+    	            }
+    	        }
+    	    }
+    	 return codeLines;
+    }
+    
+    @SuppressWarnings("resource")
+    public List<String> getCodeByColumn(String sheetName, String columnName) {
+
+        List<String> codeLines = new ArrayList<>();
+
+        Sheet sheet = workbook.getSheet(sheetName);
+        if (sheet == null) {
+            throw new RuntimeException("Sheet not found: " + sheetName);
+        }
+
+        Row headerRow = sheet.getRow(0);
+        int columnIndex = -1;
+
+        for (Cell cell : headerRow) {
+            if (cell.getStringCellValue().equalsIgnoreCase(columnName)) {
+                columnIndex = cell.getColumnIndex();
+                break;
+            }
+        }
+
+        if (columnIndex == -1) {
+            throw new RuntimeException("Column not found: " + columnName);
+        }
+
+        for (int i = 1; i <= sheet.getLastRowNum(); i++) {
+            Row row = sheet.getRow(i);
+            if (row != null) {
+                Cell cell = row.getCell(columnIndex, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK);
+                codeLines.add(getCellString(cell));
+            }
+        }
+
+        return codeLines;
+    }
+
+
+    public void writeCellData(String sheetName, int rowNum, int colNum, String value) {
+        Workbook workbook = null;
+        FileInputStream fis = null;
+        FileOutputStream fos = null;
+
+        try {
+            fis = new FileInputStream(path);
+            workbook = new XSSFWorkbook(fis); 
+            fis.close(); 
+
+            Sheet sheet = workbook.getSheet(sheetName);
+            if (sheet == null) sheet = workbook.createSheet(sheetName);
+
+            Row row = sheet.getRow(rowNum);
+            if (row == null) row = sheet.createRow(rowNum);
+
+            Cell cell = row.getCell(colNum, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK);
+            cell.setCellValue(value);
+
+            fos = new FileOutputStream(path); 
+            workbook.write(fos); 
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (workbook != null) workbook.close();
+                if (fis != null) fis.close();
+                if (fos != null) fos.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
 }
