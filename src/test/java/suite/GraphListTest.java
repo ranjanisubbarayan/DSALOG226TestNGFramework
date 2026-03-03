@@ -6,6 +6,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.*;
+
+import base.BaseTest;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import driver.DriverFactory;
@@ -16,7 +19,7 @@ import pageObjects.LaunchPage;
 import utilities.ConfigReader;
 import utilities.ExcelSheetHandling;
 
-public class GraphListTest {
+public class GraphListTest extends BaseTest {
 
     private static final Logger logger = LogManager.getLogger(GraphListTest.class);
 
