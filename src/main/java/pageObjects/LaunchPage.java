@@ -1,8 +1,6 @@
 package pageObjects;
 
 import java.time.Duration;
-
-import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
@@ -35,6 +33,12 @@ public class LaunchPage {
         }
         return new homePage(driver);
     }
-    
- 
+    public boolean isGetStartedButtonDisplayed() {
+        try {
+            wait.until(ExpectedConditions.visibilityOf(getStartedButton));
+            return getStartedButton.isDisplayed();
+        } catch (TimeoutException e) {
+            return false;
+        }
+    } 
 }

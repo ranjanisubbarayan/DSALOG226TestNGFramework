@@ -8,7 +8,9 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import utilities.ExcelSheetHandling;
 import java.time.Duration;
+import java.util.Map;
 import java.util.UUID;
 
 public class registerPage {
@@ -16,43 +18,39 @@ public class registerPage {
     private WebDriver driver;
     private WebDriverWait wait;
     private String generatedUsername;
-  
+    private Map<String, String> registerData;
+
     public registerPage(WebDriver driver) {
         this.driver = driver;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         PageFactory.initElements(driver, this);
     }
-  
+
     @FindBy(xpath = "//a[@href='/register']")
     WebElement register_link;
 
     @FindBy(id = "id_username")
-   public WebElement register_username;
+    public WebElement register_username;
 
     @FindBy(id = "id_password1")
-   public WebElement register_password;
+    public WebElement register_password;
 
     @FindBy(id = "id_password2")
-   public WebElement register_confirm_password;
+    public WebElement register_confirm_password;
 
     @FindBy(xpath = "//input[@value='Register']")
-   public WebElement register_button;
-
-    @FindBy(xpath = "//input[@value='Register']")
-    WebElement registerpage_displayed;
+    public WebElement register_button;
 
     @FindBy(xpath = "//div[@role='alert']")
     WebElement printErrormsg;
-
+    
     @FindBy(xpath = "//div[@role='alert']")
-    WebElement registeredsuccess;
+    WebElement alertMessage;
 
-   @FindBy(xpath = "//a[@href='/logout']")
-   WebElement signout;
+    @FindBy(xpath = "//a[@href='/login']")
+    WebElement signin;
+
    
-   @FindBy(xpath = "//a[@href='/login']")
-   WebElement signin;
-
     public void click_register_link() {
         wait.until(ExpectedConditions.elementToBeClickable(register_link)).click();
     }
@@ -60,7 +58,11 @@ public class registerPage {
     public boolean isRegisterPageDisplayed() {
         return register_button.isDisplayed();
     }
-    
+
+    public void clickRegisterButton() {
+        safeClick(register_button);
+    }
+
     public void safeClick(WebElement element) {
         for (int i = 0; i < 3; i++) {
             try {
@@ -72,103 +74,98 @@ public class registerPage {
         }
     }
 
-    public void clickRegisterButton() {
-        safeClick(register_button);
-    }
-
-    public void clickWithEmptyFields() {
-        register_button.click();
-    }
-
-    public void show_ErrorMsg_EmptyUsername() {
-        showValidationMessage(register_username);
-    }
-
-    public void show_ErrorMsg_EmptyPassword() {
-        showValidationMessage(register_password);
-    }
-
-    public void show_ErrorMsg_EmptyConfirmPassword() {
-        showValidationMessage(register_confirm_password);
-    }
-
-    private void showValidationMessage(WebElement element) {
-        String message = (String) ((JavascriptExecutor) driver)
-                .executeScript("return arguments[0].validationMessage;", element);
-        System.out.println("Validation message: " + message);
-    }
-
-    public void print_ErrorMessage() {
-        WebElement alert = wait.until(ExpectedConditions.visibilityOf(printErrormsg));
-        System.out.println("Error Message: " + alert.getText());
-    }
-
     public void enter_registerUsername(String username) {
-        wait.until(ExpectedConditions.visibilityOf(register_username)).sendKeys(username);
-       
+        wait.until(ExpectedConditions.visibilityOf(register_username)).clear();
+        register_username.sendKeys(username);
     }
 
     public void enter_regPassword(String password) {
-        wait.until(ExpectedConditions.visibilityOf(register_password)).sendKeys(password);
-        
+        wait.until(ExpectedConditions.visibilityOf(register_password)).clear();
+        register_password.sendKeys(password);
     }
 
     public void enter_regPwdConfirm(String confirmPassword) {
-        wait.until(ExpectedConditions.visibilityOf(register_confirm_password)).sendKeys(confirmPassword);
-       
+        wait.until(ExpectedConditions.visibilityOf(register_confirm_password)).clear();
+        register_confirm_password.sendKeys(confirmPassword);
     }
 
-    public String getValidationMessage() {
-        return getFieldValidation(register_username);
+    public String getFieldValidation(WebElement element) {
+        return (String)((JavascriptExecutor)driver).executeScript("return arguments[0].validationMessage;", element);
     }
 
-    public String getPasswordValidationMessage() {
-        return getFieldValidation(register_password);
-    }
-
-    private String getFieldValidation(WebElement element) {
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        String message = (String) js.executeScript("return arguments[0].validationMessage;", element);
-        System.out.println("Validation message: " + message);
-        return message;
-    }
+    public String getValidationMessage() { 
+    	return getFieldValidation(register_username);
+    	}
     
+    public String getPasswordValidationMessage() { 
+    	return getFieldValidation(register_password); 
+    	}
+    public String getConfirmPasswordValidationMessage() { 
+    	return getFieldValidation(register_confirm_password); 
+    	}
+
     public void generate_newUsername() {
         generatedUsername = return_generateNewUsername();
         register_username.sendKeys(generatedUsername);
         System.out.println("Generated Username: " + generatedUsername);
     }
 
-    public static String return_generateNewUsername() {    	
+    public static String return_generateNewUsername() {
         return "user_name" + UUID.randomUUID().toString().substring(0, 8);
     }
 
-    public String getGeneratedUsername() {
+    public String getGeneratedUsername() { return generatedUsername; }
+
+    public void print_successfullyRegistered() {
+        System.out.println("Registered Successfully: " + alertMessage.getText());
+    }
+
+    public void registerUsingExcel(String username, String password, String confirmPassword) {
+
+        if (username == null || username.isEmpty()) {
+            generate_newUsername();   
+        } else {
+            enter_registerUsername(username);
+        }
+
+        if (password != null && !password.isEmpty()) {
+            enter_regPassword(password);
+        }
+
+        if (confirmPassword != null && !confirmPassword.isEmpty()) {
+            enter_regPwdConfirm(confirmPassword);
+        }
+
+        clickRegisterButton();
+    }
+    public String generateUsernameAndWriteToExcel(ExcelSheetHandling excel, int rowNum, int colNum) {
+        
+        generatedUsername = return_generateNewUsername();
+
+         enter_registerUsername(generatedUsername);
+        System.out.println("Generated Username: " + generatedUsername);
+
+        excel.writeCellData("Register", rowNum, colNum, generatedUsername);
+        System.out.println("Username written to Excel at row " + rowNum + ", column " + colNum);
+
         return generatedUsername;
     }
 
-    public void print_successfullyRegistered() {
-        System.out.println("Registered Successfully: " + registeredsuccess.getText());
-    }
-    
-    public LoginPage clickSigninLink() {
-        signin.click();
-        return new LoginPage(driver); 
-    }
-    
-    public boolean isUsernameFieldVisible() {
-        return register_username.isDisplayed();
+    public String getAlertMessage() {
+        try {
+        	   return printErrormsg.getText();         
+        } catch (Exception e) {
+            return "";
+        }
     }
 
-    public boolean isPasswordFieldVisible() {
-        return register_password.isDisplayed();
-    }
-
-    public boolean isConfirmPasswordFieldVisible() {
-        return register_confirm_password.isDisplayed();
-    }
-
-    public boolean isRegisterButtonVisible() {
-        return register_button.isDisplayed();
-    }
+    public String getExpectedResult() {
+        if (registerData == null)
+            throw new RuntimeException("Register data not loaded! Call registerUsingTestData() first.");
+        return registerData.get("ExpectedResult");
+    }    
+    public boolean isUsernameFieldVisible() { return register_username.isDisplayed(); }
+    public boolean isPasswordFieldVisible() { return register_password.isDisplayed(); }
+    public boolean isConfirmPasswordFieldVisible() { return register_confirm_password.isDisplayed(); }
+    public boolean isRegisterButtonVisible() { return register_button.isDisplayed(); }
 }

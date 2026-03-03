@@ -1,104 +1,97 @@
 package suite;
 
-import org.openqa.selenium.WebDriver;
-import org.testng.Assert;
-import org.testng.annotations.*;
-
 import driver.DriverFactory;
+import org.testng.Assert;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+
+import base.BaseTest;
 import pageObjects.LaunchPage;
 import pageObjects.LoginPage;
 import pageObjects.homePage;
-import utilities.ScreenshotUtil;
+import utilities.ExcelSheetHandling;
 
-public class LoginTest {
+import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
-    private WebDriver driver;
-    private LoginPage loginPage;
-    private LaunchPage launchPage;
-    private homePage homepage;
+public class LoginPageTest extends BaseTest {
+	
+	@DataProvider(name = "loginExcelData")
+	public Object[][] getLoginData() {
+	    String path = Paths.get("src/main/resources/ExcelSheet/DsAlgoTestData.xlsx").toString();
+	    ExcelSheetHandling excel = new ExcelSheetHandling(path);
+	    List<Map<String, String>> allRows = excel.getSheetData("Login");
 
-    @BeforeClass
-    public void setUp() {
-        driver = DriverFactory.getDriver();
-        launchPage = new LaunchPage(driver);
-    }
+	   
+	    List<Map<String, String>> nonEmptyRows = new ArrayList<>();
+	    for (Map<String, String> row : allRows) {
+	        String testId = row.get("testId");
+	        String username = row.get("username");
+	        String password = row.get("password");
 
-    @Test(priority = 1)
-    public void navigateToLoginPage() {
-        homepage = launchPage.clickGetStarted();
+	        if ((testId == null || testId.trim().isEmpty()) &&
+	            (username == null || username.trim().isEmpty()) &&
+	            (password == null || password.trim().isEmpty())) {
+	            break; 
+	        }
+	        nonEmptyRows.add(row);
+	    }
 
-       
-        try {
-            loginPage = homepage.clickSignOut();
-        } catch (Exception e) {
-          
-        }
+	   
+	    Object[][] data = new Object[nonEmptyRows.size()][1];
+	    for (int i = 0; i < nonEmptyRows.size(); i++) {
+	        data[i][0] = nonEmptyRows.get(i); 
+	        System.out.println("Row " + i +
+	                " | testId: " + nonEmptyRows.get(i).get("testId") +
+	                " | username: " + nonEmptyRows.get(i).get("username") +
+	                " | password: " + nonEmptyRows.get(i).get("password"));
+	    }
 
-        loginPage = homepage.clickSignInLink();
-        Assert.assertNotNull(loginPage, "Login page not opened");
-    }
+	    return data;
+	}
+	@Test(dataProvider = "loginExcelData", priority = 1)
+	public void verifyLogin(Map<String, String> rowData) {
+	    String testId = rowData.get("testId");
+	    String username = rowData.get("username");
+	    String password = rowData.get("password");
+	    String expectedResult = rowData.get("ExpectedResult");
 
-    @Test(priority = 2)
-    public void loginWithEmptyCredentials() {
-        loginPage.clickLoginButton();
+	    LaunchPage launchPage = new LaunchPage(DriverFactory.getDriver());
+	    homePage homepage = launchPage.clickGetStarted();
+	    LoginPage loginPage = homepage.clickSignInLink();
 
-        String usernameMsg = loginPage.getUsernameValidationMessage();
-        String passwordMsg = loginPage.getPasswordValidationMessage();
+	    
+	    loginPage.login(username, password);
 
-        Assert.assertTrue(
-                !usernameMsg.isEmpty() || !passwordMsg.isEmpty(),
-                "Expected browser validation message but found none"
-        );
-    }
+	    switch (expectedResult.trim()) {
 
-    @Test(priority = 3)
-    public void loginWithInvalidCredentials() {
-        loginPage.enterUsername("invalidUser");
-        loginPage.enterPassword("invalidPass");
-        loginPage.clickLoginButton();
+	    case "You are logged in":
+	        Assert.assertTrue(loginPage.isHomePageDisplayed(),
+	                "Expected user to be logged in, but was NOT!");
+	        break;
 
-        String alert = loginPage.getAlertMessage();
-        Assert.assertTrue(
-                alert.contains("Invalid"),
-                "Expected invalid login message, but got: " + alert
-        );
-    }
+	    case "Please fill out this field":
 
-    @Test(priority = 4)
-    public void loginWithValidCredentials() {
-        loginPage.enterUsername("validUsername");  
-        loginPage.enterPassword("validPassword");
-        loginPage.clickLoginButton();
+	        String usernameMsg = loginPage.getUsernameValidationMessage();
+	        String passwordMsg = loginPage.getPasswordValidationMessage();
 
-        Assert.assertTrue(
-                loginPage.isHomePageDisplayed(),
-                "Home page should be displayed but was NOT!"
-        );
-    }
+	        Assert.assertTrue(
+	                !usernameMsg.isEmpty() || !passwordMsg.isEmpty(),
+	                "Expected browser validation message but found none."
+	        );
+	        break;
 
-    @Test(priority = 5)
-    public void loginUsingExcelData() {
-        homepage = launchPage.clickGetStarted();
-        loginPage = homepage.clickSignInLink();
+	    default:
 
-        loginPage.loginUsingTestData("TC_Login_01");
-        loginPage.getDataFromExcel();
+	        String alertMessage = loginPage.getAlertMessage();
 
-        Assert.assertTrue(
-                loginPage.isHomePageDisplayed(),
-                "Login failed using Excel data"
-        );
-    }
+	        Assert.assertTrue(alertMessage.contains(expectedResult),
+	                "Expected alert: " + expectedResult +
+	                " but got: " + alertMessage);
 
-    @Test(priority = 6)
-    public void captureScreenshotAfterLogin() {
-        ScreenshotUtil.takeScreenshot(driver, "LoginTest_Screenshot");
-    }
-
-    @AfterClass
-    public void tearDown() {
-        if (driver != null) {
-            driver.quit();
-        }
-    }
+	        break;
+	}
+	}
 }

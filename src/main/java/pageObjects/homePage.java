@@ -6,8 +6,8 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class homePage {
 
@@ -55,34 +55,56 @@ public class homePage {
     @FindBy(xpath = "//a[normalize-space()='Sign in']")
      WebElement signinlink;
 
-    
-
     public void openDropdownOnly() {
+
+        wait.until(ExpectedConditions.visibilityOf(homeTitle)); // ensure page loaded
+
         wait.until(ExpectedConditions.elementToBeClickable(dropdownMenu));
-        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", dropdownMenu);
+
+        try {
+            dropdownMenu.click();
+            System.out.println("Normal click worked");
+        } catch (Exception e) {
+            System.out.println("Normal click failed. Using JS click.");
+            js.executeScript("arguments[0].click();", dropdownMenu);
+        }
+
         wait.until(ExpectedConditions.visibilityOfAllElements(dropdownItems));
+
+        System.out.println("Dropdown opened successfully");
     }
-    
     public List<String> getAllDropdownModules() {
-    	return dropdownItems
-                .stream()
-                .map(e -> e.getText().trim())
-                .filter(text -> !text.isEmpty())
-                .collect(Collectors.toList());
+
+        List<String> moduleNames = new ArrayList<>();
+
+        for (WebElement item : dropdownItems) {
+
+            String text = item.getText().trim();
+
+            if (!text.isEmpty()) {
+                moduleNames.add(text);
+            }
+        }
+
+        return moduleNames;
     }
 
     public void clickModuleFromDropdown(String moduleName) {
-       
+
+        openDropdownOnly(); 
+
         List<WebElement> items = wait.until(
                 ExpectedConditions.visibilityOfAllElements(dropdownItems));
+
         for (WebElement item : items) {
             if (item.getText().trim().equalsIgnoreCase(moduleName.trim())) {
                 item.click();
                 return;
             }
         }
-        throw new RuntimeException(" Module '" + moduleName + "' not found in dropdown");
-        }
+
+        throw new RuntimeException("Module '" + moduleName + "' not found in dropdown");
+    }
     
     private void scrollAndClick(WebElement element) {
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
@@ -127,28 +149,7 @@ public class homePage {
     public LoginPage clickSignInLink() {
         scrollAndClick(loginLink);
         return new LoginPage(driver);
-    }
-
-    public LoginPage clickSignOut() {
-        try {
-            if (logoutLink.isDisplayed()) {
-                scrollAndClick(logoutLink);
-            }
-        } catch (NoSuchElementException e) {
-            
-        }
-        return new LoginPage(driver);
-    }
-
-    public void clickAllDropdownModulesSafely() {
-        String[] modules = {"Arrays", "Linked List", "Stack", "Queue", "Tree", "Graph"};
-        for (String moduleName : modules) {
-            clickModuleFromDropdown(moduleName);
-            driver.navigate().back();
-            waitForHomePageToLoad();
-        }
-    }
-    
+    }    
     public void clickGetStartedForModule(String moduleName) {
 
     	 wait.until(ExpectedConditions.visibilityOfAllElements(dataStructureCard));
@@ -208,25 +209,6 @@ public class homePage {
         } catch (ElementClickInterceptedException e) {
            
             System.out.println("Sign in link could not be clicked: " + e.getMessage());
-        }
-    }
-
-    public void navigateToHomePage() {
-        driver.get("https://dsportalapp.herokuapp.com/home");
-
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-        wait.until(ExpectedConditions.visibilityOfAllElements(getStartedButton));
-    }
-    public boolean areImportantOptionsVisible() {
-        try {
-            wait.until(ExpectedConditions.visibilityOfAllElements(getStartedButton));
-            wait.until(ExpectedConditions.visibilityOf(signinlink));
-
-            return getStartedButton.get(0).isDisplayed()
-                    && signinlink.isDisplayed();
-        } catch (Exception e) {
-            System.out.println("Important home page options not visible: " + e.getMessage());
-            return false;
         }
     }
     public void signOutIfLoggedIn() {
