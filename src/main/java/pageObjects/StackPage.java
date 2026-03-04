@@ -63,7 +63,8 @@ public class StackPage {
 
     @FindBy(xpath = "//button[text()='Run']")
     WebElement run;
-
+    @FindBy(xpath = "//h4[text()='Stack']")
+    WebElement stackHeader;
     @FindBy(id = "output")
     WebElement outputConsole;
 
@@ -179,16 +180,18 @@ public class StackPage {
 			        
 			    }
 				}
-				public void errorMessageinAlertWindow() {
+				public String errorMessageinAlertWindow() {
 					 WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 						Alert alert = null;
 						try {						   
 						    alert = wait.until(ExpectedConditions.alertIsPresent());						   
 						    String alertMsg = alert.getText();
 						    System.out.println("Alert Message: " + alertMsg); 
-						    alert.accept();						   				    
+						    alert.accept();	
+						    return alertMsg;
 						} catch (TimeoutException e) {						    
-						    System.out.println("No native alert appeared.");						   
+						    System.out.println("No native alert appeared.");	
+						    return null; 
 						}
 				}
 				public void readDataFromExcel(String testId) {
@@ -218,10 +221,17 @@ public class StackPage {
 				        throw new RuntimeException("Both Valid Input and Invalid Input columns are empty in Excel!");
 				    }
 				}
-						
-				public void seeOutput() {
+					
+				
+				public String seeOutput() {
 					WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-			    	wait.until(ExpectedConditions.visibilityOf(outputConsole)).getText();
-			       	System.out.println(outputConsole);
+					  wait.until(ExpectedConditions.visibilityOf(outputConsole));
+					    String output = outputConsole.getText();
+					    System.out.println("Console Output: " + output);
+			       	return output;
+				}
+				public void waitForStackPage() {
+					wait.until(ExpectedConditions.visibilityOf(stackHeader));
+					
 				}	
 }

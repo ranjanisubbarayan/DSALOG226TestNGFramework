@@ -28,7 +28,7 @@ public class BaseTest {
     }
 
     @Parameters("browser")
-    @BeforeMethod
+    @BeforeClass
     public void setup(@Optional("chrome") String browser) {
         driver = DriverFactory.initDriver(browser);
 
@@ -39,7 +39,7 @@ public class BaseTest {
         driver.get(url);
     }
 
-    @AfterMethod
+    @AfterClass
     public void tearDown(ITestResult result) {
         if (ITestResult.FAILURE == result.getStatus() && driver != null) {
             takeScreenshot(result.getName());
