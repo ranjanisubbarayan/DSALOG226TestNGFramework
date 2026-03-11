@@ -8,7 +8,7 @@ import org.testng.annotations.DataProvider;
 
 public class TestDataProvider {
 	
-    private final String excelPath = "src/main/resources/ExcelSheet/DsAlgoTestData.xlsx";
+    private final String excelPath = "src/test/resources/ExcelSheet/DsAlgoTestData.xlsx";
     private ExcelSheetHandling excel = new ExcelSheetHandling(excelPath);
 
     @DataProvider(name = "validPythonCode")
@@ -84,7 +84,7 @@ public class TestDataProvider {
     
     @DataProvider(name = "loginExcelData")
 	public Object[][] getLoginData() {
-	    String path = Paths.get("src/main/resources/ExcelSheet/DsAlgoTestData.xlsx").toString();
+	    String path = Paths.get("src/test/resources/ExcelSheet/DsAlgoTestData.xlsx").toString();
 	    ExcelSheetHandling excel = new ExcelSheetHandling(path);
 	    List<Map<String, String>> allRows = excel.getSheetData("Login");
 

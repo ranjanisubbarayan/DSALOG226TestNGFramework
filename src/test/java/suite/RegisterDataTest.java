@@ -18,7 +18,7 @@ public class RegisterDataTest extends BaseTest {
     public void verifyRegister(Map<String, String> rowData) {
 
     	ExcelSheetHandling excel =
-                new ExcelSheetHandling("src/main/resources/ExcelSheet/DsAlgoTestData.xlsx");
+                new ExcelSheetHandling("src/test/resources/ExcelSheet/DsAlgoTestData.xlsx");
 
         String username = rowData.get("username");
         String password = rowData.get("password");
