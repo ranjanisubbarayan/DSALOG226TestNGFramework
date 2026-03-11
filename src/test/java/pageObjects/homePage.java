@@ -57,7 +57,7 @@ public class homePage {
 
     public void openDropdownOnly() {
 
-        wait.until(ExpectedConditions.visibilityOf(homeTitle)); // ensure page loaded
+        wait.until(ExpectedConditions.visibilityOf(homeTitle)); 
 
         wait.until(ExpectedConditions.elementToBeClickable(dropdownMenu));
 

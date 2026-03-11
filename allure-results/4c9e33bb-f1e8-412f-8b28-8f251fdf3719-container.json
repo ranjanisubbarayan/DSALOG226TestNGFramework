@@ -1,0 +1,1 @@
+{"uuid":"4c9e33bb-f1e8-412f-8b28-8f251fdf3719","name":"suite.StacklistTest.setUp","children":["df1d99a3-7197-496d-b50d-0bfefd2e98dd"],"description":"","befores":[{"name":"setUp","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1773254975590,"stop":1773254975591}],"afters":[],"start":1773254975590,"stop":1773254975591}

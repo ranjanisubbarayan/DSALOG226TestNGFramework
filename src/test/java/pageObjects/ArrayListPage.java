@@ -2,7 +2,6 @@ package pageObjects;
 
 import java.io.IOException;
 import java.time.Duration;
-
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -14,6 +13,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import utilities.ConfigReader;
 
+import org.openqa.selenium.TimeoutException;
+import java.util.List;
+
+
 
 public class ArrayListPage {
 	
@@ -22,7 +25,8 @@ public class ArrayListPage {
     Actions actions;
     LaunchPage launchPage;
     private homePage homepage;
-
+    
+    
 	public ArrayListPage(WebDriver driver) {
 		this.driver=driver;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(5));
@@ -30,18 +34,35 @@ public class ArrayListPage {
 		PageFactory.initElements(driver, this);
 	}
 
-	
+	@FindBy(xpath="//pre[@id='output']")
+	WebElement console;
 	@FindBy (xpath="//div[contains(text(),'You are logged in')]")
 	WebElement VerifyHomepage;
 	
 	@FindBy (xpath="//a[@href='array']")
 	WebElement btnArrayGetstarted;
 	
-	@FindBy (xpath="//div/h4[text()='Array']")
+	@FindBy (xpath="//div/h4[normalize-space()='Array']")
 	WebElement verifyArrayspage;
 	
-	@FindBy (xpath="//a[contains(text(),'Arrays in Python')]")
+	@FindBy (xpath="//a[normalize-space()='Arrays in Python']")
 	WebElement lnkArraysInPython;
+	
+	@FindBy (xpath="//a[normalize-space()='Basic Operations in Lists']")
+	WebElement lnkBasicOperationofArray;
+	
+	@FindBy (xpath="//a[normalize-space()='Applications of Array']")
+	WebElement lnkApplicationofArray;
+	
+	@FindBy (xpath="//a[normalize-space()='Arrays Using List']")
+	WebElement lnkArraysusinglist;
+	
+	@FindBy (xpath="//a[normalize-space()='Practice Questions']")
+	WebElement lnkPracticeQue;
+	
+	@FindBy(xpath = "//a[contains(@href,'array')]")
+	private List<WebElement> arraypagelements;
+
 	
 	@FindBy (xpath="//a[@href='/tryEditor']")
 	WebElement btnTryEditor;
@@ -54,9 +75,6 @@ public class ArrayListPage {
 	
 	@FindBy (xpath="//pre[@role='presentation']")
 	WebElement codeEditor;
-	
-	@FindBy(xpath="//pre[@id='output']")
-	WebElement console;
 	
 	public void writeCodeAndRun(String code) {
 		Actions actions = new Actions(driver);
@@ -79,19 +97,70 @@ public class ArrayListPage {
 	public void clickArraysInPython() {
 		lnkArraysInPython.click();
 	}
+	public void clickArraysUsingList() {
+		lnkArraysusinglist.click();
+	}
+	public void clickBasicOperationArray() {
+		lnkBasicOperationofArray.click();
+	}
+	public void clickApplicationofArray() {
+		lnkApplicationofArray.click();
+	}
+	public void clickPracticeQue() {
+		lnkPracticeQue.click();
+	}
+	
 	public void clickTryHere() {
 		btnTryEditor.click();
 	}
-
+	public boolean isTryHereButtonVisible() {
+	    return btnTryEditor.isDisplayed();
+	}
+	public boolean isTryHereButtonClickable() {
+	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+	    try {
+	        wait.until(ExpectedConditions.elementToBeClickable(btnTryEditor));
+	        return true;
+	    } catch (TimeoutException e) {
+	        return false;
+	    }
+	}
 	public boolean isRunButtonDisplayed() {
         return btnRun.isDisplayed();
     }
 
+	public boolean areAllArrayelementsVisible() {
+	    for (WebElement link : arraypagelements) {
+	        if (!link.isDisplayed()) {
+	            return false;
+	        }
+	    }
+	    return true;
+	}
+	public void writeAndRunLinkedListCode(String code) throws IOException {
+		Actions action=new Actions(driver);
+		action.click(codeEditor).perform();
+		action.sendKeys(code).perform();
+		btnRun.click();
+	}
+	public boolean areAllArrayelementsClickable() {
+
+	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+
+	    for (WebElement link : arraypagelements) {
+	        try {
+	        	wait.until(ExpectedConditions.elementToBeClickable(link));
+	        } catch (TimeoutException e) {
+	        	   return false;
+	        }
+	    }
+	    return true;
+	}
    
 	   public String getArraysInPythonText() {
 	        return verifyArraysInPython.getText();
 	    }
-	public void writeAndRunLinkedListCode(String code) throws IOException {
+	public void writeAndRunArrayListCode(String code) throws IOException {
 		Actions action=new Actions(driver);
 		action.click(codeEditor).perform();
 		action.sendKeys(code).perform();
@@ -101,16 +170,6 @@ public class ArrayListPage {
         wait.until(ExpectedConditions.visibilityOf(verifyArrayspage));
     }
 
-	
-	public void clickTryHereIfVisible() {
-        try {
-        	clickArraysInPython();
-            wait.until(ExpectedConditions.elementToBeClickable(btnTryEditor)).click();
-            wait.until(ExpectedConditions.visibilityOf(btnRun));
-        } catch (Exception e) {
-            throw new RuntimeException("Try Here button not visible: " + e.getMessage());
-        }
-    }
 
 	public String waitForAlertIfPresent() {
 	    try {
@@ -123,24 +182,24 @@ public class ArrayListPage {
 	        return null; 
 	    }
 	}
-	
+
 	public String getOutput(){
 		return console.getText();
 	}
 	
-	  public void loginToApplication() {
-	    	 String username = ConfigReader.getProperty("username");
-	         String password = ConfigReader.getProperty("password");
-	         LaunchPage launchPage = new LaunchPage(driver);
-	         homepage = launchPage.clickGetStarted();
+	 public void loginToApplication() {
+	        String username = ConfigReader.getProperty("username");
+	        String password = ConfigReader.getProperty("password");
+	        launchPage = new LaunchPage(driver);
+	        homepage = launchPage.clickGetStarted();
 
-	         if (!homepage.isUserLoggedIn()) {
-	             homepage.clickSignInLinkIfPresent();
-	             LoginPage loginPage = new LoginPage(driver);
-	             loginPage.enterUsername(username);
-	             loginPage.enterPassword(password);
-	             loginPage.clickLoginButton();
-	         }
+	        if (!homepage.isUserLoggedIn()) {
+	            homepage.clickSignInLinkIfPresent();
+	            LoginPage loginPage = new LoginPage(driver);
+	            loginPage.enterUsername(username);
+	            loginPage.enterPassword(password);
+	            loginPage.clickLoginButton();
+	        }
+	 }
 
-}
 }

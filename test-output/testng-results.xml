@@ -1,25 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="12" passed="12" failed="0" skipped="0">
+<testng-results ignored="8" total="10" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-03-11T13:08:16 EDT" name="Default suite" finished-at="2026-03-11T13:09:14 EDT" duration-ms="58444">
+  <suite started-at="2026-03-11T15:53:15 EDT" name="Default suite" finished-at="2026-03-11T15:53:31 EDT" duration-ms="15681">
     <groups>
-      <group name="editor">
-        <method signature="GraphListTest.runValidGraphCodeUsingDataDriven(java.lang.String)[pri:9, instance:suite.GraphListTest@4fe89c24]" name="runValidGraphCodeUsingDataDriven" class="suite.GraphListTest"/>
-      </group> <!-- editor -->
       <group name="regression">
-        <method signature="GraphListTest.runValidGraphCodeUsingDataDriven(java.lang.String)[pri:9, instance:suite.GraphListTest@4fe89c24]" name="runValidGraphCodeUsingDataDriven" class="suite.GraphListTest"/>
+        <method signature="GraphListTest.navigateToGraphSection(java.lang.String)[pri:2, instance:suite.GraphListTest@1a1da881]" name="navigateToGraphSection" class="suite.GraphListTest"/>
       </group> <!-- regression -->
-      <group name="smoke">
-        <method signature="GraphListTest.LoginToDsAlgo()[pri:1, instance:suite.GraphListTest@4fe89c24]" name="LoginToDsAlgo" class="suite.GraphListTest"/>
-      </group> <!-- smoke -->
-      <group name="login">
-        <method signature="GraphListTest.LoginToDsAlgo()[pri:1, instance:suite.GraphListTest@4fe89c24]" name="LoginToDsAlgo" class="suite.GraphListTest"/>
-      </group> <!-- login -->
+      <group name="graph">
+        <method signature="GraphListTest.navigateToGraphSection(java.lang.String)[pri:2, instance:suite.GraphListTest@1a1da881]" name="navigateToGraphSection" class="suite.GraphListTest"/>
+      </group> <!-- graph -->
     </groups>
-    <test started-at="2026-03-11T13:08:16 EDT" name="Default test" finished-at="2026-03-11T13:09:14 EDT" duration-ms="58444">
+    <test started-at="2026-03-11T15:53:15 EDT" name="Default test" finished-at="2026-03-11T15:53:31 EDT" duration-ms="15681">
       <class name="suite.GraphListTest">
-        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:suite.GraphListTest@4fe89c24]" started-at="2026-03-11T13:08:16 EDT" name="setup" finished-at="2026-03-11T13:08:18 EDT" duration-ms="2298" status="PASS">
+        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:suite.GraphListTest@1a1da881]" started-at="2026-03-11T15:53:16 EDT" name="setup" finished-at="2026-03-11T15:53:20 EDT" duration-ms="4095" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -30,42 +24,26 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:suite.GraphListTest@4fe89c24]" started-at="2026-03-11T13:08:18 EDT" name="setUp" finished-at="2026-03-11T13:08:18 EDT" duration-ms="33" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:suite.GraphListTest@1a1da881]" started-at="2026-03-11T15:53:21 EDT" name="setUp" finished-at="2026-03-11T15:53:21 EDT" duration-ms="51" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="LoginToDsAlgo()[pri:1, instance:suite.GraphListTest@4fe89c24]" started-at="2026-03-11T13:08:18 EDT" name="LoginToDsAlgo" finished-at="2026-03-11T13:08:20 EDT" duration-ms="1745" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- LoginToDsAlgo -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:suite.GraphListTest@4fe89c24]" started-at="2026-03-11T13:08:20 EDT" name="tearDown" finished-at="2026-03-11T13:08:20 EDT" duration-ms="314" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:suite.GraphListTest@4fe89c24]" started-at="2026-03-11T13:08:20 EDT" name="setup" finished-at="2026-03-11T13:08:21 EDT" duration-ms="1276" status="PASS">
+        <test-method signature="navigateToGraphSection(java.lang.String)[pri:2, instance:suite.GraphListTest@1a1da881]" started-at="2026-03-11T15:53:21 EDT" name="navigateToGraphSection" data-provider="graphlinks" finished-at="2026-03-11T15:53:25 EDT" duration-ms="4490" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[chrome]]>
+                <![CDATA[Graph]]>
               </value>
             </param>
           </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:suite.GraphListTest@4fe89c24]" started-at="2026-03-11T13:08:21 EDT" name="setUp" finished-at="2026-03-11T13:08:21 EDT" duration-ms="2" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="navigateToGraphSection()[pri:2, instance:suite.GraphListTest@4fe89c24]" started-at="2026-03-11T13:08:21 EDT" name="navigateToGraphSection" finished-at="2026-03-11T13:08:24 EDT" duration-ms="2358" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- navigateToGraphSection -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:suite.GraphListTest@4fe89c24]" started-at="2026-03-11T13:08:24 EDT" name="tearDown" finished-at="2026-03-11T13:08:24 EDT" duration-ms="176" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:suite.GraphListTest@1a1da881]" started-at="2026-03-11T15:53:25 EDT" name="tearDown" finished-at="2026-03-11T15:53:26 EDT" duration-ms="296" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:suite.GraphListTest@4fe89c24]" started-at="2026-03-11T13:08:24 EDT" name="setup" finished-at="2026-03-11T13:08:25 EDT" duration-ms="1314" status="PASS">
+        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:suite.GraphListTest@1a1da881]" started-at="2026-03-11T15:53:26 EDT" name="setup" finished-at="2026-03-11T15:53:27 EDT" duration-ms="1675" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -76,250 +54,22 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:suite.GraphListTest@4fe89c24]" started-at="2026-03-11T13:08:25 EDT" name="setUp" finished-at="2026-03-11T13:08:25 EDT" duration-ms="2" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:suite.GraphListTest@1a1da881]" started-at="2026-03-11T15:53:27 EDT" name="setUp" finished-at="2026-03-11T15:53:27 EDT" duration-ms="3" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="openGraphTopicPage()[pri:3, instance:suite.GraphListTest@4fe89c24]" started-at="2026-03-11T13:08:25 EDT" name="openGraphTopicPage" finished-at="2026-03-11T13:08:28 EDT" duration-ms="2227" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- openGraphTopicPage -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:suite.GraphListTest@4fe89c24]" started-at="2026-03-11T13:08:28 EDT" name="tearDown" finished-at="2026-03-11T13:08:28 EDT" duration-ms="200" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:suite.GraphListTest@4fe89c24]" started-at="2026-03-11T13:08:28 EDT" name="setup" finished-at="2026-03-11T13:08:29 EDT" duration-ms="1450" status="PASS">
+        <test-method signature="navigateToGraphSection(java.lang.String)[pri:2, instance:suite.GraphListTest@1a1da881]" started-at="2026-03-11T15:53:27 EDT" name="navigateToGraphSection" data-provider="graphlinks" finished-at="2026-03-11T15:53:30 EDT" duration-ms="3145" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[chrome]]>
+                <![CDATA[Graph Representations]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:suite.GraphListTest@4fe89c24]" started-at="2026-03-11T13:08:29 EDT" name="setUp" finished-at="2026-03-11T13:08:29 EDT" duration-ms="2" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="openGraphTopicTryEditor()[pri:4, instance:suite.GraphListTest@4fe89c24]" started-at="2026-03-11T13:08:29 EDT" name="openGraphTopicTryEditor" finished-at="2026-03-11T13:08:32 EDT" duration-ms="3212" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- openGraphTopicTryEditor -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:suite.GraphListTest@4fe89c24]" started-at="2026-03-11T13:08:32 EDT" name="tearDown" finished-at="2026-03-11T13:08:33 EDT" duration-ms="212" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:suite.GraphListTest@4fe89c24]" started-at="2026-03-11T13:08:33 EDT" name="setup" finished-at="2026-03-11T13:08:34 EDT" duration-ms="1279" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:suite.GraphListTest@4fe89c24]" started-at="2026-03-11T13:08:34 EDT" name="setUp" finished-at="2026-03-11T13:08:34 EDT" duration-ms="3" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="runInvalidGraphTopicCode()[pri:5, instance:suite.GraphListTest@4fe89c24]" started-at="2026-03-11T13:08:34 EDT" name="runInvalidGraphTopicCode" finished-at="2026-03-11T13:08:37 EDT" duration-ms="3461" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runInvalidGraphTopicCode -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:suite.GraphListTest@4fe89c24]" started-at="2026-03-11T13:08:37 EDT" name="tearDown" finished-at="2026-03-11T13:08:38 EDT" duration-ms="168" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:suite.GraphListTest@4fe89c24]" started-at="2026-03-11T13:08:38 EDT" name="setup" finished-at="2026-03-11T13:08:39 EDT" duration-ms="1198" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:suite.GraphListTest@4fe89c24]" started-at="2026-03-11T13:08:39 EDT" name="setUp" finished-at="2026-03-11T13:08:39 EDT" duration-ms="2" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="openGraphRepresentationsPage()[pri:6, instance:suite.GraphListTest@4fe89c24]" started-at="2026-03-11T13:08:39 EDT" name="openGraphRepresentationsPage" finished-at="2026-03-11T13:08:41 EDT" duration-ms="2373" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- openGraphRepresentationsPage -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:suite.GraphListTest@4fe89c24]" started-at="2026-03-11T13:08:41 EDT" name="tearDown" finished-at="2026-03-11T13:08:41 EDT" duration-ms="207" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:suite.GraphListTest@4fe89c24]" started-at="2026-03-11T13:08:41 EDT" name="setup" finished-at="2026-03-11T13:08:43 EDT" duration-ms="1259" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:suite.GraphListTest@4fe89c24]" started-at="2026-03-11T13:08:43 EDT" name="setUp" finished-at="2026-03-11T13:08:43 EDT" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="openGraphRepresentationsTryEditor()[pri:7, instance:suite.GraphListTest@4fe89c24]" started-at="2026-03-11T13:08:43 EDT" name="openGraphRepresentationsTryEditor" finished-at="2026-03-11T13:08:46 EDT" duration-ms="3346" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- openGraphRepresentationsTryEditor -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:suite.GraphListTest@4fe89c24]" started-at="2026-03-11T13:08:46 EDT" name="tearDown" finished-at="2026-03-11T13:08:46 EDT" duration-ms="213" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:suite.GraphListTest@4fe89c24]" started-at="2026-03-11T13:08:46 EDT" name="setup" finished-at="2026-03-11T13:08:48 EDT" duration-ms="1320" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:suite.GraphListTest@4fe89c24]" started-at="2026-03-11T13:08:48 EDT" name="setUp" finished-at="2026-03-11T13:08:48 EDT" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="runInvalidGraphRepresentationsCode()[pri:8, instance:suite.GraphListTest@4fe89c24]" started-at="2026-03-11T13:08:48 EDT" name="runInvalidGraphRepresentationsCode" finished-at="2026-03-11T13:08:51 EDT" duration-ms="3639" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runInvalidGraphRepresentationsCode -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:suite.GraphListTest@4fe89c24]" started-at="2026-03-11T13:08:51 EDT" name="tearDown" finished-at="2026-03-11T13:08:51 EDT" duration-ms="205" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:suite.GraphListTest@4fe89c24]" started-at="2026-03-11T13:08:52 EDT" name="setup" finished-at="2026-03-11T13:08:54 EDT" duration-ms="1633" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:suite.GraphListTest@4fe89c24]" started-at="2026-03-11T13:08:54 EDT" name="setUp" finished-at="2026-03-11T13:08:54 EDT" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="runValidGraphCodeUsingDataDriven(java.lang.String)[pri:9, instance:suite.GraphListTest@4fe89c24]" started-at="2026-03-11T13:08:54 EDT" name="runValidGraphCodeUsingDataDriven" data-provider="arrayCodeData" finished-at="2026-03-11T13:08:58 EDT" duration-ms="3665" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[print(5+3)]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runValidGraphCodeUsingDataDriven -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:suite.GraphListTest@4fe89c24]" started-at="2026-03-11T13:08:58 EDT" name="tearDown" finished-at="2026-03-11T13:08:58 EDT" duration-ms="207" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:suite.GraphListTest@4fe89c24]" started-at="2026-03-11T13:08:58 EDT" name="setup" finished-at="2026-03-11T13:08:59 EDT" duration-ms="1278" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:suite.GraphListTest@4fe89c24]" started-at="2026-03-11T13:08:59 EDT" name="setUp" finished-at="2026-03-11T13:08:59 EDT" duration-ms="2" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="runValidGraphCodeUsingDataDriven(java.lang.String)[pri:9, instance:suite.GraphListTest@4fe89c24]" started-at="2026-03-11T13:08:59 EDT" name="runValidGraphCodeUsingDataDriven" data-provider="arrayCodeData" finished-at="2026-03-11T13:09:03 EDT" duration-ms="3684" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[print(10)]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runValidGraphCodeUsingDataDriven -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:suite.GraphListTest@4fe89c24]" started-at="2026-03-11T13:09:03 EDT" name="tearDown" finished-at="2026-03-11T13:09:03 EDT" duration-ms="220" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:suite.GraphListTest@4fe89c24]" started-at="2026-03-11T13:09:03 EDT" name="setup" finished-at="2026-03-11T13:09:04 EDT" duration-ms="1139" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:suite.GraphListTest@4fe89c24]" started-at="2026-03-11T13:09:04 EDT" name="setUp" finished-at="2026-03-11T13:09:04 EDT" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="runValidGraphCodeUsingDataDriven(java.lang.String)[pri:9, instance:suite.GraphListTest@4fe89c24]" started-at="2026-03-11T13:09:04 EDT" name="runValidGraphCodeUsingDataDriven" data-provider="arrayCodeData" finished-at="2026-03-11T13:09:08 EDT" duration-ms="4000" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[print('Hello')]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runValidGraphCodeUsingDataDriven -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:suite.GraphListTest@4fe89c24]" started-at="2026-03-11T13:09:08 EDT" name="tearDown" finished-at="2026-03-11T13:09:08 EDT" duration-ms="221" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:suite.GraphListTest@4fe89c24]" started-at="2026-03-11T13:09:08 EDT" name="setup" finished-at="2026-03-11T13:09:10 EDT" duration-ms="1281" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:suite.GraphListTest@4fe89c24]" started-at="2026-03-11T13:09:10 EDT" name="setUp" finished-at="2026-03-11T13:09:10 EDT" duration-ms="3" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="runValidGraphCodeUsingDataDriven(java.lang.String)[pri:9, instance:suite.GraphListTest@4fe89c24]" started-at="2026-03-11T13:09:10 EDT" name="runValidGraphCodeUsingDataDriven" data-provider="arrayCodeData" finished-at="2026-03-11T13:09:14 EDT" duration-ms="4101" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[print(100/2)]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runValidGraphCodeUsingDataDriven -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:suite.GraphListTest@4fe89c24]" started-at="2026-03-11T13:09:14 EDT" name="tearDown" finished-at="2026-03-11T13:09:14 EDT" duration-ms="220" status="PASS">
+        </test-method> <!-- navigateToGraphSection -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:suite.GraphListTest@1a1da881]" started-at="2026-03-11T15:53:30 EDT" name="tearDown" finished-at="2026-03-11T15:53:31 EDT" duration-ms="277" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

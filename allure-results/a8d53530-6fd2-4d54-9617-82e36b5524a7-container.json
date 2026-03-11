@@ -1,0 +1,1 @@
+{"uuid":"a8d53530-6fd2-4d54-9617-82e36b5524a7","name":"suite.LinkedListTest.setUp","children":["6423c8af-1259-434d-ae20-1677768a85d8"],"description":"","befores":[{"name":"setUp","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1773250408620,"stop":1773250408620}],"afters":[],"start":1773250408620,"stop":1773250408620}

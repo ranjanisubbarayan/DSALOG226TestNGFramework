@@ -14,9 +14,8 @@
              <class name="suite.StacklistTest"/>
         </classes>
     </test>
-  
-    <test name="FirefoxTests">
-        <parameter name="browser" value="firefox"/>
+  <test name="ChromeTests">
+        <parameter name="browser" value="chrome"/>
         <classes>
            <class name="suite.LaunchPageTest"/> 
            <class name="suite.HomePageTest"/> 
@@ -28,4 +27,5 @@
              <class name="suite.StacklistTest"/>
         </classes>
     </test>
+    
 </suite> <!-- Suite -->

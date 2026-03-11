@@ -54,6 +54,35 @@ public class StacklistTest extends BaseTest {
         );
         logger.info("Stack page verified");
     }
+    
+    @Test(priority = 3,groups = {"stacklinks", "editor"},
+            dataProvider = "stacklinks",
+            dataProviderClass = TestDataProvider.class)
+    public void verifyStackPageNavigation(String StackLinks) {
+    	stackPage.navigateToStackPage();
+    switch (StackLinks) {
+    case "Operations in Stack":
+        stackPage.clickOperationsInStack();
+        break;
+
+    case "Implementation":
+        stackPage.clickImplementStackLink();
+        break;
+
+    case "Applications":
+        stackPage.clickApplicationStackLink();
+        break;
+        
+    case "Practice Questions":
+        stackPage.clickPracticeQuestions();
+        break;
+
+    default:
+        throw new IllegalArgumentException("Invalid Stack link: " + StackLinks);
+}
+logger.info("User Clicked Stack link in the stack page: " + StackLinks);
+}
+
 
     @Test(priority = 4)
     public void verifyStackPageLoadTime() {

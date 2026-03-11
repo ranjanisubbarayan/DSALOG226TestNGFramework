@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>ChromeTests</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>73/4/4</td>
+<td>Tests passed/Failed/Skipped:</td><td>75/2/2</td>
 </tr><tr>
-<td>Started on:</td><td>Wed Mar 11 11:34:00 EDT 2026</td>
+<td>Started on:</td><td>Wed Mar 11 14:44:40 EDT 2026</td>
 </tr>
-<tr><td>Total time:</td><td>360 seconds (360983 ms)</td>
+<tr><td>Total time:</td><td>584 seconds (584150 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -84,8 +84,8 @@ function toggleAllBoxes() {
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
 	at java.base/java.lang.Thread.run(Thread.java:840)
-... Removed 20 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1246345644", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1246345644'><pre>java.lang.AssertionError: Expected alert: [New Account Created.] but got: [password_mismatch:The two password fields didn’t match.] expected [true] but found [false]
+... Removed 20 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1239021101", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1239021101'><pre>java.lang.AssertionError: Expected alert: [New Account Created.] but got: [password_mismatch:The two password fields didn’t match.] expected [true] but found [false]
 	at org.testng.Assert.fail(Assert.java:111)
 	at org.testng.Assert.failNotEquals(Assert.java:1590)
 	at org.testng.Assert.assertTrue(Assert.java:57)
@@ -114,7 +114,7 @@ function toggleAllBoxes() {
 	at java.base/java.lang.Thread.run(Thread.java:840)
 </pre></div></td>
 <td>2</td>
-<td>suite.RegisterDataTest@55cf0d14</td></tr>
+<td>suite.RegisterDataTest@1d483de4</td></tr>
 <tr>
 <td title='suite.StacklistTest.verifyStackMainLinksVisible()'><b>verifyStackMainLinksVisible</b><br>Test class: suite.StacklistTest</td>
 <td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//p[text()=&apos;Implementation&apos;]&quot;}
@@ -123,9 +123,9 @@ For documentation on this error, please visit: https://www.selenium.dev/document
 Build info: version: &apos;4.38.0&apos;, revision: &apos;6b412e825c*&apos;
 System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.16&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [cbf8812502fd6250aeef7b0d915f2754, findElement {using=xpath, value=//p[text()=&apos;Implementation&apos;]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 145.0.7632.160, chrome: {chromedriverVersion: 145.0.7632.117 (de4e5d6e13b..., userDataDir: C:\Users\HAPPYF~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54391}, goog:processID: 34444, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54391/devtoo..., se:cdpVersion: 145.0.7632.160, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: cbf8812502fd6250aeef7b0d915f2754
+Command: [32ce267433f440e378680b4e9367699e, findElement {using=xpath, value=//p[text()=&apos;Implementation&apos;]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 145.0.7632.160, chrome: {chromedriverVersion: 145.0.7632.117 (de4e5d6e13b..., userDataDir: C:\Users\HAPPYF~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63337}, goog:processID: 24552, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63337/devtoo..., se:cdpVersion: 145.0.7632.160, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 32ce267433f440e378680b4e9367699e
 	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
@@ -140,23 +140,23 @@ Session ID: cbf8812502fd6250aeef7b0d915f2754
 	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
 	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
 	at jdk.proxy2/jdk.proxy2.$Proxy24.isDisplayed(Unknown Source)
-	at pageObjects.StackPage.isImplementInStackDisplayed(StackPage.java:102)
-	at suite.StacklistTest.verifyStackMainLinksVisible(StacklistTest.java:137)
+	at pageObjects.StackPage.isImplementInStackDisplayed(StackPage.java:106)
+	at suite.StacklistTest.verifyStackMainLinksVisible(StacklistTest.java:102)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
 	at java.base/java.lang.Thread.run(Thread.java:840)
-... Removed 21 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace548439832", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace548439832'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//p[text()=&apos;Implementation&apos;]&quot;}
+... Removed 21 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1618635268", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1618635268'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//p[text()=&apos;Implementation&apos;]&quot;}
   (Session info: chrome=145.0.7632.160)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
 Build info: version: &apos;4.38.0&apos;, revision: &apos;6b412e825c*&apos;
 System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.16&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [cbf8812502fd6250aeef7b0d915f2754, findElement {using=xpath, value=//p[text()=&apos;Implementation&apos;]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 145.0.7632.160, chrome: {chromedriverVersion: 145.0.7632.117 (de4e5d6e13b..., userDataDir: C:\Users\HAPPYF~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54391}, goog:processID: 34444, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54391/devtoo..., se:cdpVersion: 145.0.7632.160, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: cbf8812502fd6250aeef7b0d915f2754
+Command: [32ce267433f440e378680b4e9367699e, findElement {using=xpath, value=//p[text()=&apos;Implementation&apos;]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 145.0.7632.160, chrome: {chromedriverVersion: 145.0.7632.117 (de4e5d6e13b..., userDataDir: C:\Users\HAPPYF~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63337}, goog:processID: 24552, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63337/devtoo..., se:cdpVersion: 145.0.7632.160, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 32ce267433f440e378680b4e9367699e
 	at jdk.internal.reflect.GeneratedConstructorAccessor66.newInstance(Unknown Source)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
@@ -175,292 +175,8 @@ Session ID: cbf8812502fd6250aeef7b0d915f2754
 	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
 	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
 	at jdk.proxy2/jdk.proxy2.$Proxy24.isDisplayed(Unknown Source)
-	at pageObjects.StackPage.isImplementInStackDisplayed(StackPage.java:102)
-	at suite.StacklistTest.verifyStackMainLinksVisible(StacklistTest.java:137)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
-	at org.testng.internal.invokers.TestInvoker.retryFailed(TestInvoker.java:269)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:76)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:741)
-	at org.testng.TestRunner.run(TestRunner.java:616)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:463)
-	at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:64)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
-	at java.base/java.lang.Thread.run(Thread.java:840)
-</pre></div></td>
-<td>1</td>
-<td>suite.StacklistTest@31024624</td></tr>
-<tr>
-<td title='suite.GraphListTest.runInvalidGraphRepresentationsCode()'><b>runInvalidGraphRepresentationsCode</b><br>Test class: suite.GraphListTest</td>
-<td><div><pre>org.openqa.selenium.json.JsonException: java.lang.reflect.InvocationTargetException
-Build info: version: &apos;4.38.0&apos;, revision: &apos;6b412e825c*&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.16&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [baf8b19181e1c528952e82b0025945bf, actions {actions=[org.openqa.selenium.interactions.Sequence@650b9356]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 145.0.7632.160, chrome: {chromedriverVersion: 145.0.7632.117 (de4e5d6e13b..., userDataDir: C:\Users\HAPPYF~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60763}, goog:processID: 36612, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60763/devtoo..., se:cdpVersion: 145.0.7632.160, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: baf8b19181e1c528952e82b0025945bf
-	at org.openqa.selenium.json.JsonOutput.convertUsingMethod(JsonOutput.java:520)
-	at org.openqa.selenium.json.JsonOutput.lambda$new$16(JsonOutput.java:182)
-	at org.openqa.selenium.json.JsonOutput.write0(JsonOutput.java:409)
-	at org.openqa.selenium.json.JsonOutput.lambda$new$22(JsonOutput.java:204)
-	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
-	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
-	at java.base/java.util.Iterator.forEachRemaining(Iterator.java:133)
-	at java.base/java.util.Spliterators$IteratorSpliterator.forEachRemaining(Spliterators.java:1845)
-	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
-	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
-	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
-	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
-	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
-	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
-	at org.openqa.selenium.json.JsonOutput.lambda$new$23(JsonOutput.java:204)
-	at org.openqa.selenium.json.JsonOutput.write0(JsonOutput.java:409)
-	at org.openqa.selenium.json.JsonOutput.lambda$new$24(JsonOutput.java:222)
-	at java.base/java.util.Map.forEach(Map.java:713)
-	at org.openqa.selenium.json.JsonOutput.lambda$new$25(JsonOutput.java:217)
-	at org.openqa.selenium.json.JsonOutput.write0(JsonOutput.java:409)
-	at org.openqa.selenium.json.JsonOutput.write(JsonOutput.java:400)
-	at org.openqa.selenium.json.Json.toJson(Json.java:133)
-	at org.openqa.selenium.json.Json.toJson(Json.java:119)
-	at org.openqa.selenium.remote.codec.AbstractHttpCommandCodec.encode(AbstractHttpCommandCodec.java:236)
-	at org.openqa.selenium.remote.codec.AbstractHttpCommandCodec.encode(AbstractHttpCommandCodec.java:109)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:203)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:557)
-	at org.openqa.selenium.remote.RemoteWebDriver.perform(RemoteWebDriver.java:647)
-	at org.openqa.selenium.interactions.Actions$BuiltAction.perform(Actions.java:616)
-	at org.openqa.selenium.interactions.Actions.perform(Actions.java:581)
-	at pageObjects.GraphListPage.writeCodeAndRun(GraphListPage.java:119)
-	at suite.GraphListTest.runInvalidGraphRepresentationsCode(GraphListTest.java:130)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
-	at java.base/java.lang.Thread.run(Thread.java:840)
-	Suppressed: org.openqa.selenium.json.JsonException: Attempting to close incomplete json stream
-Build info: version: &apos;4.38.0&apos;, revision: &apos;6b412e825c*&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.16&apos;
-Driver info: driver.version: RemoteWebDriver
-		at org.openqa.selenium.json.JsonOutput.close(JsonOutput.java:431)
-		at org.openqa.selenium.json.Json.toJson(Json.java:131)
-		... 34 more
-	at org.openqa.selenium.json.JsonOutput.convertUsingMethod(JsonOutput.java:516)
-	... 55 more
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//pre[@role=&apos;presentation&apos;]&quot;}
-  (Session info: chrome=145.0.7632.160)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
-Build info: version: &apos;4.38.0&apos;, revision: &apos;6b412e825c*&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.16&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [baf8b19181e1c528952e82b0025945bf, findElement {using=xpath, value=//pre[@role=&apos;presentation&apos;]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 145.0.7632.160, chrome: {chromedriverVersion: 145.0.7632.117 (de4e5d6e13b..., userDataDir: C:\Users\HAPPYF~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60763}, goog:processID: 36612, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60763/devtoo..., se:cdpVersion: 145.0.7632.160, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: baf8b19181e1c528952e82b0025945bf
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:557)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:380)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:374)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy24.getWrappedElement(Unknown Source)
-	at org.openqa.selenium.interactions.PointerInput$Origin.asArg(PointerInput.java:262)
-	at org.openqa.selenium.interactions.PointerInput$Move.encode(PointerInput.java:211)
-	at org.openqa.selenium.interactions.Sequence.encode(Sequence.java:74)
-	at org.openqa.selenium.interactions.Sequence.toJson(Sequence.java:83)
-	... 59 more
-... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1422103144", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1422103144'><pre>org.openqa.selenium.json.JsonException: java.lang.reflect.InvocationTargetException
-Build info: version: &apos;4.38.0&apos;, revision: &apos;6b412e825c*&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.16&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [baf8b19181e1c528952e82b0025945bf, actions {actions=[org.openqa.selenium.interactions.Sequence@650b9356]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 145.0.7632.160, chrome: {chromedriverVersion: 145.0.7632.117 (de4e5d6e13b..., userDataDir: C:\Users\HAPPYF~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60763}, goog:processID: 36612, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60763/devtoo..., se:cdpVersion: 145.0.7632.160, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: baf8b19181e1c528952e82b0025945bf
-	at org.openqa.selenium.json.JsonOutput.convertUsingMethod(JsonOutput.java:520)
-	at org.openqa.selenium.json.JsonOutput.lambda$new$16(JsonOutput.java:182)
-	at org.openqa.selenium.json.JsonOutput.write0(JsonOutput.java:409)
-	at org.openqa.selenium.json.JsonOutput.lambda$new$22(JsonOutput.java:204)
-	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
-	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
-	at java.base/java.util.Iterator.forEachRemaining(Iterator.java:133)
-	at java.base/java.util.Spliterators$IteratorSpliterator.forEachRemaining(Spliterators.java:1845)
-	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
-	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
-	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
-	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
-	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
-	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
-	at org.openqa.selenium.json.JsonOutput.lambda$new$23(JsonOutput.java:204)
-	at org.openqa.selenium.json.JsonOutput.write0(JsonOutput.java:409)
-	at org.openqa.selenium.json.JsonOutput.lambda$new$24(JsonOutput.java:222)
-	at java.base/java.util.Map.forEach(Map.java:713)
-	at org.openqa.selenium.json.JsonOutput.lambda$new$25(JsonOutput.java:217)
-	at org.openqa.selenium.json.JsonOutput.write0(JsonOutput.java:409)
-	at org.openqa.selenium.json.JsonOutput.write(JsonOutput.java:400)
-	at org.openqa.selenium.json.Json.toJson(Json.java:133)
-	at org.openqa.selenium.json.Json.toJson(Json.java:119)
-	at org.openqa.selenium.remote.codec.AbstractHttpCommandCodec.encode(AbstractHttpCommandCodec.java:236)
-	at org.openqa.selenium.remote.codec.AbstractHttpCommandCodec.encode(AbstractHttpCommandCodec.java:109)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:203)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:557)
-	at org.openqa.selenium.remote.RemoteWebDriver.perform(RemoteWebDriver.java:647)
-	at org.openqa.selenium.interactions.Actions$BuiltAction.perform(Actions.java:616)
-	at org.openqa.selenium.interactions.Actions.perform(Actions.java:581)
-	at pageObjects.GraphListPage.writeCodeAndRun(GraphListPage.java:119)
-	at suite.GraphListTest.runInvalidGraphRepresentationsCode(GraphListTest.java:130)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
-	at org.testng.internal.invokers.TestInvoker.retryFailed(TestInvoker.java:269)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:76)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:741)
-	at org.testng.TestRunner.run(TestRunner.java:616)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:463)
-	at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:64)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
-	at java.base/java.lang.Thread.run(Thread.java:840)
-	Suppressed: org.openqa.selenium.json.JsonException: Attempting to close incomplete json stream
-Build info: version: &apos;4.38.0&apos;, revision: &apos;6b412e825c*&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.16&apos;
-Driver info: driver.version: RemoteWebDriver
-		at org.openqa.selenium.json.JsonOutput.close(JsonOutput.java:431)
-		at org.openqa.selenium.json.Json.toJson(Json.java:131)
-		... 34 more
-Caused by: java.lang.reflect.InvocationTargetException
-	at jdk.internal.reflect.GeneratedMethodAccessor68.invoke(Unknown Source)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
-	at org.openqa.selenium.json.JsonOutput.convertUsingMethod(JsonOutput.java:516)
-	... 55 more
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//pre[@role=&apos;presentation&apos;]&quot;}
-  (Session info: chrome=145.0.7632.160)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
-Build info: version: &apos;4.38.0&apos;, revision: &apos;6b412e825c*&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.16&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [baf8b19181e1c528952e82b0025945bf, findElement {using=xpath, value=//pre[@role=&apos;presentation&apos;]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 145.0.7632.160, chrome: {chromedriverVersion: 145.0.7632.117 (de4e5d6e13b..., userDataDir: C:\Users\HAPPYF~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60763}, goog:processID: 36612, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60763/devtoo..., se:cdpVersion: 145.0.7632.160, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: baf8b19181e1c528952e82b0025945bf
-	at jdk.internal.reflect.GeneratedConstructorAccessor66.newInstance(Unknown Source)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:557)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:380)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:374)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy24.getWrappedElement(Unknown Source)
-	at org.openqa.selenium.interactions.PointerInput$Origin.asArg(PointerInput.java:262)
-	at org.openqa.selenium.interactions.PointerInput$Move.encode(PointerInput.java:211)
-	at org.openqa.selenium.interactions.Sequence.encode(Sequence.java:74)
-	at org.openqa.selenium.interactions.Sequence.toJson(Sequence.java:83)
-	... 59 more
-</pre></div></td>
-<td>0</td>
-<td>suite.GraphListTest@439a8f59</td></tr>
-<tr>
-<td title='suite.ArraysListTest.clickTryHereButton()'><b>clickTryHereButton</b><br>Test class: suite.ArraysListTest</td>
-<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//a[@href=&apos;/tryEditor&apos;]&quot;}
-  (Session info: chrome=145.0.7632.160)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
-Build info: version: &apos;4.38.0&apos;, revision: &apos;6b412e825c*&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.16&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [9af3459344d48e3219aeed8b80b19d15, findElement {using=xpath, value=//a[@href=&apos;/tryEditor&apos;]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 145.0.7632.160, chrome: {chromedriverVersion: 145.0.7632.117 (de4e5d6e13b..., userDataDir: C:\Users\HAPPYF~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61710}, goog:processID: 21460, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61710/devtoo..., se:cdpVersion: 145.0.7632.160, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 9af3459344d48e3219aeed8b80b19d15
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:557)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:380)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:374)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy24.click(Unknown Source)
-	at pageObjects.ArrayListPage.clickTryHere(ArrayListPage.java:79)
-	at suite.ArraysListTest.clickTryHereButton(ArraysListTest.java:106)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
-	at java.base/java.lang.Thread.run(Thread.java:840)
-... Removed 21 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace196321341", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace196321341'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//a[@href=&apos;/tryEditor&apos;]&quot;}
-  (Session info: chrome=145.0.7632.160)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
-Build info: version: &apos;4.38.0&apos;, revision: &apos;6b412e825c*&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.16&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [9af3459344d48e3219aeed8b80b19d15, findElement {using=xpath, value=//a[@href=&apos;/tryEditor&apos;]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 145.0.7632.160, chrome: {chromedriverVersion: 145.0.7632.117 (de4e5d6e13b..., userDataDir: C:\Users\HAPPYF~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61710}, goog:processID: 21460, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61710/devtoo..., se:cdpVersion: 145.0.7632.160, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 9af3459344d48e3219aeed8b80b19d15
-	at jdk.internal.reflect.GeneratedConstructorAccessor66.newInstance(Unknown Source)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:557)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:380)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:374)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy24.click(Unknown Source)
-	at pageObjects.ArrayListPage.clickTryHere(ArrayListPage.java:79)
-	at suite.ArraysListTest.clickTryHereButton(ArraysListTest.java:106)
+	at pageObjects.StackPage.isImplementInStackDisplayed(StackPage.java:106)
+	at suite.StacklistTest.verifyStackMainLinksVisible(StacklistTest.java:102)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -485,7 +201,7 @@ Session ID: 9af3459344d48e3219aeed8b80b19d15
 	at java.base/java.lang.Thread.run(Thread.java:840)
 </pre></div></td>
 <td>3</td>
-<td>suite.ArraysListTest@5fb97279</td></tr>
+<td>suite.StacklistTest@5ab14cb9</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
@@ -496,370 +212,380 @@ Session ID: 9af3459344d48e3219aeed8b80b19d15
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='suite.HomePageTest.verifyWarningMessageForModulesGetstarted()'><b>verifyWarningMessageForModulesGetstarted</b><br>Test class: suite.HomePageTest<br>Parameters: Linked List</td>
-<td></td>
-<td>1</td>
-<td>suite.HomePageTest@28d18df5</td></tr>
-<tr>
-<td title='suite.StacklistTest.clickTryHereButton()'><b>clickTryHereButton</b><br>Test class: suite.StacklistTest</td>
-<td></td>
-<td>2</td>
-<td>suite.StacklistTest@31024624</td></tr>
-<tr>
-<td title='suite.LoginPageTest.verifyLogin()'><b>verifyLogin</b><br>Test class: suite.LoginPageTest<br>Parameters: {testId=TC005, username=invalid@test.com, password=C5Mha6FkdSAVEN@, ExpectedResult=Invalid Username and Password}</td>
-<td></td>
-<td>1</td>
-<td>suite.LoginPageTest@934b6cb</td></tr>
-<tr>
-<td title='suite.RegisterDataTest.verifyRegister()'><b>verifyRegister</b><br>Test class: suite.RegisterDataTest<br>Parameters: {testId=TC006, username=Testuser, password=C5Mha6FkdSAVEN@, confirmpassword=C5Mha6FkdSAVEN@1234, ExpectedResult=password_mismatch:The two password fields didn’t match.}</td>
-<td></td>
-<td>1</td>
-<td>suite.RegisterDataTest@55cf0d14</td></tr>
-<tr>
-<td title='suite.HomePageTest.verifyNavigationToHomePage()'><b>verifyNavigationToHomePage</b><br>Test class: suite.HomePageTest</td>
-<td></td>
-<td>0</td>
-<td>suite.HomePageTest@28d18df5</td></tr>
-<tr>
-<td title='suite.HomePageTest.verifyWarningMessageForModules()'><b>verifyWarningMessageForModules</b><br>Test class: suite.HomePageTest<br>Parameters: Tree</td>
-<td></td>
-<td>1</td>
-<td>suite.HomePageTest@28d18df5</td></tr>
-<tr>
-<td title='suite.HomePageTest.verifyWarningMessageForModules()'><b>verifyWarningMessageForModules</b><br>Test class: suite.HomePageTest<br>Parameters: Linked List</td>
-<td></td>
-<td>1</td>
-<td>suite.HomePageTest@28d18df5</td></tr>
-<tr>
-<td title='suite.StacklistTest.LoginToDsAlgo()'><b>LoginToDsAlgo</b><br>Test class: suite.StacklistTest</td>
-<td></td>
-<td>1</td>
-<td>suite.StacklistTest@31024624</td></tr>
-<tr>
-<td title='suite.LaunchPageTest.verifyLaunchPageTitle()'><b>verifyLaunchPageTitle</b><br>Test class: suite.LaunchPageTest</td>
-<td></td>
-<td>0</td>
-<td>suite.LaunchPageTest@28b46423</td></tr>
-<tr>
-<td title='suite.HomePageTest.verifyDropdownModules()'><b>verifyDropdownModules</b><br>Test class: suite.HomePageTest</td>
-<td></td>
-<td>0</td>
-<td>suite.HomePageTest@28d18df5</td></tr>
-<tr>
-<td title='suite.ArraysListTest.clickGetStartedArrayPanel()'><b>clickGetStartedArrayPanel</b><br>Test class: suite.ArraysListTest</td>
-<td></td>
-<td>2</td>
-<td>suite.ArraysListTest@5fb97279</td></tr>
-<tr>
-<td title='suite.HomePageTest.verifyWarningMessageForModulesGetstarted()'><b>verifyWarningMessageForModulesGetstarted</b><br>Test class: suite.HomePageTest<br>Parameters: Graph</td>
-<td></td>
-<td>1</td>
-<td>suite.HomePageTest@28d18df5</td></tr>
-<tr>
-<td title='suite.GraphListTest.openGraphTopicTryEditor()'><b>openGraphTopicTryEditor</b><br>Test class: suite.GraphListTest</td>
-<td></td>
-<td>3</td>
-<td>suite.GraphListTest@439a8f59</td></tr>
-<tr>
-<td title='suite.GraphListTest.runValidGraphCodeUsingDataDriven()'><b>runValidGraphCodeUsingDataDriven</b><br>Test class: suite.GraphListTest<br>Parameters: print(100/2)</td>
-<td></td>
-<td>3</td>
-<td>suite.GraphListTest@439a8f59</td></tr>
-<tr>
-<td title='suite.LinkedListTest.clickGetStartedLinkedListPanel()'><b>clickGetStartedLinkedListPanel</b><br>Test class: suite.LinkedListTest</td>
-<td></td>
-<td>2</td>
-<td>suite.LinkedListTest@61861a29</td></tr>
-<tr>
-<td title='suite.StacklistTest.runCodeUsingExcelData()'><b>runCodeUsingExcelData</b><br>Test class: suite.StacklistTest<br>Parameters: print(100/2)</td>
-<td></td>
-<td>14</td>
-<td>suite.StacklistTest@31024624</td></tr>
-<tr>
-<td title='suite.HomePageTest.verifyWarningMessageForModulesGetstarted()'><b>verifyWarningMessageForModulesGetstarted</b><br>Test class: suite.HomePageTest<br>Parameters: Queue</td>
-<td></td>
-<td>1</td>
-<td>suite.HomePageTest@28d18df5</td></tr>
-<tr>
-<td title='suite.LinkedListTest.runInvalidCodeAndVerifyAlert()'><b>runInvalidCodeAndVerifyAlert</b><br>Test class: suite.LinkedListTest</td>
-<td></td>
-<td>3</td>
-<td>suite.LinkedListTest@61861a29</td></tr>
-<tr>
-<td title='suite.GraphListTest.runValidGraphCodeUsingDataDriven()'><b>runValidGraphCodeUsingDataDriven</b><br>Test class: suite.GraphListTest<br>Parameters: print(5+3)</td>
-<td></td>
-<td>3</td>
-<td>suite.GraphListTest@439a8f59</td></tr>
-<tr>
-<td title='suite.ArraysListTest.runCodeUsingDataDriven()'><b>runCodeUsingDataDriven</b><br>Test class: suite.ArraysListTest<br>Parameters: print('Hello')</td>
-<td></td>
-<td>3</td>
-<td>suite.ArraysListTest@5fb97279</td></tr>
-<tr>
-<td title='suite.RegisterDataTest.verifyRegister()'><b>verifyRegister</b><br>Test class: suite.RegisterDataTest<br>Parameters: {testId=TC002, username=, password=C5Mha6FkdSAVEN@, confirmpassword=, ExpectedResult=Please fill out this field }</td>
-<td></td>
-<td>1</td>
-<td>suite.RegisterDataTest@55cf0d14</td></tr>
-<tr>
-<td title='suite.HomePageTest.verifyWarningMessageForModules()'><b>verifyWarningMessageForModules</b><br>Test class: suite.HomePageTest<br>Parameters: Queue</td>
-<td></td>
-<td>1</td>
-<td>suite.HomePageTest@28d18df5</td></tr>
-<tr>
-<td title='suite.ArraysListTest.runInvalidCodeAndVerifyAlert()'><b>runInvalidCodeAndVerifyAlert</b><br>Test class: suite.ArraysListTest</td>
-<td></td>
-<td>3</td>
-<td>suite.ArraysListTest@5fb97279</td></tr>
-<tr>
-<td title='suite.StacklistTest.refreshStackPageAndVerifyNoErrors()'><b>refreshStackPageAndVerifyNoErrors</b><br>Test class: suite.StacklistTest</td>
-<td></td>
-<td>2</td>
-<td>suite.StacklistTest@31024624</td></tr>
-<tr>
-<td title='suite.ArraysListTest.clickArraysInPythonLink()'><b>clickArraysInPythonLink</b><br>Test class: suite.ArraysListTest</td>
-<td></td>
-<td>2</td>
-<td>suite.ArraysListTest@5fb97279</td></tr>
-<tr>
-<td title='suite.LinkedListTest.verifyLinkedListPageNavigation()'><b>verifyLinkedListPageNavigation</b><br>Test class: suite.LinkedListTest</td>
-<td></td>
-<td>2</td>
-<td>suite.LinkedListTest@61861a29</td></tr>
-<tr>
-<td title='suite.LinkedListTest.runCodeUsingExcelData()'><b>runCodeUsingExcelData</b><br>Test class: suite.LinkedListTest<br>Parameters: print(5+3)</td>
-<td></td>
-<td>3</td>
-<td>suite.LinkedListTest@61861a29</td></tr>
-<tr>
-<td title='suite.GraphListTest.openGraphTopicPage()'><b>openGraphTopicPage</b><br>Test class: suite.GraphListTest</td>
-<td></td>
-<td>2</td>
-<td>suite.GraphListTest@439a8f59</td></tr>
-<tr>
 <td title='suite.LoginPageTest.verifyLogin()'><b>verifyLogin</b><br>Test class: suite.LoginPageTest<br>Parameters: {testId=TC002, username=, password=pass@123, ExpectedResult=Please fill out this field }</td>
 <td></td>
 <td>1</td>
-<td>suite.LoginPageTest@934b6cb</td></tr>
+<td>suite.LoginPageTest@31920ade</td></tr>
 <tr>
-<td title='suite.StacklistTest.verifyStackPageNavigation()'><b>verifyStackPageNavigation</b><br>Test class: suite.StacklistTest</td>
+<td title='suite.LinkedListTest.verifyLinkedListPageNavigation()'><b>verifyLinkedListPageNavigation</b><br>Test class: suite.LinkedListTest</td>
 <td></td>
-<td>1</td>
-<td>suite.StacklistTest@31024624</td></tr>
+<td>3</td>
+<td>suite.LinkedListTest@3f23a3a0</td></tr>
 <tr>
-<td title='suite.StacklistTest.verifyStackPageHTTPS()'><b>verifyStackPageHTTPS</b><br>Test class: suite.StacklistTest</td>
-<td></td>
-<td>1</td>
-<td>suite.StacklistTest@31024624</td></tr>
-<tr>
-<td title='suite.LinkedListTest.runCodeUsingExcelData()'><b>runCodeUsingExcelData</b><br>Test class: suite.LinkedListTest<br>Parameters: print('Hello')</td>
+<td title='suite.StacklistTest.LoginToDsAlgo()'><b>LoginToDsAlgo</b><br>Test class: suite.StacklistTest</td>
 <td></td>
 <td>2</td>
-<td>suite.LinkedListTest@61861a29</td></tr>
+<td>suite.StacklistTest@5ab14cb9</td></tr>
 <tr>
-<td title='suite.GraphListTest.runValidGraphCodeUsingDataDriven()'><b>runValidGraphCodeUsingDataDriven</b><br>Test class: suite.GraphListTest<br>Parameters: print(10)</td>
+<td title='suite.GraphListTest.runValidGraphCodeUsingDataDriven()'><b>runValidGraphCodeUsingDataDriven</b><br>Test class: suite.GraphListTest<br>Parameters: print(5+3)</td>
 <td></td>
-<td>3</td>
-<td>suite.GraphListTest@439a8f59</td></tr>
+<td>6</td>
+<td>suite.GraphListTest@25f7391e</td></tr>
 <tr>
-<td title='suite.ArraysListTest.runValidCodeAndVerifyOutput()'><b>runValidCodeAndVerifyOutput</b><br>Test class: suite.ArraysListTest</td>
-<td></td>
-<td>3</td>
-<td>suite.ArraysListTest@5fb97279</td></tr>
-<tr>
-<td title='suite.StacklistTest.clickGetStartedStackPanel()'><b>clickGetStartedStackPanel</b><br>Test class: suite.StacklistTest</td>
+<td title='suite.ArraysListTest.LoginToDsAlgo()'><b>LoginToDsAlgo</b><br>Test class: suite.ArraysListTest</td>
 <td></td>
 <td>2</td>
-<td>suite.StacklistTest@31024624</td></tr>
+<td>suite.ArraysListTest@674c583e</td></tr>
 <tr>
-<td title='suite.HomePageTest.verifyWarningMessageForModules()'><b>verifyWarningMessageForModules</b><br>Test class: suite.HomePageTest<br>Parameters: Graph</td>
-<td></td>
-<td>1</td>
-<td>suite.HomePageTest@28d18df5</td></tr>
-<tr>
-<td title='suite.GraphListTest.runInvalidGraphTopicCode()'><b>runInvalidGraphTopicCode</b><br>Test class: suite.GraphListTest</td>
-<td></td>
-<td>3</td>
-<td>suite.GraphListTest@439a8f59</td></tr>
-<tr>
-<td title='suite.ArraysListTest.runCodeUsingDataDriven()'><b>runCodeUsingDataDriven</b><br>Test class: suite.ArraysListTest<br>Parameters: print(5+3)</td>
-<td></td>
-<td>4</td>
-<td>suite.ArraysListTest@5fb97279</td></tr>
-<tr>
-<td title='suite.LoginPageTest.verifyLogin()'><b>verifyLogin</b><br>Test class: suite.LoginPageTest<br>Parameters: {testId=TC003, username=user1, password=, ExpectedResult=Please fill out this field }</td>
-<td></td>
-<td>1</td>
-<td>suite.LoginPageTest@934b6cb</td></tr>
-<tr>
-<td title='suite.LinkedListTest.runCodeUsingExcelData()'><b>runCodeUsingExcelData</b><br>Test class: suite.LinkedListTest<br>Parameters: print(100/2)</td>
-<td></td>
-<td>3</td>
-<td>suite.LinkedListTest@61861a29</td></tr>
-<tr>
-<td title='suite.HomePageTest.verifyWarningMessageForModules()'><b>verifyWarningMessageForModules</b><br>Test class: suite.HomePageTest<br>Parameters: Stack</td>
-<td></td>
-<td>1</td>
-<td>suite.HomePageTest@28d18df5</td></tr>
-<tr>
-<td title='suite.HomePageTest.verifyWarningMessageForModulesGetstarted()'><b>verifyWarningMessageForModulesGetstarted</b><br>Test class: suite.HomePageTest<br>Parameters: Stack</td>
-<td></td>
-<td>1</td>
-<td>suite.HomePageTest@28d18df5</td></tr>
-<tr>
-<td title='suite.LinkedListTest.runCodeUsingExcelData()'><b>runCodeUsingExcelData</b><br>Test class: suite.LinkedListTest<br>Parameters: print(10)</td>
-<td></td>
-<td>3</td>
-<td>suite.LinkedListTest@61861a29</td></tr>
-<tr>
-<td title='suite.LoginPageTest.verifyLogin()'><b>verifyLogin</b><br>Test class: suite.LoginPageTest<br>Parameters: {testId=TC006, username=TestNinja, password=C5Mha6FkdSAVEN@, ExpectedResult=You are logged in}</td>
-<td></td>
-<td>1</td>
-<td>suite.LoginPageTest@934b6cb</td></tr>
-<tr>
-<td title='suite.GraphListTest.LoginToDsAlgo()'><b>LoginToDsAlgo</b><br>Test class: suite.GraphListTest</td>
-<td></td>
-<td>1</td>
-<td>suite.GraphListTest@439a8f59</td></tr>
-<tr>
-<td title='suite.LinkedListTest.runValidCodeAndVerifyOutput()'><b>runValidCodeAndVerifyOutput</b><br>Test class: suite.LinkedListTest</td>
-<td></td>
-<td>3</td>
-<td>suite.LinkedListTest@61861a29</td></tr>
-<tr>
-<td title='suite.StacklistTest.clickOperationsInStack()'><b>clickOperationsInStack</b><br>Test class: suite.StacklistTest</td>
+<td title='suite.HomePageTest.verifyWarningMessageForModulesGetstarted()'><b>verifyWarningMessageForModulesGetstarted</b><br>Test class: suite.HomePageTest<br>Parameters: Graph</td>
 <td></td>
 <td>2</td>
-<td>suite.StacklistTest@31024624</td></tr>
+<td>suite.HomePageTest@5c669da8</td></tr>
+<tr>
+<td title='suite.GraphListTest.openGraphTopicPage()'><b>openGraphTopicPage</b><br>Test class: suite.GraphListTest</td>
+<td></td>
+<td>3</td>
+<td>suite.GraphListTest@25f7391e</td></tr>
+<tr>
+<td title='suite.HomePageTest.verifyWarningMessageForModulesGetstarted()'><b>verifyWarningMessageForModulesGetstarted</b><br>Test class: suite.HomePageTest<br>Parameters: Linked List</td>
+<td></td>
+<td>1</td>
+<td>suite.HomePageTest@5c669da8</td></tr>
 <tr>
 <td title='suite.StacklistTest.verifyStackPageLoadTime()'><b>verifyStackPageLoadTime</b><br>Test class: suite.StacklistTest</td>
 <td></td>
-<td>1</td>
-<td>suite.StacklistTest@31024624</td></tr>
-<tr>
-<td title='suite.LoginPageTest.verifyLogin()'><b>verifyLogin</b><br>Test class: suite.LoginPageTest<br>Parameters: {testId=TC001, username=user1, password=pass@123, ExpectedResult=Invalid Username and Password}</td>
-<td></td>
-<td>1</td>
-<td>suite.LoginPageTest@934b6cb</td></tr>
-<tr>
-<td title='suite.StacklistTest.runValidCodeAndVerifyOutput()'><b>runValidCodeAndVerifyOutput</b><br>Test class: suite.StacklistTest</td>
-<td></td>
-<td>13</td>
-<td>suite.StacklistTest@31024624</td></tr>
-<tr>
-<td title='suite.HomePageTest.verifyWarningMessageForModules()'><b>verifyWarningMessageForModules</b><br>Test class: suite.HomePageTest<br>Parameters: Arrays</td>
-<td></td>
-<td>1</td>
-<td>suite.HomePageTest@28d18df5</td></tr>
-<tr>
-<td title='suite.GraphListTest.openGraphRepresentationsPage()'><b>openGraphRepresentationsPage</b><br>Test class: suite.GraphListTest</td>
-<td></td>
 <td>2</td>
-<td>suite.GraphListTest@439a8f59</td></tr>
+<td>suite.StacklistTest@5ab14cb9</td></tr>
 <tr>
-<td title='suite.LoginPageTest.verifyLogin()'><b>verifyLogin</b><br>Test class: suite.LoginPageTest<br>Parameters: {testId=TC004, username=TestNinja, password=wrong, ExpectedResult=Invalid Username and Password}</td>
-<td></td>
-<td>1</td>
-<td>suite.LoginPageTest@934b6cb</td></tr>
-<tr>
-<td title='suite.LinkedListTest.clickIntroductionLink()'><b>clickIntroductionLink</b><br>Test class: suite.LinkedListTest</td>
-<td></td>
-<td>2</td>
-<td>suite.LinkedListTest@61861a29</td></tr>
-<tr>
-<td title='suite.ArraysListTest.runCodeUsingDataDriven()'><b>runCodeUsingDataDriven</b><br>Test class: suite.ArraysListTest<br>Parameters: print(100/2)</td>
+<td title='suite.GraphListTest.LoginToDsAlgo()'><b>LoginToDsAlgo</b><br>Test class: suite.GraphListTest</td>
 <td></td>
 <td>3</td>
-<td>suite.ArraysListTest@5fb97279</td></tr>
+<td>suite.GraphListTest@25f7391e</td></tr>
 <tr>
-<td title='suite.LinkedListTest.LoginToDsAlgo()'><b>LoginToDsAlgo</b><br>Test class: suite.LinkedListTest</td>
+<td title='suite.HomePageTest.verifyDropdownModules()'><b>verifyDropdownModules</b><br>Test class: suite.HomePageTest</td>
+<td></td>
+<td>1</td>
+<td>suite.HomePageTest@5c669da8</td></tr>
+<tr>
+<td title='suite.HomePageTest.verifyWarningMessageForModules()'><b>verifyWarningMessageForModules</b><br>Test class: suite.HomePageTest<br>Parameters: Graph</td>
 <td></td>
 <td>2</td>
-<td>suite.LinkedListTest@61861a29</td></tr>
+<td>suite.HomePageTest@5c669da8</td></tr>
 <tr>
 <td title='suite.RegisterDataTest.verifyRegister()'><b>verifyRegister</b><br>Test class: suite.RegisterDataTest<br>Parameters: {testId=TC005, username=Testuser, password=C5Mha6FkdSAVEN@, confirmpassword=C5Mha6FkdSAVEN@, ExpectedResult=password_mismatch:The two password fields didn’t match.}</td>
 <td></td>
-<td>1</td>
-<td>suite.RegisterDataTest@55cf0d14</td></tr>
-<tr>
-<td title='suite.StacklistTest.runCodeUsingExcelData()'><b>runCodeUsingExcelData</b><br>Test class: suite.StacklistTest<br>Parameters: print('Hello')</td>
-<td></td>
-<td>16</td>
-<td>suite.StacklistTest@31024624</td></tr>
-<tr>
-<td title='suite.GraphListTest.navigateToGraphSection()'><b>navigateToGraphSection</b><br>Test class: suite.GraphListTest</td>
-<td></td>
 <td>2</td>
-<td>suite.GraphListTest@439a8f59</td></tr>
+<td>suite.RegisterDataTest@1d483de4</td></tr>
 <tr>
-<td title='suite.ArraysListTest.runCodeUsingDataDriven()'><b>runCodeUsingDataDriven</b><br>Test class: suite.ArraysListTest<br>Parameters: print(10)</td>
+<td title='suite.StacklistTest.clickOperationsInStack()'><b>clickOperationsInStack</b><br>Test class: suite.StacklistTest</td>
 <td></td>
 <td>3</td>
-<td>suite.ArraysListTest@5fb97279</td></tr>
+<td>suite.StacklistTest@5ab14cb9</td></tr>
+<tr>
+<td title='suite.HomePageTest.verifyWarningMessageForModules()'><b>verifyWarningMessageForModules</b><br>Test class: suite.HomePageTest<br>Parameters: Queue</td>
+<td></td>
+<td>2</td>
+<td>suite.HomePageTest@5c669da8</td></tr>
 <tr>
 <td title='suite.HomePageTest.verifyWarningMessageForModulesGetstarted()'><b>verifyWarningMessageForModulesGetstarted</b><br>Test class: suite.HomePageTest<br>Parameters: Arrays</td>
 <td></td>
 <td>1</td>
-<td>suite.HomePageTest@28d18df5</td></tr>
+<td>suite.HomePageTest@5c669da8</td></tr>
 <tr>
-<td title='suite.HomePageTest.verifyWarningMessageForModulesGetstarted()'><b>verifyWarningMessageForModulesGetstarted</b><br>Test class: suite.HomePageTest<br>Parameters: Tree</td>
+<td title='suite.LinkedListTest.runInvalidCodeAndVerifyAlert()'><b>runInvalidCodeAndVerifyAlert</b><br>Test class: suite.LinkedListTest</td>
 <td></td>
-<td>1</td>
-<td>suite.HomePageTest@28d18df5</td></tr>
+<td>6</td>
+<td>suite.LinkedListTest@3f23a3a0</td></tr>
 <tr>
-<td title='suite.ArraysListTest.LoginToDsAlgo()'><b>LoginToDsAlgo</b><br>Test class: suite.ArraysListTest</td>
+<td title='suite.GraphListTest.runInvalidGraphTopicCode()'><b>runInvalidGraphTopicCode</b><br>Test class: suite.GraphListTest</td>
 <td></td>
-<td>1</td>
-<td>suite.ArraysListTest@5fb97279</td></tr>
-<tr>
-<td title='suite.ArraysListTest.verifyArrayPageNavigation()'><b>verifyArrayPageNavigation</b><br>Test class: suite.ArraysListTest</td>
-<td></td>
-<td>1</td>
-<td>suite.ArraysListTest@5fb97279</td></tr>
-<tr>
-<td title='suite.GraphListTest.runValidGraphCodeUsingDataDriven()'><b>runValidGraphCodeUsingDataDriven</b><br>Test class: suite.GraphListTest<br>Parameters: print('Hello')</td>
-<td></td>
-<td>3</td>
-<td>suite.GraphListTest@439a8f59</td></tr>
-<tr>
-<td title='suite.StacklistTest.runInvalidCodeAndVerifyAlert()'><b>runInvalidCodeAndVerifyAlert</b><br>Test class: suite.StacklistTest</td>
-<td></td>
-<td>3</td>
-<td>suite.StacklistTest@31024624</td></tr>
-<tr>
-<td title='suite.StacklistTest.runCodeUsingExcelData()'><b>runCodeUsingExcelData</b><br>Test class: suite.StacklistTest<br>Parameters: print(10)</td>
-<td></td>
-<td>14</td>
-<td>suite.StacklistTest@31024624</td></tr>
+<td>5</td>
+<td>suite.GraphListTest@25f7391e</td></tr>
 <tr>
 <td title='suite.RegisterDataTest.verifyRegister()'><b>verifyRegister</b><br>Test class: suite.RegisterDataTest<br>Parameters: {testId=TC004, username=, password=, confirmpassword=, ExpectedResult=Please fill out this field }</td>
 <td></td>
 <td>1</td>
-<td>suite.RegisterDataTest@55cf0d14</td></tr>
+<td>suite.RegisterDataTest@1d483de4</td></tr>
+<tr>
+<td title='suite.ArraysListTest.runCodeUsingDataDriven()'><b>runCodeUsingDataDriven</b><br>Test class: suite.ArraysListTest<br>Parameters: print('Hello')</td>
+<td></td>
+<td>7</td>
+<td>suite.ArraysListTest@674c583e</td></tr>
+<tr>
+<td title='suite.HomePageTest.verifyWarningMessageForModulesGetstarted()'><b>verifyWarningMessageForModulesGetstarted</b><br>Test class: suite.HomePageTest<br>Parameters: Tree</td>
+<td></td>
+<td>1</td>
+<td>suite.HomePageTest@5c669da8</td></tr>
+<tr>
+<td title='suite.StacklistTest.verifyStackPageHTTPS()'><b>verifyStackPageHTTPS</b><br>Test class: suite.StacklistTest</td>
+<td></td>
+<td>2</td>
+<td>suite.StacklistTest@5ab14cb9</td></tr>
+<tr>
+<td title='suite.GraphListTest.openGraphRepresentationsPage()'><b>openGraphRepresentationsPage</b><br>Test class: suite.GraphListTest</td>
+<td></td>
+<td>3</td>
+<td>suite.GraphListTest@25f7391e</td></tr>
+<tr>
+<td title='suite.StacklistTest.runCodeUsingExcelData()'><b>runCodeUsingExcelData</b><br>Test class: suite.StacklistTest<br>Parameters: print(5+3)</td>
+<td></td>
+<td>17</td>
+<td>suite.StacklistTest@5ab14cb9</td></tr>
+<tr>
+<td title='suite.StacklistTest.runCodeUsingExcelData()'><b>runCodeUsingExcelData</b><br>Test class: suite.StacklistTest<br>Parameters: print(10)</td>
+<td></td>
+<td>33</td>
+<td>suite.StacklistTest@5ab14cb9</td></tr>
+<tr>
+<td title='suite.RegisterDataTest.verifyRegister()'><b>verifyRegister</b><br>Test class: suite.RegisterDataTest<br>Parameters: {testId=TC003, username=TestNinja, password=, confirmpassword=, ExpectedResult=Please fill out this field }</td>
+<td></td>
+<td>2</td>
+<td>suite.RegisterDataTest@1d483de4</td></tr>
+<tr>
+<td title='suite.LinkedListTest.runValidCodeAndVerifyOutput()'><b>runValidCodeAndVerifyOutput</b><br>Test class: suite.LinkedListTest</td>
+<td></td>
+<td>5</td>
+<td>suite.LinkedListTest@3f23a3a0</td></tr>
+<tr>
+<td title='suite.HomePageTest.verifyWarningMessageForModulesGetstarted()'><b>verifyWarningMessageForModulesGetstarted</b><br>Test class: suite.HomePageTest<br>Parameters: Queue</td>
+<td></td>
+<td>2</td>
+<td>suite.HomePageTest@5c669da8</td></tr>
+<tr>
+<td title='suite.ArraysListTest.runCodeUsingDataDriven()'><b>runCodeUsingDataDriven</b><br>Test class: suite.ArraysListTest<br>Parameters: print(100/2)</td>
+<td></td>
+<td>5</td>
+<td>suite.ArraysListTest@674c583e</td></tr>
+<tr>
+<td title='suite.HomePageTest.verifyWarningMessageForModules()'><b>verifyWarningMessageForModules</b><br>Test class: suite.HomePageTest<br>Parameters: Tree</td>
+<td></td>
+<td>2</td>
+<td>suite.HomePageTest@5c669da8</td></tr>
+<tr>
+<td title='suite.GraphListTest.openGraphRepresentationsTryEditor()'><b>openGraphRepresentationsTryEditor</b><br>Test class: suite.GraphListTest</td>
+<td></td>
+<td>4</td>
+<td>suite.GraphListTest@25f7391e</td></tr>
+<tr>
+<td title='suite.StacklistTest.runInvalidCodeAndVerifyAlert()'><b>runInvalidCodeAndVerifyAlert</b><br>Test class: suite.StacklistTest</td>
+<td></td>
+<td>5</td>
+<td>suite.StacklistTest@5ab14cb9</td></tr>
+<tr>
+<td title='suite.ArraysListTest.runInvalidCodeAndVerifyAlert()'><b>runInvalidCodeAndVerifyAlert</b><br>Test class: suite.ArraysListTest</td>
+<td></td>
+<td>4</td>
+<td>suite.ArraysListTest@674c583e</td></tr>
+<tr>
+<td title='suite.GraphListTest.runValidGraphCodeUsingDataDriven()'><b>runValidGraphCodeUsingDataDriven</b><br>Test class: suite.GraphListTest<br>Parameters: print('Hello')</td>
+<td></td>
+<td>6</td>
+<td>suite.GraphListTest@25f7391e</td></tr>
+<tr>
+<td title='suite.LoginPageTest.verifyLogin()'><b>verifyLogin</b><br>Test class: suite.LoginPageTest<br>Parameters: {testId=TC004, username=TestNinja, password=wrong, ExpectedResult=Invalid Username and Password}</td>
+<td></td>
+<td>2</td>
+<td>suite.LoginPageTest@31920ade</td></tr>
+<tr>
+<td title='suite.ArraysListTest.clickGetStartedArrayPanel()'><b>clickGetStartedArrayPanel</b><br>Test class: suite.ArraysListTest</td>
+<td></td>
+<td>7</td>
+<td>suite.ArraysListTest@674c583e</td></tr>
+<tr>
+<td title='suite.HomePageTest.verifyWarningMessageForModules()'><b>verifyWarningMessageForModules</b><br>Test class: suite.HomePageTest<br>Parameters: Stack</td>
+<td></td>
+<td>1</td>
+<td>suite.HomePageTest@5c669da8</td></tr>
+<tr>
+<td title='suite.ArraysListTest.clickTryHereButton()'><b>clickTryHereButton</b><br>Test class: suite.ArraysListTest</td>
+<td></td>
+<td>6</td>
+<td>suite.ArraysListTest@674c583e</td></tr>
+<tr>
+<td title='suite.StacklistTest.verifyStackPageNavigation()'><b>verifyStackPageNavigation</b><br>Test class: suite.StacklistTest</td>
+<td></td>
+<td>2</td>
+<td>suite.StacklistTest@5ab14cb9</td></tr>
+<tr>
+<td title='suite.LinkedListTest.clickGetStartedLinkedListPanel()'><b>clickGetStartedLinkedListPanel</b><br>Test class: suite.LinkedListTest</td>
+<td></td>
+<td>2</td>
+<td>suite.LinkedListTest@3f23a3a0</td></tr>
+<tr>
+<td title='suite.LinkedListTest.clickIntroductionLink()'><b>clickIntroductionLink</b><br>Test class: suite.LinkedListTest</td>
+<td></td>
+<td>3</td>
+<td>suite.LinkedListTest@3f23a3a0</td></tr>
+<tr>
+<td title='suite.StacklistTest.runCodeUsingExcelData()'><b>runCodeUsingExcelData</b><br>Test class: suite.StacklistTest<br>Parameters: print(100/2)</td>
+<td></td>
+<td>15</td>
+<td>suite.StacklistTest@5ab14cb9</td></tr>
+<tr>
+<td title='suite.GraphListTest.navigateToGraphSection()'><b>navigateToGraphSection</b><br>Test class: suite.GraphListTest</td>
+<td></td>
+<td>6</td>
+<td>suite.GraphListTest@25f7391e</td></tr>
+<tr>
+<td title='suite.LoginPageTest.verifyLogin()'><b>verifyLogin</b><br>Test class: suite.LoginPageTest<br>Parameters: {testId=TC005, username=invalid@test.com, password=C5Mha6FkdSAVEN@, ExpectedResult=Invalid Username and Password}</td>
+<td></td>
+<td>2</td>
+<td>suite.LoginPageTest@31920ade</td></tr>
+<tr>
+<td title='suite.ArraysListTest.runValidCodeAndVerifyOutput()'><b>runValidCodeAndVerifyOutput</b><br>Test class: suite.ArraysListTest</td>
+<td></td>
+<td>5</td>
+<td>suite.ArraysListTest@674c583e</td></tr>
+<tr>
+<td title='suite.ArraysListTest.runCodeUsingDataDriven()'><b>runCodeUsingDataDriven</b><br>Test class: suite.ArraysListTest<br>Parameters: print(10)</td>
+<td></td>
+<td>6</td>
+<td>suite.ArraysListTest@674c583e</td></tr>
+<tr>
+<td title='suite.ArraysListTest.runCodeUsingDataDriven()'><b>runCodeUsingDataDriven</b><br>Test class: suite.ArraysListTest<br>Parameters: print(5+3)</td>
+<td></td>
+<td>5</td>
+<td>suite.ArraysListTest@674c583e</td></tr>
+<tr>
+<td title='suite.RegisterDataTest.verifyRegister()'><b>verifyRegister</b><br>Test class: suite.RegisterDataTest<br>Parameters: {testId=TC006, username=Testuser, password=C5Mha6FkdSAVEN@, confirmpassword=C5Mha6FkdSAVEN@1234, ExpectedResult=password_mismatch:The two password fields didn’t match.}</td>
+<td></td>
+<td>2</td>
+<td>suite.RegisterDataTest@1d483de4</td></tr>
+<tr>
+<td title='suite.HomePageTest.verifyWarningMessageForModules()'><b>verifyWarningMessageForModules</b><br>Test class: suite.HomePageTest<br>Parameters: Arrays</td>
+<td></td>
+<td>1</td>
+<td>suite.HomePageTest@5c669da8</td></tr>
+<tr>
+<td title='suite.StacklistTest.refreshStackPageAndVerifyNoErrors()'><b>refreshStackPageAndVerifyNoErrors</b><br>Test class: suite.StacklistTest</td>
+<td></td>
+<td>8</td>
+<td>suite.StacklistTest@5ab14cb9</td></tr>
+<tr>
+<td title='suite.RegisterDataTest.verifyRegister()'><b>verifyRegister</b><br>Test class: suite.RegisterDataTest<br>Parameters: {testId=TC002, username=, password=C5Mha6FkdSAVEN@, confirmpassword=, ExpectedResult=Please fill out this field }</td>
+<td></td>
+<td>2</td>
+<td>suite.RegisterDataTest@1d483de4</td></tr>
+<tr>
+<td title='suite.LinkedListTest.runCodeUsingExcelData()'><b>runCodeUsingExcelData</b><br>Test class: suite.LinkedListTest<br>Parameters: print(10)</td>
+<td></td>
+<td>5</td>
+<td>suite.LinkedListTest@3f23a3a0</td></tr>
+<tr>
+<td title='suite.StacklistTest.clickGetStartedStackPanel()'><b>clickGetStartedStackPanel</b><br>Test class: suite.StacklistTest</td>
+<td></td>
+<td>2</td>
+<td>suite.StacklistTest@5ab14cb9</td></tr>
+<tr>
+<td title='suite.GraphListTest.runValidGraphCodeUsingDataDriven()'><b>runValidGraphCodeUsingDataDriven</b><br>Test class: suite.GraphListTest<br>Parameters: print(100/2)</td>
+<td></td>
+<td>5</td>
+<td>suite.GraphListTest@25f7391e</td></tr>
+<tr>
+<td title='suite.GraphListTest.runInvalidGraphRepresentationsCode()'><b>runInvalidGraphRepresentationsCode</b><br>Test class: suite.GraphListTest</td>
+<td></td>
+<td>5</td>
+<td>suite.GraphListTest@25f7391e</td></tr>
+<tr>
+<td title='suite.LinkedListTest.LoginToDsAlgo()'><b>LoginToDsAlgo</b><br>Test class: suite.LinkedListTest</td>
+<td></td>
+<td>2</td>
+<td>suite.LinkedListTest@3f23a3a0</td></tr>
+<tr>
+<td title='suite.LinkedListTest.runCodeUsingExcelData()'><b>runCodeUsingExcelData</b><br>Test class: suite.LinkedListTest<br>Parameters: print(5+3)</td>
+<td></td>
+<td>6</td>
+<td>suite.LinkedListTest@3f23a3a0</td></tr>
 <tr>
 <td title='suite.LaunchPageTest.verifyGetStartedButtonAndNavigation()'><b>verifyGetStartedButtonAndNavigation</b><br>Test class: suite.LaunchPageTest</td>
 <td></td>
 <td>0</td>
-<td>suite.LaunchPageTest@28b46423</td></tr>
+<td>suite.LaunchPageTest@51c693d</td></tr>
 <tr>
-<td title='suite.GraphListTest.openGraphRepresentationsTryEditor()'><b>openGraphRepresentationsTryEditor</b><br>Test class: suite.GraphListTest</td>
+<td title='suite.GraphListTest.openGraphTopicTryEditor()'><b>openGraphTopicTryEditor</b><br>Test class: suite.GraphListTest</td>
 <td></td>
-<td>2</td>
-<td>suite.GraphListTest@439a8f59</td></tr>
+<td>27</td>
+<td>suite.GraphListTest@25f7391e</td></tr>
 <tr>
-<td title='suite.StacklistTest.runCodeUsingExcelData()'><b>runCodeUsingExcelData</b><br>Test class: suite.StacklistTest<br>Parameters: print(5+3)</td>
+<td title='suite.LaunchPageTest.verifyLaunchPageTitle()'><b>verifyLaunchPageTitle</b><br>Test class: suite.LaunchPageTest</td>
 <td></td>
-<td>13</td>
-<td>suite.StacklistTest@31024624</td></tr>
+<td>0</td>
+<td>suite.LaunchPageTest@51c693d</td></tr>
+<tr>
+<td title='suite.StacklistTest.clickTryHereButton()'><b>clickTryHereButton</b><br>Test class: suite.StacklistTest</td>
+<td></td>
+<td>4</td>
+<td>suite.StacklistTest@5ab14cb9</td></tr>
+<tr>
+<td title='suite.HomePageTest.verifyNavigationToHomePage()'><b>verifyNavigationToHomePage</b><br>Test class: suite.HomePageTest</td>
+<td></td>
+<td>0</td>
+<td>suite.HomePageTest@5c669da8</td></tr>
+<tr>
+<td title='suite.StacklistTest.runCodeUsingExcelData()'><b>runCodeUsingExcelData</b><br>Test class: suite.StacklistTest<br>Parameters: print('Hello')</td>
+<td></td>
+<td>28</td>
+<td>suite.StacklistTest@5ab14cb9</td></tr>
 <tr>
 <td title='suite.RegisterDataTest.verifyRegister()'><b>verifyRegister</b><br>Test class: suite.RegisterDataTest<br>Parameters: {testId=TC001, username=invalid@test.com, password=wrong, confirmpassword=, ExpectedResult=Please fill out this field }</td>
 <td></td>
-<td>4</td>
-<td>suite.RegisterDataTest@55cf0d14</td></tr>
+<td>3</td>
+<td>suite.RegisterDataTest@1d483de4</td></tr>
 <tr>
-<td title='suite.RegisterDataTest.verifyRegister()'><b>verifyRegister</b><br>Test class: suite.RegisterDataTest<br>Parameters: {testId=TC003, username=TestNinja, password=, confirmpassword=, ExpectedResult=Please fill out this field }</td>
+<td title='suite.LoginPageTest.verifyLogin()'><b>verifyLogin</b><br>Test class: suite.LoginPageTest<br>Parameters: {testId=TC006, username=TestNinja, password=C5Mha6FkdSAVEN@, ExpectedResult=You are logged in}</td>
+<td></td>
+<td>2</td>
+<td>suite.LoginPageTest@31920ade</td></tr>
+<tr>
+<td title='suite.ArraysListTest.verifyArrayPageNavigation()'><b>verifyArrayPageNavigation</b><br>Test class: suite.ArraysListTest</td>
+<td></td>
+<td>2</td>
+<td>suite.ArraysListTest@674c583e</td></tr>
+<tr>
+<td title='suite.GraphListTest.runValidGraphCodeUsingDataDriven()'><b>runValidGraphCodeUsingDataDriven</b><br>Test class: suite.GraphListTest<br>Parameters: print(10)</td>
+<td></td>
+<td>5</td>
+<td>suite.GraphListTest@25f7391e</td></tr>
+<tr>
+<td title='suite.LinkedListTest.runCodeUsingExcelData()'><b>runCodeUsingExcelData</b><br>Test class: suite.LinkedListTest<br>Parameters: print('Hello')</td>
+<td></td>
+<td>5</td>
+<td>suite.LinkedListTest@3f23a3a0</td></tr>
+<tr>
+<td title='suite.HomePageTest.verifyWarningMessageForModulesGetstarted()'><b>verifyWarningMessageForModulesGetstarted</b><br>Test class: suite.HomePageTest<br>Parameters: Stack</td>
 <td></td>
 <td>1</td>
-<td>suite.RegisterDataTest@55cf0d14</td></tr>
+<td>suite.HomePageTest@5c669da8</td></tr>
+<tr>
+<td title='suite.HomePageTest.verifyWarningMessageForModules()'><b>verifyWarningMessageForModules</b><br>Test class: suite.HomePageTest<br>Parameters: Linked List</td>
+<td></td>
+<td>1</td>
+<td>suite.HomePageTest@5c669da8</td></tr>
+<tr>
+<td title='suite.ArraysListTest.clickArraysInPythonLink()'><b>clickArraysInPythonLink</b><br>Test class: suite.ArraysListTest</td>
+<td></td>
+<td>6</td>
+<td>suite.ArraysListTest@674c583e</td></tr>
+<tr>
+<td title='suite.LoginPageTest.verifyLogin()'><b>verifyLogin</b><br>Test class: suite.LoginPageTest<br>Parameters: {testId=TC001, username=user1, password=pass@123, ExpectedResult=Invalid Username and Password}</td>
+<td></td>
+<td>2</td>
+<td>suite.LoginPageTest@31920ade</td></tr>
+<tr>
+<td title='suite.LinkedListTest.runCodeUsingExcelData()'><b>runCodeUsingExcelData</b><br>Test class: suite.LinkedListTest<br>Parameters: print(100/2)</td>
+<td></td>
+<td>4</td>
+<td>suite.LinkedListTest@3f23a3a0</td></tr>
+<tr>
+<td title='suite.StacklistTest.runValidCodeAndVerifyOutput()'><b>runValidCodeAndVerifyOutput</b><br>Test class: suite.StacklistTest</td>
+<td></td>
+<td>15</td>
+<td>suite.StacklistTest@5ab14cb9</td></tr>
+<tr>
+<td title='suite.LoginPageTest.verifyLogin()'><b>verifyLogin</b><br>Test class: suite.LoginPageTest<br>Parameters: {testId=TC003, username=user1, password=, ExpectedResult=Please fill out this field }</td>
+<td></td>
+<td>2</td>
+<td>suite.LoginPageTest@31920ade</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-skipped'>
 <tr><td colspan='4' align='center'><b>SKIPPED TESTS</b></td></tr>
@@ -870,93 +596,6 @@ Session ID: 9af3459344d48e3219aeed8b80b19d15
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='suite.StacklistTest.verifyStackMainLinksVisible()'><b>verifyStackMainLinksVisible</b><br>Test class: suite.StacklistTest</td>
-<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//p[text()=&apos;Implementation&apos;]&quot;}
-  (Session info: chrome=145.0.7632.160)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
-Build info: version: &apos;4.38.0&apos;, revision: &apos;6b412e825c*&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.16&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [3f6c9f9e3456330e148a17dbc8ba3a72, findElement {using=xpath, value=//p[text()=&apos;Implementation&apos;]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 145.0.7632.160, chrome: {chromedriverVersion: 145.0.7632.117 (de4e5d6e13b..., userDataDir: C:\Users\HAPPYF~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59382}, goog:processID: 23368, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59382/devtoo..., se:cdpVersion: 145.0.7632.160, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 3f6c9f9e3456330e148a17dbc8ba3a72
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:557)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:380)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:374)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy24.isDisplayed(Unknown Source)
-	at pageObjects.StackPage.isImplementInStackDisplayed(StackPage.java:102)
-	at suite.StacklistTest.verifyStackMainLinksVisible(StacklistTest.java:137)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
-	at java.base/java.lang.Thread.run(Thread.java:840)
-... Removed 21 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace374149903", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace374149903'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//p[text()=&apos;Implementation&apos;]&quot;}
-  (Session info: chrome=145.0.7632.160)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
-Build info: version: &apos;4.38.0&apos;, revision: &apos;6b412e825c*&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.16&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [3f6c9f9e3456330e148a17dbc8ba3a72, findElement {using=xpath, value=//p[text()=&apos;Implementation&apos;]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 145.0.7632.160, chrome: {chromedriverVersion: 145.0.7632.117 (de4e5d6e13b..., userDataDir: C:\Users\HAPPYF~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59382}, goog:processID: 23368, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59382/devtoo..., se:cdpVersion: 145.0.7632.160, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 3f6c9f9e3456330e148a17dbc8ba3a72
-	at jdk.internal.reflect.GeneratedConstructorAccessor66.newInstance(Unknown Source)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:557)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:380)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:374)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy24.isDisplayed(Unknown Source)
-	at pageObjects.StackPage.isImplementInStackDisplayed(StackPage.java:102)
-	at suite.StacklistTest.verifyStackMainLinksVisible(StacklistTest.java:137)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:741)
-	at org.testng.TestRunner.run(TestRunner.java:616)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:463)
-	at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:64)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
-	at java.base/java.lang.Thread.run(Thread.java:840)
-</pre></div></td>
-<td>2</td>
-<td>suite.StacklistTest@31024624</td></tr>
-<tr>
 <td title='suite.RegisterDataTest.verifyRegister()'><b>verifyRegister</b><br>Test class: suite.RegisterDataTest<br>Parameters: {testId=TC007, username=user_name29c8e7d6, password=C5Mha6FkdSAVEN@, confirmpassword=C5Mha6FkdSAVEN@, ExpectedResult=New Account Created.}</td>
 <td><div><pre>java.lang.AssertionError: Expected alert: [New Account Created.] but got: [password_mismatch:The two password fields didn’t match.] expected [true] but found [false]
 	at suite.RegisterDataTest.verifyRegister(RegisterDataTest.java:64)
@@ -965,8 +604,8 @@ Session ID: 3f6c9f9e3456330e148a17dbc8ba3a72
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
 	at java.base/java.lang.Thread.run(Thread.java:840)
-... Removed 20 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1111681121", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1111681121'><pre>java.lang.AssertionError: Expected alert: [New Account Created.] but got: [password_mismatch:The two password fields didn’t match.] expected [true] but found [false]
+... Removed 20 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace853731104", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace853731104'><pre>java.lang.AssertionError: Expected alert: [New Account Created.] but got: [password_mismatch:The two password fields didn’t match.] expected [true] but found [false]
 	at org.testng.Assert.fail(Assert.java:111)
 	at org.testng.Assert.failNotEquals(Assert.java:1590)
 	at org.testng.Assert.assertTrue(Assert.java:57)
@@ -994,74 +633,19 @@ Session ID: 3f6c9f9e3456330e148a17dbc8ba3a72
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
 	at java.base/java.lang.Thread.run(Thread.java:840)
 </pre></div></td>
-<td>1</td>
-<td>suite.RegisterDataTest@55cf0d14</td></tr>
+<td>2</td>
+<td>suite.RegisterDataTest@1d483de4</td></tr>
 <tr>
-<td title='suite.GraphListTest.runInvalidGraphRepresentationsCode()'><b>runInvalidGraphRepresentationsCode</b><br>Test class: suite.GraphListTest</td>
-<td><div><pre>org.openqa.selenium.json.JsonException: java.lang.reflect.InvocationTargetException
-Build info: version: &apos;4.38.0&apos;, revision: &apos;6b412e825c*&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.16&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [202e1234f5ad6b1dd3e3a6952ad14d23, actions {actions=[org.openqa.selenium.interactions.Sequence@7d710399]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 145.0.7632.160, chrome: {chromedriverVersion: 145.0.7632.117 (de4e5d6e13b..., userDataDir: C:\Users\HAPPYF~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58633}, goog:processID: 35476, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58633/devtoo..., se:cdpVersion: 145.0.7632.160, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 202e1234f5ad6b1dd3e3a6952ad14d23
-	at org.openqa.selenium.json.JsonOutput.convertUsingMethod(JsonOutput.java:520)
-	at org.openqa.selenium.json.JsonOutput.lambda$new$16(JsonOutput.java:182)
-	at org.openqa.selenium.json.JsonOutput.write0(JsonOutput.java:409)
-	at org.openqa.selenium.json.JsonOutput.lambda$new$22(JsonOutput.java:204)
-	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
-	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
-	at java.base/java.util.Iterator.forEachRemaining(Iterator.java:133)
-	at java.base/java.util.Spliterators$IteratorSpliterator.forEachRemaining(Spliterators.java:1845)
-	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
-	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
-	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
-	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
-	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
-	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
-	at org.openqa.selenium.json.JsonOutput.lambda$new$23(JsonOutput.java:204)
-	at org.openqa.selenium.json.JsonOutput.write0(JsonOutput.java:409)
-	at org.openqa.selenium.json.JsonOutput.lambda$new$24(JsonOutput.java:222)
-	at java.base/java.util.Map.forEach(Map.java:713)
-	at org.openqa.selenium.json.JsonOutput.lambda$new$25(JsonOutput.java:217)
-	at org.openqa.selenium.json.JsonOutput.write0(JsonOutput.java:409)
-	at org.openqa.selenium.json.JsonOutput.write(JsonOutput.java:400)
-	at org.openqa.selenium.json.Json.toJson(Json.java:133)
-	at org.openqa.selenium.json.Json.toJson(Json.java:119)
-	at org.openqa.selenium.remote.codec.AbstractHttpCommandCodec.encode(AbstractHttpCommandCodec.java:236)
-	at org.openqa.selenium.remote.codec.AbstractHttpCommandCodec.encode(AbstractHttpCommandCodec.java:109)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:203)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:557)
-	at org.openqa.selenium.remote.RemoteWebDriver.perform(RemoteWebDriver.java:647)
-	at org.openqa.selenium.interactions.Actions$BuiltAction.perform(Actions.java:616)
-	at org.openqa.selenium.interactions.Actions.perform(Actions.java:581)
-	at pageObjects.GraphListPage.writeCodeAndRun(GraphListPage.java:119)
-	at suite.GraphListTest.runInvalidGraphRepresentationsCode(GraphListTest.java:130)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
-	at java.base/java.lang.Thread.run(Thread.java:840)
-	Suppressed: org.openqa.selenium.json.JsonException: Attempting to close incomplete json stream
-Build info: version: &apos;4.38.0&apos;, revision: &apos;6b412e825c*&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.16&apos;
-Driver info: driver.version: RemoteWebDriver
-		at org.openqa.selenium.json.JsonOutput.close(JsonOutput.java:431)
-		at org.openqa.selenium.json.Json.toJson(Json.java:131)
-		... 34 more
-	at org.openqa.selenium.json.JsonOutput.convertUsingMethod(JsonOutput.java:516)
-	... 55 more
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//pre[@role=&apos;presentation&apos;]&quot;}
+<td title='suite.StacklistTest.verifyStackMainLinksVisible()'><b>verifyStackMainLinksVisible</b><br>Test class: suite.StacklistTest</td>
+<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//p[text()=&apos;Implementation&apos;]&quot;}
   (Session info: chrome=145.0.7632.160)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
 Build info: version: &apos;4.38.0&apos;, revision: &apos;6b412e825c*&apos;
 System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.16&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [202e1234f5ad6b1dd3e3a6952ad14d23, findElement {using=xpath, value=//pre[@role=&apos;presentation&apos;]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 145.0.7632.160, chrome: {chromedriverVersion: 145.0.7632.117 (de4e5d6e13b..., userDataDir: C:\Users\HAPPYF~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58633}, goog:processID: 35476, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58633/devtoo..., se:cdpVersion: 145.0.7632.160, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 202e1234f5ad6b1dd3e3a6952ad14d23
+Command: [12735c2b33c855ff2add471b8dc4f3cd, findElement {using=xpath, value=//p[text()=&apos;Implementation&apos;]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 145.0.7632.160, chrome: {chromedriverVersion: 145.0.7632.117 (de4e5d6e13b..., userDataDir: C:\Users\HAPPYF~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64490}, goog:processID: 20552, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64490/devtoo..., se:cdpVersion: 145.0.7632.160, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 12735c2b33c855ff2add471b8dc4f3cd
 	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
@@ -1075,98 +659,24 @@ Session ID: 202e1234f5ad6b1dd3e3a6952ad14d23
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:374)
 	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
 	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy24.getWrappedElement(Unknown Source)
-	at org.openqa.selenium.interactions.PointerInput$Origin.asArg(PointerInput.java:262)
-	at org.openqa.selenium.interactions.PointerInput$Move.encode(PointerInput.java:211)
-	at org.openqa.selenium.interactions.Sequence.encode(Sequence.java:74)
-	at org.openqa.selenium.interactions.Sequence.toJson(Sequence.java:83)
-	... 59 more
-... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace206794311", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace206794311'><pre>org.openqa.selenium.json.JsonException: java.lang.reflect.InvocationTargetException
-Build info: version: &apos;4.38.0&apos;, revision: &apos;6b412e825c*&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.16&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [202e1234f5ad6b1dd3e3a6952ad14d23, actions {actions=[org.openqa.selenium.interactions.Sequence@7d710399]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 145.0.7632.160, chrome: {chromedriverVersion: 145.0.7632.117 (de4e5d6e13b..., userDataDir: C:\Users\HAPPYF~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58633}, goog:processID: 35476, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58633/devtoo..., se:cdpVersion: 145.0.7632.160, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 202e1234f5ad6b1dd3e3a6952ad14d23
-	at org.openqa.selenium.json.JsonOutput.convertUsingMethod(JsonOutput.java:520)
-	at org.openqa.selenium.json.JsonOutput.lambda$new$16(JsonOutput.java:182)
-	at org.openqa.selenium.json.JsonOutput.write0(JsonOutput.java:409)
-	at org.openqa.selenium.json.JsonOutput.lambda$new$22(JsonOutput.java:204)
-	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
-	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
-	at java.base/java.util.Iterator.forEachRemaining(Iterator.java:133)
-	at java.base/java.util.Spliterators$IteratorSpliterator.forEachRemaining(Spliterators.java:1845)
-	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
-	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
-	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
-	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
-	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
-	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
-	at org.openqa.selenium.json.JsonOutput.lambda$new$23(JsonOutput.java:204)
-	at org.openqa.selenium.json.JsonOutput.write0(JsonOutput.java:409)
-	at org.openqa.selenium.json.JsonOutput.lambda$new$24(JsonOutput.java:222)
-	at java.base/java.util.Map.forEach(Map.java:713)
-	at org.openqa.selenium.json.JsonOutput.lambda$new$25(JsonOutput.java:217)
-	at org.openqa.selenium.json.JsonOutput.write0(JsonOutput.java:409)
-	at org.openqa.selenium.json.JsonOutput.write(JsonOutput.java:400)
-	at org.openqa.selenium.json.Json.toJson(Json.java:133)
-	at org.openqa.selenium.json.Json.toJson(Json.java:119)
-	at org.openqa.selenium.remote.codec.AbstractHttpCommandCodec.encode(AbstractHttpCommandCodec.java:236)
-	at org.openqa.selenium.remote.codec.AbstractHttpCommandCodec.encode(AbstractHttpCommandCodec.java:109)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:203)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:557)
-	at org.openqa.selenium.remote.RemoteWebDriver.perform(RemoteWebDriver.java:647)
-	at org.openqa.selenium.interactions.Actions$BuiltAction.perform(Actions.java:616)
-	at org.openqa.selenium.interactions.Actions.perform(Actions.java:581)
-	at pageObjects.GraphListPage.writeCodeAndRun(GraphListPage.java:119)
-	at suite.GraphListTest.runInvalidGraphRepresentationsCode(GraphListTest.java:130)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at jdk.proxy2/jdk.proxy2.$Proxy24.isDisplayed(Unknown Source)
+	at pageObjects.StackPage.isImplementInStackDisplayed(StackPage.java:106)
+	at suite.StacklistTest.verifyStackMainLinksVisible(StacklistTest.java:102)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:741)
-	at org.testng.TestRunner.run(TestRunner.java:616)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:463)
-	at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:64)
 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
 	at java.base/java.lang.Thread.run(Thread.java:840)
-	Suppressed: org.openqa.selenium.json.JsonException: Attempting to close incomplete json stream
-Build info: version: &apos;4.38.0&apos;, revision: &apos;6b412e825c*&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.16&apos;
-Driver info: driver.version: RemoteWebDriver
-		at org.openqa.selenium.json.JsonOutput.close(JsonOutput.java:431)
-		at org.openqa.selenium.json.Json.toJson(Json.java:131)
-		... 34 more
-Caused by: java.lang.reflect.InvocationTargetException
-	at jdk.internal.reflect.GeneratedMethodAccessor68.invoke(Unknown Source)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
-	at org.openqa.selenium.json.JsonOutput.convertUsingMethod(JsonOutput.java:516)
-	... 55 more
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//pre[@role=&apos;presentation&apos;]&quot;}
+... Removed 21 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace422357730", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace422357730'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//p[text()=&apos;Implementation&apos;]&quot;}
   (Session info: chrome=145.0.7632.160)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
 Build info: version: &apos;4.38.0&apos;, revision: &apos;6b412e825c*&apos;
 System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.16&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [202e1234f5ad6b1dd3e3a6952ad14d23, findElement {using=xpath, value=//pre[@role=&apos;presentation&apos;]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 145.0.7632.160, chrome: {chromedriverVersion: 145.0.7632.117 (de4e5d6e13b..., userDataDir: C:\Users\HAPPYF~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58633}, goog:processID: 35476, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58633/devtoo..., se:cdpVersion: 145.0.7632.160, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 202e1234f5ad6b1dd3e3a6952ad14d23
+Command: [12735c2b33c855ff2add471b8dc4f3cd, findElement {using=xpath, value=//p[text()=&apos;Implementation&apos;]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 145.0.7632.160, chrome: {chromedriverVersion: 145.0.7632.117 (de4e5d6e13b..., userDataDir: C:\Users\HAPPYF~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64490}, goog:processID: 20552, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64490/devtoo..., se:cdpVersion: 145.0.7632.160, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 12735c2b33c855ff2add471b8dc4f3cd
 	at jdk.internal.reflect.GeneratedConstructorAccessor66.newInstance(Unknown Source)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
@@ -1184,77 +694,9 @@ Session ID: 202e1234f5ad6b1dd3e3a6952ad14d23
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:374)
 	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
 	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy24.getWrappedElement(Unknown Source)
-	at org.openqa.selenium.interactions.PointerInput$Origin.asArg(PointerInput.java:262)
-	at org.openqa.selenium.interactions.PointerInput$Move.encode(PointerInput.java:211)
-	at org.openqa.selenium.interactions.Sequence.encode(Sequence.java:74)
-	at org.openqa.selenium.interactions.Sequence.toJson(Sequence.java:83)
-	... 59 more
-</pre></div></td>
-<td>0</td>
-<td>suite.GraphListTest@439a8f59</td></tr>
-<tr>
-<td title='suite.ArraysListTest.clickTryHereButton()'><b>clickTryHereButton</b><br>Test class: suite.ArraysListTest</td>
-<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//a[@href=&apos;/tryEditor&apos;]&quot;}
-  (Session info: chrome=145.0.7632.160)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
-Build info: version: &apos;4.38.0&apos;, revision: &apos;6b412e825c*&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.16&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [cb7f79096871ed9a719714d7657be428, findElement {using=xpath, value=//a[@href=&apos;/tryEditor&apos;]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 145.0.7632.160, chrome: {chromedriverVersion: 145.0.7632.117 (de4e5d6e13b..., userDataDir: C:\Users\HAPPYF~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57031}, goog:processID: 40660, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57031/devtoo..., se:cdpVersion: 145.0.7632.160, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: cb7f79096871ed9a719714d7657be428
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:557)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:380)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:374)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy24.click(Unknown Source)
-	at pageObjects.ArrayListPage.clickTryHere(ArrayListPage.java:79)
-	at suite.ArraysListTest.clickTryHereButton(ArraysListTest.java:106)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
-	at java.base/java.lang.Thread.run(Thread.java:840)
-... Removed 21 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1316018629", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1316018629'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//a[@href=&apos;/tryEditor&apos;]&quot;}
-  (Session info: chrome=145.0.7632.160)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
-Build info: version: &apos;4.38.0&apos;, revision: &apos;6b412e825c*&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.16&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [cb7f79096871ed9a719714d7657be428, findElement {using=xpath, value=//a[@href=&apos;/tryEditor&apos;]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 145.0.7632.160, chrome: {chromedriverVersion: 145.0.7632.117 (de4e5d6e13b..., userDataDir: C:\Users\HAPPYF~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57031}, goog:processID: 40660, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57031/devtoo..., se:cdpVersion: 145.0.7632.160, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: cb7f79096871ed9a719714d7657be428
-	at jdk.internal.reflect.GeneratedConstructorAccessor66.newInstance(Unknown Source)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:557)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:380)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:374)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy24.click(Unknown Source)
-	at pageObjects.ArrayListPage.clickTryHere(ArrayListPage.java:79)
-	at suite.ArraysListTest.clickTryHereButton(ArraysListTest.java:106)
+	at jdk.proxy2/jdk.proxy2.$Proxy24.isDisplayed(Unknown Source)
+	at pageObjects.StackPage.isImplementInStackDisplayed(StackPage.java:106)
+	at suite.StacklistTest.verifyStackMainLinksVisible(StacklistTest.java:102)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -1278,8 +720,8 @@ Session ID: cb7f79096871ed9a719714d7657be428
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
 	at java.base/java.lang.Thread.run(Thread.java:840)
 </pre></div></td>
-<td>3</td>
-<td>suite.ArraysListTest@5fb97279</td></tr>
+<td>2</td>
+<td>suite.StacklistTest@5ab14cb9</td></tr>
 </table><p>
 </body>
 </html>

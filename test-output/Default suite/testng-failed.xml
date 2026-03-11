@@ -8,7 +8,7 @@
           <include name="setup"/>
           <include name="tearDown"/>
           <include name="setUp"/>
-          <include name="clickTryHereButton"/>
+          <include name="clickArraysInPythonLink" invocation-numbers="4"/>
         </methods>
       </class> <!-- suite.ArraysListTest -->
     </classes>

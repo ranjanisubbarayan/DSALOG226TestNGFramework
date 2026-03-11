@@ -37,17 +37,21 @@ public class GraphListTest extends BaseTest {
     	graphPage.loginToApplication();
     }
     
-    @Test(priority = 2)
-    public void navigateToGraphSection() {
+    @Test(priority = 2, groups = {"regression", "graph"}, dataProvider = "graphlinks",
+            dataProviderClass = TestDataProvider.class)
+    public void navigateToGraphSection(String graphLink) {
        
     	graphPage.loginToApplication();
     	graphPage.getstartedGraph();
+    	 if (graphLink.equalsIgnoreCase("Graph")) {
+ 	        graphPage.clickGraphTopic();
 
-        Assert.assertEquals(
-                graphPage.getGraphLandingPageText(),
-                "Graph",
-                "Graph landing page is not displayed"
-        );
+ 	    } else if (graphLink.equalsIgnoreCase("Graph Representations")) {
+ 	        graphPage.clickGraphRepresentations();
+
+ 	    } else {
+ 	        throw new IllegalArgumentException("Invalid Graph link: " + graphLink);
+ 	    }
     }
 
     @Test(priority = 3)

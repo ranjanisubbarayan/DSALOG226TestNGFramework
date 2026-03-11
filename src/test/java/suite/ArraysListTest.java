@@ -50,7 +50,7 @@ public class ArraysListTest extends BaseTest {
     public void verifyArrayPageNavigation() {
     	
     	arrayListPage.loginToApplication();
-    	   ArrayListPage arrayListPage  = new ArrayListPage(getDriver());
+    	  
            arrayListPage.getstartedArray();
     	
     	Assert.assertEquals(
@@ -61,30 +61,43 @@ public class ArraysListTest extends BaseTest {
         logger.info("Array page verified");
     }
 
-    @Test(priority = 4, groups = {"regression", "array"})
-    public void clickArraysInPythonLink() {
+    @Test(priority = 4, groups = {"regression", "array"}, dataProvider = "arraylinks",
+            dataProviderClass = TestDataProvider.class)
+    public void clickArraysInPythonLink(String links) {
     
     	arrayListPage.loginToApplication();
-    	 ArrayListPage arrayListPage = new ArrayListPage(getDriver());
-         arrayListPage.getstartedArray();
-         arrayListPage.clickArraysInPython();
-        arrayListPage.clickArraysInPython();
-        Assert.assertEquals(
-                arrayListPage.getArraysInPythonText(),
-                "Arrays in Python",
-                "Arrays in Python page not displayed"
-        );
-    }
+  	  
+        arrayListPage.getstartedArray();
+    	 
+         if (links.equalsIgnoreCase("Arrays in Python")) {
+        	 arrayListPage.clickArraysInPython();
+
+ 	    } else if (links.equalsIgnoreCase("Arrays Using List")) {
+ 	    	arrayListPage.clickArraysUsingList();
+
+ 	    } else if (links.equalsIgnoreCase("Basic Operations in Lists")) {
+ 	    	arrayListPage.clickBasicOperationArray();
+
+ 	    } else if (links.equalsIgnoreCase("Applications of Array")) {
+ 	    	arrayListPage.clickApplicationofArray();
+
+ 	    } else if (links.equalsIgnoreCase("Practice Questions")) {
+ 	    	arrayListPage.clickPracticeQue();
+
+ 	    } else {
+ 	        throw new IllegalArgumentException("Invalid Array link: " + links);
+ 	    }
+ }
+
+    
 
     @Test(priority = 5, groups = {"regression", "editor"})
     public void clickTryHereButton() {
     	
     	arrayListPage.loginToApplication();
-    	   ArrayListPage arrayListPage = new ArrayListPage(getDriver());
-           arrayListPage.getstartedArray();
+    	   arrayListPage.getstartedArray();
            arrayListPage.clickArraysInPython();
            arrayListPage.clickTryHere();
-        arrayListPage.clickTryHere();
         Assert.assertTrue(
                 arrayListPage.isRunButtonDisplayed(),
                 "Run button is not displayed"
@@ -95,7 +108,7 @@ public class ArraysListTest extends BaseTest {
     public void runInvalidCodeAndVerifyAlert() {
     
     	arrayListPage.loginToApplication();
-    	ArrayListPage arrayListPage = new ArrayListPage(getDriver());
+    	
           arrayListPage.getstartedArray();
           arrayListPage.clickArraysInPython();
           arrayListPage.clickTryHere();
@@ -110,8 +123,7 @@ public class ArraysListTest extends BaseTest {
     public void runValidCodeAndVerifyOutput() {
     
     	arrayListPage.loginToApplication();
-    	 ArrayListPage arrayListPage = new ArrayListPage(getDriver());
-         arrayListPage.getstartedArray();
+    	arrayListPage.getstartedArray();
          arrayListPage.clickArraysInPython();
          arrayListPage.clickTryHere();
     	
@@ -127,8 +139,7 @@ public class ArraysListTest extends BaseTest {
     public void runCodeUsingDataDriven(String code) throws IOException {
     	
     	arrayListPage.loginToApplication();
-    	 ArrayListPage arrayListPage = new ArrayListPage(getDriver());
-         arrayListPage.getstartedArray();
+          arrayListPage.getstartedArray();
          arrayListPage.clickArraysInPython();
          arrayListPage.clickTryHere();
             arrayListPage.writeAndRunLinkedListCode(code);

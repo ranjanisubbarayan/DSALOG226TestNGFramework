@@ -8,7 +8,7 @@ import org.testng.annotations.DataProvider;
 
 public class TestDataProvider {
 	
-    private final String excelPath = "src/main/resources/ExcelSheet/DsAlgoTestData.xlsx";
+    private final String excelPath = "src/test/resources/ExcelSheet/DsAlgoTestData.xlsx";
     private ExcelSheetHandling excel = new ExcelSheetHandling(excelPath);
 
     @DataProvider(name = "validPythonCode")
@@ -82,9 +82,57 @@ public class TestDataProvider {
         
     }
     
+    @DataProvider(name = "stacklinks")
+    public Object[][] stackLinks() {
+        return new Object[][]{
+                {"Operations in Stack"},
+                {"Implementation"},
+                {"Applications"},
+                {"Practice Questions"}
+        };
+    }
+    
+    @DataProvider(name = "graphlinks")
+    public Object[][] getGraphLinks() {
+
+        return new Object[][]{
+
+                {"Graph"},
+                {"Graph Representations"}
+
+        };
+    }
+    
+    @DataProvider(name = "linkedlistlinks")
+    public Object[][] linkedListLinks() {
+        return new Object[][]{
+
+                {"Introduction"},
+                {"Creating Linked List"},
+                {"Types of Linked List"},
+                {"Implement Linked List in Python"},
+                {"Traversal"},
+                {"Insertion"},
+                {"Deletion"}
+
+        };
+    }
+    @DataProvider(name = "arraylinks")
+    public Object[][] getArrayLinks() {
+
+        return new Object[][]{
+
+                {"Arrays in Python"},
+                {"Arrays Using List"},
+                {"Basic Operations in Lists"},
+                {"Applications of Array"},
+                {"Practice Questions"}
+
+        };
+    }
     @DataProvider(name = "loginExcelData")
 	public Object[][] getLoginData() {
-	    String path = Paths.get("src/main/resources/ExcelSheet/DsAlgoTestData.xlsx").toString();
+	    String path = Paths.get("src/test/resources/ExcelSheet/DsAlgoTestData.xlsx").toString();
 	    ExcelSheetHandling excel = new ExcelSheetHandling(path);
 	    List<Map<String, String>> allRows = excel.getSheetData("Login");
 

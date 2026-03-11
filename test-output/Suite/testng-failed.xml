@@ -9,14 +9,6 @@
   <test thread-count="3" parallel="tests" name="ChromeTests(failed)">
     <parameter name="browser" value="chrome"/>
     <classes>
-      <class name="suite.GraphListTest">
-        <methods>
-          <include name="setup"/>
-          <include name="tearDown"/>
-          <include name="runInvalidGraphRepresentationsCode"/>
-          <include name="setUp"/>
-        </methods>
-      </class> <!-- suite.GraphListTest -->
       <class name="suite.StacklistTest">
         <methods>
           <include name="setup"/>
@@ -32,14 +24,6 @@
           <include name="verifyRegister" invocation-numbers="6"/>
         </methods>
       </class> <!-- suite.RegisterDataTest -->
-      <class name="suite.ArraysListTest">
-        <methods>
-          <include name="setup"/>
-          <include name="tearDown"/>
-          <include name="setUp"/>
-          <include name="clickTryHereButton"/>
-        </methods>
-      </class> <!-- suite.ArraysListTest -->
     </classes>
   </test> <!-- ChromeTests(failed) -->
 </suite> <!-- Failed suite [Suite] -->

@@ -56,12 +56,37 @@ public class LinkedListTest extends BaseTest {
         logger.info("Linked List page verified");
     }
 
-    @Test(priority = 4)
-    public void clickIntroductionLink() {
+    @Test(priority = 4, groups = {"linkedlistlinks", "editor"},
+            dataProvider = "linkedlistlinks",
+            dataProviderClass = TestDataProvider.class)
+    public void clickIntroductionLink(String LinkedLinks) {
     	linkedlistPage.loginToApplication();
     	linkedlistPage.getstartedLinkedList();
-        linkedlistPage.clickIntroductionLink();
-        logger.info("Clicked Introduction link");
+    	if (LinkedLinks.equalsIgnoreCase("Introduction")) {
+	        linkedlistPage.clickIntroductionLink();
+
+	    } else if (LinkedLinks.equalsIgnoreCase("Creating Linked List")) {
+	        linkedlistPage.clickCreatingLink();
+
+	    } else if (LinkedLinks.equalsIgnoreCase("Types of Linked List")) {
+	        linkedlistPage.clicktypesLink();
+
+	    } else if (LinkedLinks.equalsIgnoreCase("Implement Linked List in Python")) {
+	        linkedlistPage.clickImplementingLink();
+
+	    } else if (LinkedLinks.equalsIgnoreCase("Traversal")) {
+	        linkedlistPage.clickTraversalLink();
+
+	    } else if (LinkedLinks.equalsIgnoreCase("Insertion")) {
+	        linkedlistPage.clickInsertionLink();
+
+	    } else if (LinkedLinks.equalsIgnoreCase("Deletion")) {
+	        linkedlistPage.clickDeletionLink();
+
+	    } else {
+	        throw new IllegalArgumentException("Invalid LinkedList link: " + LinkedLinks);
+	    }
+    	
     }
 
 
