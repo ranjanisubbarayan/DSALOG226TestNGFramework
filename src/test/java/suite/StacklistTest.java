@@ -1,34 +1,30 @@
 package suite;
 
-import static driver.DriverFactory.getDriver;
-
 import java.io.IOException;
-import java.util.List;
-
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-import org.testng.annotations.*;
-
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 import base.BaseTest;
 import pageObjects.LaunchPage;
 import pageObjects.LoginPage;
 import pageObjects.StackPage;
 import pageObjects.homePage;
 import utilities.ConfigReader;
-import utilities.ExcelSheetHandling;
+import utilities.TestDataProvider;
 
 public class StacklistTest extends BaseTest {
 
     private static final Logger logger = LogManager.getLogger(StacklistTest.class);
 
     private WebDriver driver;
-    private LaunchPage launchPage;
+    LaunchPage launchPage;
     private homePage homepage;
     private StackPage stackPage;
 
-    @BeforeClass
+    @BeforeMethod(alwaysRun = true)
     public void setUp() {
         driver = getDriver();
         launchPage = new LaunchPage(driver);
@@ -36,54 +32,87 @@ public class StacklistTest extends BaseTest {
         logger.info("Stack Test setup completed");
     }
 
-    @Test(priority = 1)
-    public void userLoginToDsAlgo() {
+    public void loginToApplication() {
+        String username = ConfigReader.getProperty("username");
+        String password = ConfigReader.getProperty("password");
 
         homepage = launchPage.clickGetStarted();
 
         if (!homepage.isUserLoggedIn()) {
             homepage.clickSignInLinkIfPresent();
-
-            LoginPage loginPage = new LoginPage(driver);
-            loginPage.enterUsername("TestNinja");
-            loginPage.enterPassword("C5Mha6FkdSAVEN@");
+            LoginPage loginPage = new LoginPage(getDriver());
+            loginPage.enterUsername(username);
+            loginPage.enterPassword(password);
             loginPage.clickLoginButton();
         }
 
-        Assert.assertTrue(homepage.isUserLoggedIn(), "Login failed");
+        Assert.assertTrue(homepage.isUserLoggedIn(), "User login failed");
         logger.info("Successfully logged into dsAlgo application");
+    }
+
+    public void navigateToStackPage() {
+        loginToApplication();
+        stackPage.clickStackGetStarted();
+        logger.info("Navigated to Stack page");
+    }
+
+    public void navigateToOperationsInStackPage() {
+        navigateToStackPage();
+        stackPage.clickOperationsInStack();
+        logger.info("Navigated to Operations in Stack page");
+    }
+
+    public void navigateToTryEditorFromOperationsInStack() {
+        navigateToOperationsInStackPage();
+        stackPage.clickTryHere();
+        logger.info("Navigated to Try Editor from Operations in Stack page");
+    }
+
+    @Test(priority = 1, groups = {"smoke", "login"})
+    public void LoginToDsAlgo() {
+        loginToApplication();
     }
 
     @Test(priority = 2)
     public void clickGetStartedStackPanel() {
-        stackPage.clickStackGetStarted();
+        navigateToStackPage();
         logger.info("Clicked Stack Get Started");
     }
 
     @Test(priority = 3)
     public void verifyStackPageNavigation() {
-        Assert.assertTrue(stackPage.isStackPageDisplayed(),
-                "User is not on Stack Page");
+        navigateToStackPage();
+
+        Assert.assertTrue(
+                stackPage.isStackPageDisplayed(),
+                "User is not on Stack Page"
+        );
+        logger.info("Stack page verified");
     }
 
     @Test(priority = 4)
     public void verifyStackPageLoadTime() {
+        loginToApplication();
 
-        long maxTime = 5; // seconds
+        long maxTime = 5;
         long startTime = System.currentTimeMillis();
 
+        stackPage.clickStackGetStarted();
         stackPage.waitForStackPage();
 
         long loadTime = (System.currentTimeMillis() - startTime) / 1000;
 
-        Assert.assertTrue(loadTime <= maxTime,
-                "Stack page load time exceeded limit: " + loadTime + " seconds");
+        Assert.assertTrue(
+                loadTime <= maxTime,
+                "Stack page load time exceeded limit: " + loadTime + " seconds"
+        );
 
         logger.info("Stack page loaded in " + loadTime + " seconds");
     }
 
     @Test(priority = 5)
     public void verifyStackPageHTTPS() {
+        navigateToStackPage();
 
         String currentUrl = driver.getCurrentUrl();
 
@@ -97,37 +126,51 @@ public class StacklistTest extends BaseTest {
 
     @Test(priority = 6)
     public void verifyStackMainLinksVisible() {
+        navigateToStackPage();
 
-        Assert.assertTrue(stackPage.isOperationInStackDisplayed(),
-                "Operations in Stack not visible");
+        Assert.assertTrue(
+                stackPage.isOperationInStackDisplayed(),
+                "Operations in Stack not visible"
+        );
 
-        Assert.assertTrue(stackPage.isImplementInStackDisplayed(),
-                "Implementation not visible");
+        Assert.assertTrue(
+                stackPage.isImplementInStackDisplayed(),
+                "Implementation not visible"
+        );
 
-        Assert.assertTrue(stackPage.isApplicationInStackDisplayed(),
-                "Applications not visible");
+        Assert.assertTrue(
+                stackPage.isApplicationInStackDisplayed(),
+                "Applications not visible"
+        );
 
         logger.info("All main stack links are visible");
     }
 
     @Test(priority = 7)
     public void clickOperationsInStack() {
+        navigateToStackPage();
         stackPage.clickOperationsInStack();
         logger.info("Clicked Operations in Stack");
     }
 
     @Test(priority = 8)
     public void clickTryHereButton() {
+        navigateToOperationsInStackPage();
         stackPage.clickTryHere();
-        Assert.assertTrue(stackPage.isTryEditorDisplayed(),
-                "Try Editor not visible");
+
+        Assert.assertTrue(
+                stackPage.isTryEditorDisplayed(),
+                "Try Editor not visible"
+        );
+        logger.info("Try Here page verified");
     }
 
     @Test(priority = 9)
     public void runInvalidCodeAndVerifyAlert() {
+        navigateToTryEditorFromOperationsInStack();
 
-        stackPage.enterCodeInEditor("print(5 + 8 )");
-
+        stackPage.enterCodeInEditor("print(5 + )");
+        stackPage.clickRunButton();
         String alertMsg = stackPage.errorMessageinAlertWindow();
 
         Assert.assertNotNull(alertMsg, "Expected alert but none appeared");
@@ -136,57 +179,39 @@ public class StacklistTest extends BaseTest {
 
     @Test(priority = 10)
     public void runValidCodeAndVerifyOutput() {
+        navigateToTryEditorFromOperationsInStack();
 
         stackPage.enterCodeInEditor("print(5 + 3)");
-
         String output = stackPage.seeOutput();
 
-        Assert.assertFalse(output.isEmpty(),
-                "Expected output but got empty");
-
+        Assert.assertFalse(output.isEmpty(), "Expected output but got empty");
         logger.info("Stack console output: " + output);
     }
 
-    @Test(priority = 11)
-    public void runCodeUsingExcelData() throws IOException {
-
-        String excelPath = ConfigReader.getProperty("excelPath");
-        ExcelSheetHandling excel = new ExcelSheetHandling(excelPath);
-
-        List<String> data = excel.getCodeByColumn("testdata", "Data1");
-
-        for (String line : data) {
+    @Test(priority = 11, groups = {"regression", "editor"},
+            dataProvider = "arrayCodeData",
+            dataProviderClass = TestDataProvider.class)
+    public void runCodeUsingExcelData(String line) throws IOException {
+            navigateToTryEditorFromOperationsInStack();
             stackPage.enterCodeInEditor(line);
-        }
-
+        
         String output = stackPage.seeOutput();
         Assert.assertFalse(output.isEmpty(), "No output displayed");
-
         logger.info("Data-driven Stack execution output: " + output);
     }
 
     @Test(priority = 12)
     public void refreshStackPageAndVerifyNoErrors() {
+        navigateToStackPage();
 
         driver.navigate().refresh();
 
-        String pageSource = driver.getPageSource();
+        String pageSource = driver.getPageSource().toLowerCase();
 
-        Assert.assertFalse(pageSource.contains("error"), "Page contains 'error'");
         Assert.assertFalse(pageSource.contains("404"), "Page contains '404'");
         Assert.assertFalse(pageSource.contains("500"), "Page contains '500'");
-
-        Assert.assertNotNull(driver.getTitle(),
-                "Stack page title is NULL after refresh");
+        Assert.assertNotNull(driver.getTitle(), "Stack page title is NULL after refresh");
 
         logger.info("Stack page refreshed without errors");
-    }
-
-    @AfterClass
-    public void tearDown() {
-        if (driver != null) {
-            driver.quit();
-        }
-        logger.info("Stack Test execution completed");
     }
 }

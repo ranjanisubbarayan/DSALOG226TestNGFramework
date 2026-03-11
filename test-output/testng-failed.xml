@@ -6,253 +6,40 @@
     <listener class-name="listeners.TestListener"/>
     <listener class-name="io.qameta.allure.testng.AllureTestNg"/>
   </listeners>
-  <test thread-count="3" parallel="tests" name="EdgeTests(failed)">
-    <parameter name="browser" value="edge"/>
-    <classes>
-      <class name="suite.HomePageTest">
-        <methods>
-          <include name="setup"/>
-          <include name="tearDown"/>
-          <include name="setupExtentReports"/>
-          <include name="verifyWarningMessageForModules"/>
-          <include name="tearDownExtentReports"/>
-          <include name="verifyWarningMessageForModulesGetstarted"/>
-          <include name="verifyNavigationToHomePage"/>
-          <include name="verifyDropdownModules"/>
-        </methods>
-      </class> <!-- suite.HomePageTest -->
-      <class name="suite.ArraysListTest">
-        <methods>
-          <include name="clickGetStartedArrayPanel"/>
-          <include name="setup"/>
-          <include name="setupExtentReports"/>
-          <include name="tearDown"/>
-          <include name="runValidCodeAndVerifyOutput"/>
-          <include name="tearDownExtentReports"/>
-          <include name="clickArraysInPythonLink"/>
-          <include name="clickTryHereButton"/>
-          <include name="verifyArrayPageNavigation"/>
-          <include name="tearDown"/>
-          <include name="setUp"/>
-          <include name="userLoginToDsAlgo"/>
-          <include name="runCodeUsingDataDriven"/>
-          <include name="runInvalidCodeAndVerifyAlert"/>
-        </methods>
-      </class> <!-- suite.ArraysListTest -->
-      <class name="suite.LaunchPageTest">
-        <methods>
-          <include name="setup"/>
-          <include name="tearDown"/>
-          <include name="setupExtentReports"/>
-          <include name="setUpPage"/>
-          <include name="tearDownExtentReports"/>
-          <include name="verifyGetStartedButtonAndNavigation"/>
-          <include name="verifyLaunchPageTitle"/>
-        </methods>
-      </class> <!-- suite.LaunchPageTest -->
-      <class name="suite.GraphListTest">
-        <methods>
-          <include name="setup"/>
-          <include name="setupExtentReports"/>
-          <include name="openGraphTopicPage"/>
-          <include name="navigateToGraphSection"/>
-          <include name="openGraphTopicTryEditor"/>
-          <include name="openGraphRepresentationsTryEditor"/>
-          <include name="tearDownExtentReports"/>
-          <include name="setUp"/>
-          <include name="openGraphRepresentationsPage"/>
-          <include name="tearDown"/>
-          <include name="runInvalidGraphTopicCode"/>
-          <include name="runInvalidGraphRepresentationsCode"/>
-          <include name="runValidGraphCodeUsingDataDriven"/>
-          <include name="tearDown"/>
-          <include name="loginToDsAlgo"/>
-        </methods>
-      </class> <!-- suite.GraphListTest -->
-      <class name="suite.LoginPageTest">
-        <methods>
-          <include name="verifyLogin"/>
-          <include name="setup"/>
-          <include name="tearDown"/>
-          <include name="setupExtentReports"/>
-          <include name="tearDownExtentReports"/>
-        </methods>
-      </class> <!-- suite.LoginPageTest -->
-      <class name="suite.RegisterDataTest">
-        <methods>
-          <include name="setup"/>
-          <include name="tearDown"/>
-          <include name="setupExtentReports"/>
-          <include name="tearDownExtentReports"/>
-          <include name="verifyRegister" invocation-numbers="1 2 3 4 5 6"/>
-        </methods>
-      </class> <!-- suite.RegisterDataTest -->
-    </classes>
-  </test> <!-- EdgeTests(failed) -->
   <test thread-count="3" parallel="tests" name="ChromeTests(failed)">
     <parameter name="browser" value="chrome"/>
     <classes>
-      <class name="suite.HomePageTest">
-        <methods>
-          <include name="setup"/>
-          <include name="tearDown"/>
-          <include name="setupExtentReports"/>
-          <include name="verifyWarningMessageForModules"/>
-          <include name="tearDownExtentReports"/>
-          <include name="verifyWarningMessageForModulesGetstarted"/>
-          <include name="verifyDropdownModules"/>
-          <include name="verifyNavigationToHomePage"/>
-        </methods>
-      </class> <!-- suite.HomePageTest -->
-      <class name="suite.ArraysListTest">
-        <methods>
-          <include name="clickGetStartedArrayPanel"/>
-          <include name="setup"/>
-          <include name="setupExtentReports"/>
-          <include name="tearDown"/>
-          <include name="runValidCodeAndVerifyOutput"/>
-          <include name="tearDownExtentReports"/>
-          <include name="clickArraysInPythonLink"/>
-          <include name="clickTryHereButton"/>
-          <include name="tearDown"/>
-          <include name="verifyArrayPageNavigation"/>
-          <include name="setUp"/>
-          <include name="userLoginToDsAlgo"/>
-          <include name="runInvalidCodeAndVerifyAlert"/>
-          <include name="runCodeUsingDataDriven"/>
-        </methods>
-      </class> <!-- suite.ArraysListTest -->
-      <class name="suite.LaunchPageTest">
-        <methods>
-          <include name="setup"/>
-          <include name="tearDown"/>
-          <include name="setupExtentReports"/>
-          <include name="setUpPage"/>
-          <include name="tearDownExtentReports"/>
-          <include name="verifyGetStartedButtonAndNavigation"/>
-          <include name="verifyLaunchPageTitle"/>
-        </methods>
-      </class> <!-- suite.LaunchPageTest -->
       <class name="suite.GraphListTest">
         <methods>
           <include name="setup"/>
-          <include name="setupExtentReports"/>
-          <include name="openGraphTopicPage"/>
-          <include name="navigateToGraphSection"/>
-          <include name="openGraphTopicTryEditor"/>
-          <include name="openGraphRepresentationsTryEditor"/>
-          <include name="tearDownExtentReports"/>
-          <include name="setUp"/>
-          <include name="openGraphRepresentationsPage"/>
-          <include name="runInvalidGraphTopicCode"/>
           <include name="tearDown"/>
-          <include name="runValidGraphCodeUsingDataDriven"/>
           <include name="runInvalidGraphRepresentationsCode"/>
-          <include name="loginToDsAlgo"/>
-          <include name="tearDown"/>
+          <include name="setUp"/>
         </methods>
       </class> <!-- suite.GraphListTest -->
-      <class name="suite.LoginPageTest">
+      <class name="suite.StacklistTest">
         <methods>
           <include name="setup"/>
-          <include name="verifyLogin"/>
           <include name="tearDown"/>
-          <include name="setupExtentReports"/>
-          <include name="tearDownExtentReports"/>
+          <include name="verifyStackMainLinksVisible"/>
+          <include name="setUp"/>
         </methods>
-      </class> <!-- suite.LoginPageTest -->
+      </class> <!-- suite.StacklistTest -->
       <class name="suite.RegisterDataTest">
         <methods>
           <include name="setup"/>
           <include name="tearDown"/>
-          <include name="setupExtentReports"/>
-          <include name="tearDownExtentReports"/>
-          <include name="verifyRegister" invocation-numbers="1 2 3 4 5 6"/>
+          <include name="verifyRegister" invocation-numbers="6"/>
         </methods>
       </class> <!-- suite.RegisterDataTest -->
+      <class name="suite.ArraysListTest">
+        <methods>
+          <include name="setup"/>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+          <include name="clickTryHereButton"/>
+        </methods>
+      </class> <!-- suite.ArraysListTest -->
     </classes>
   </test> <!-- ChromeTests(failed) -->
-  <test thread-count="3" parallel="tests" name="FirefoxTests(failed)">
-    <parameter name="browser" value="firefox"/>
-    <classes>
-      <class name="suite.HomePageTest">
-        <methods>
-          <include name="setup"/>
-          <include name="tearDown"/>
-          <include name="setupExtentReports"/>
-          <include name="verifyWarningMessageForModules"/>
-          <include name="tearDownExtentReports"/>
-          <include name="verifyWarningMessageForModulesGetstarted"/>
-          <include name="verifyDropdownModules"/>
-          <include name="verifyNavigationToHomePage"/>
-        </methods>
-      </class> <!-- suite.HomePageTest -->
-      <class name="suite.ArraysListTest">
-        <methods>
-          <include name="setup"/>
-          <include name="clickGetStartedArrayPanel"/>
-          <include name="setupExtentReports"/>
-          <include name="tearDown"/>
-          <include name="runValidCodeAndVerifyOutput"/>
-          <include name="tearDownExtentReports"/>
-          <include name="clickArraysInPythonLink"/>
-          <include name="clickTryHereButton"/>
-          <include name="tearDown"/>
-          <include name="verifyArrayPageNavigation"/>
-          <include name="setUp"/>
-          <include name="userLoginToDsAlgo"/>
-          <include name="runInvalidCodeAndVerifyAlert"/>
-          <include name="runCodeUsingDataDriven"/>
-        </methods>
-      </class> <!-- suite.ArraysListTest -->
-      <class name="suite.LaunchPageTest">
-        <methods>
-          <include name="setup"/>
-          <include name="tearDown"/>
-          <include name="setupExtentReports"/>
-          <include name="setUpPage"/>
-          <include name="tearDownExtentReports"/>
-          <include name="verifyGetStartedButtonAndNavigation"/>
-          <include name="verifyLaunchPageTitle"/>
-        </methods>
-      </class> <!-- suite.LaunchPageTest -->
-      <class name="suite.GraphListTest">
-        <methods>
-          <include name="setup"/>
-          <include name="setupExtentReports"/>
-          <include name="openGraphTopicPage"/>
-          <include name="navigateToGraphSection"/>
-          <include name="openGraphRepresentationsTryEditor"/>
-          <include name="openGraphTopicTryEditor"/>
-          <include name="tearDownExtentReports"/>
-          <include name="setUp"/>
-          <include name="openGraphRepresentationsPage"/>
-          <include name="runInvalidGraphTopicCode"/>
-          <include name="tearDown"/>
-          <include name="runInvalidGraphRepresentationsCode"/>
-          <include name="runValidGraphCodeUsingDataDriven"/>
-          <include name="tearDown"/>
-          <include name="loginToDsAlgo"/>
-        </methods>
-      </class> <!-- suite.GraphListTest -->
-      <class name="suite.LoginPageTest">
-        <methods>
-          <include name="verifyLogin"/>
-          <include name="setup"/>
-          <include name="tearDown"/>
-          <include name="setupExtentReports"/>
-          <include name="tearDownExtentReports"/>
-        </methods>
-      </class> <!-- suite.LoginPageTest -->
-      <class name="suite.RegisterDataTest">
-        <methods>
-          <include name="setup"/>
-          <include name="tearDown"/>
-          <include name="setupExtentReports"/>
-          <include name="tearDownExtentReports"/>
-          <include name="verifyRegister" invocation-numbers="0 1 2 3 4 5 6"/>
-        </methods>
-      </class> <!-- suite.RegisterDataTest -->
-    </classes>
-  </test> <!-- FirefoxTests(failed) -->
 </suite> <!-- Failed suite [Suite] -->

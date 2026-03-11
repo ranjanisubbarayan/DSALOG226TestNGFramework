@@ -1,10 +1,10 @@
 package suite;
 import base.BaseTest;
 import org.testng.Assert;
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import pageObjects.LaunchPage;
 import pageObjects.homePage;
+import utilities.TestDataProvider;
 
 import java.util.Arrays;
 import java.util.List;
@@ -13,9 +13,9 @@ public class HomePageTest extends BaseTest {
 
     @Test(priority = 1)
     public void verifyNavigationToHomePage() {
-
-        LaunchPage launchPage = new LaunchPage(driver);
-        homePage homepage = launchPage.clickGetStarted();
+    	
+    	LaunchPage launchPage = new LaunchPage(getDriver());
+    	    homePage homepage = launchPage.clickGetStarted();
 
         Assert.assertTrue(homepage.isHomePageDisplayed(),
                 "Home page not displayed");
@@ -24,7 +24,7 @@ public class HomePageTest extends BaseTest {
     @Test(priority = 2)
     public void verifyDropdownModules() {
 
-        LaunchPage launchPage = new LaunchPage(driver);
+        LaunchPage launchPage = new LaunchPage(getDriver());
         homePage homepage = launchPage.clickGetStarted();
 
         homepage.openDropdownOnly();
@@ -44,22 +44,12 @@ public class HomePageTest extends BaseTest {
                 "Dropdown modules mismatch");
     }
 
-    @DataProvider(name = "moduleData")
-    public Object[][] moduleData() {
-        return new Object[][]{
-                {"Arrays"},
-                {"Linked List"},
-                {"Stack"},
-                {"Queue"},
-                {"Tree"},
-                {"Graph"}
-        };
-    }
+  
 
-    @Test(dataProvider = "moduleData", priority = 3)
+    @Test(dataProvider = "moduleData",dataProviderClass = TestDataProvider.class, priority = 3)
     public void verifyWarningMessageForModules(String moduleName) {
 
-        LaunchPage launchPage = new LaunchPage(driver);
+        LaunchPage launchPage = new LaunchPage(getDriver());
         homePage homepage = launchPage.clickGetStarted();
 
         System.out.println("Print Module Name  :" + moduleName);
@@ -72,10 +62,10 @@ public class HomePageTest extends BaseTest {
                 "Warning message mismatch");
     }
 
-    @Test(dataProvider = "moduleData", priority = 4)
+    @Test(dataProvider = "moduleData",dataProviderClass = TestDataProvider.class,  priority = 4)
     public void verifyWarningMessageForModulesGetstarted(String moduleName) {
 
-        LaunchPage launchPage = new LaunchPage(driver);
+        LaunchPage launchPage = new LaunchPage(getDriver());
         homePage homepage = launchPage.clickGetStarted();
 
         homepage.waitForHomePageToLoad();

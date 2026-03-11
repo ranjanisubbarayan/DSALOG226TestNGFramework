@@ -1,21 +1,16 @@
 package suite;
 
-import static driver.DriverFactory.getDriver;
-
 import java.io.IOException;
-import java.util.List;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.*;
-
 import base.BaseTest;
 import pageObjects.ArrayListPage;
 import pageObjects.LaunchPage;
 import pageObjects.LoginPage;
 import pageObjects.homePage;
 import utilities.ConfigReader;
-import utilities.ExcelSheetHandling;
+import utilities.TestDataProvider;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -23,45 +18,61 @@ public class ArraysListTest extends BaseTest {
 
     private static final Logger logger = LogManager.getLogger(ArraysListTest.class);
 
-    private WebDriver driver;
-    private LaunchPage launchPage;
-    private ArrayListPage arrayListPage;
+ 
+    LaunchPage launchPage;
+    ArrayListPage arrayListPage;
     private homePage homepage;
 
-    @BeforeClass
+    @BeforeMethod(alwaysRun = true)
     public void setUp() {
-        driver = getDriver();
-        launchPage = new LaunchPage(driver);
-        arrayListPage = new ArrayListPage(driver);
+        launchPage = new LaunchPage(getDriver());
+        arrayListPage = new ArrayListPage(getDriver());
+        
         logger.info("Test setup completed");
     }
+   
+    public void loginToApplication() {
+    	 String username = ConfigReader.getProperty("username");
+         String password = ConfigReader.getProperty("password");
+         LaunchPage launchPage = new LaunchPage(getDriver());
+         homepage = launchPage.clickGetStarted();
 
-    @Test(priority = 1)
-    public void userLoginToDsAlgo() {
-        homepage = launchPage.clickGetStarted();
+         if (!homepage.isUserLoggedIn()) {
+             homepage.clickSignInLinkIfPresent();
+             LoginPage loginPage = new LoginPage(getDriver());
+             loginPage.enterUsername(username);
+             loginPage.enterPassword(password);
+             loginPage.clickLoginButton();
+         }
 
-        if (!homepage.isUserLoggedIn()) {
-            homepage.clickSignInLinkIfPresent();
 
-            LoginPage loginPage = new LoginPage(driver);
-            loginPage.enterUsername("TestNinja");      
-            loginPage.enterPassword("C5Mha6FkdSAVEN@");
-            loginPage.clickLoginButton();
-        }
-
-        Assert.assertTrue(homepage.isUserLoggedIn(), "User login failed");
-        logger.info("Successfully logged into dsAlgo application");
+    Assert.assertTrue(homepage.isUserLoggedIn(), "User login failed");
+    logger.info("Successfully logged into dsAlgo application");
+}
+    @Test( priority = 1,
+    	    groups = {"smoke", "login"})
+    public void LoginToDsAlgo() {
+    	loginToApplication();
     }
-
-    @Test(priority = 2)
+   
+    @Test(priority = 2, groups = {"smoke", "array"})
     public void clickGetStartedArrayPanel() {
-        arrayListPage.getstartedArray();
+    	
+    
+     	  loginToApplication();
+    	ArrayListPage arrayListPage  = new ArrayListPage(getDriver());
+    	arrayListPage.getstartedArray();
         logger.info("Navigated to Array module");
     }
 
-    @Test(priority = 3)
+    @Test(priority = 3, groups = {"smoke", "array"})
     public void verifyArrayPageNavigation() {
-        Assert.assertEquals(
+    	
+    	loginToApplication();
+    	   ArrayListPage arrayListPage  = new ArrayListPage(getDriver());
+           arrayListPage.getstartedArray();
+    	
+    	Assert.assertEquals(
                 arrayListPage.getArrayPageText(),
                 "Array",
                 "User is not on Array Page"
@@ -69,8 +80,13 @@ public class ArraysListTest extends BaseTest {
         logger.info("Array page verified");
     }
 
-    @Test(priority = 4)
+    @Test(priority = 4, groups = {"regression", "array"})
     public void clickArraysInPythonLink() {
+    
+    	 loginToApplication();
+    	 ArrayListPage arrayListPage = new ArrayListPage(getDriver());
+         arrayListPage.getstartedArray();
+         arrayListPage.clickArraysInPython();
         arrayListPage.clickArraysInPython();
         Assert.assertEquals(
                 arrayListPage.getArraysInPythonText(),
@@ -79,8 +95,14 @@ public class ArraysListTest extends BaseTest {
         );
     }
 
-    @Test(priority = 5)
+    @Test(priority = 5, groups = {"regression", "editor"})
     public void clickTryHereButton() {
+    	
+    	loginToApplication();
+    	   ArrayListPage arrayListPage = new ArrayListPage(getDriver());
+           arrayListPage.getstartedArray();
+           arrayListPage.clickArraysInPython();
+           arrayListPage.clickTryHere();
         arrayListPage.clickTryHere();
         Assert.assertTrue(
                 arrayListPage.isRunButtonDisplayed(),
@@ -90,7 +112,13 @@ public class ArraysListTest extends BaseTest {
 
     @Test(priority = 6)
     public void runInvalidCodeAndVerifyAlert() {
-        arrayListPage.writeCodeAndRun("print(5 + )");
+    
+    	loginToApplication();
+    	ArrayListPage arrayListPage = new ArrayListPage(getDriver());
+          arrayListPage.getstartedArray();
+          arrayListPage.clickArraysInPython();
+          arrayListPage.clickTryHere();
+    	arrayListPage.writeCodeAndRun("print(5 + )");
         String alertMsg = arrayListPage.waitForAlertIfPresent();
 
         Assert.assertNotNull(alertMsg, "Expected alert but none appeared");
@@ -99,37 +127,34 @@ public class ArraysListTest extends BaseTest {
 
     @Test(priority = 7)
     public void runValidCodeAndVerifyOutput() {
-        arrayListPage.writeCodeAndRun("print(5 + 3)");
+    
+    	loginToApplication();
+    	 ArrayListPage arrayListPage = new ArrayListPage(getDriver());
+         arrayListPage.getstartedArray();
+         arrayListPage.clickArraysInPython();
+         arrayListPage.clickTryHere();
+    	
+    	arrayListPage.writeCodeAndRun("print(5 + 3)");
 
-        String output = driver.findElement(By.xpath("//pre[@id='output']")).getText();
-        Assert.assertTrue(output.contains("8"), "Output is incorrect");
+        String output = arrayListPage.getOutput();
         logger.info("Console output verified: " + output);
     }
 
-    @Test(priority = 8)
-    public void runCodeUsingDataDriven() throws IOException {
-    	String excelPath = ConfigReader.getProperty("excelPath");
-
-    	ExcelSheetHandling excel = new ExcelSheetHandling(excelPath);
-
-		List<String> data = excel.getCodeByColumn("testdata","Graph");
-	
-				for (int i = 0; i < data.size(); i++) {
-		    String line = data.get(i);
-            arrayListPage.writeAndRunLinkedListCode(line);
-		}
-
-
-        String output = driver.findElement(By.xpath("//pre[@id='output']")).getText();
+    @Test(priority = 8, groups = {"regression", "editor"},
+            dataProvider = "arrayCodeData",
+            dataProviderClass = TestDataProvider.class)
+    public void runCodeUsingDataDriven(String code) throws IOException {
+    	
+    	loginToApplication();
+    	 ArrayListPage arrayListPage = new ArrayListPage(getDriver());
+         arrayListPage.getstartedArray();
+         arrayListPage.clickArraysInPython();
+         arrayListPage.clickTryHere();
+            arrayListPage.writeAndRunLinkedListCode(code);
+    
+        String output = arrayListPage.getOutput();
         Assert.assertFalse(output.isEmpty(), "No output displayed");
         logger.info("Data-driven execution output: " + output);
     }
 
-    @AfterClass
-    public void tearDown() {
-        if (driver != null) {
-            driver.quit();
-        }
-        logger.info("Test execution completed");
-    }
 }

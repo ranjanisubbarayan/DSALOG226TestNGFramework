@@ -1,0 +1,1 @@
+{"uuid":"c2f89d28-a1ea-45ea-ae91-3e5511bd6713","name":"suite.ArraysListTest.setUp","children":["9c5f7620-2898-4e9b-8931-2a37049e99f6"],"description":"","befores":[],"afters":[{"name":"setUp","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1773231723430,"stop":1773231723431}],"start":1773231723430,"stop":1773231723431}

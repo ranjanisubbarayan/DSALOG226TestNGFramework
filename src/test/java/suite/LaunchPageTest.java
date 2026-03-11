@@ -14,13 +14,13 @@ public class LaunchPageTest extends BaseTest {
 
     @BeforeMethod
     public void setUpPage() {
-        launchPage = new LaunchPage(driver);
+        launchPage = new LaunchPage(getDriver());
     }
 
     @Test(priority = 1)
     public void verifyLaunchPageTitle() {
         String expectedTitle = "Numpy Ninja";
-        Assert.assertEquals(driver.getTitle(), expectedTitle, "Launch page title mismatch");
+        Assert.assertEquals(getDriver().getTitle(), expectedTitle, "Launch page title mismatch");
     }
 
     @Test(priority = 2)

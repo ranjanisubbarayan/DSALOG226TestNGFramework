@@ -1,7 +1,6 @@
 package suite;
 
 import org.testng.Assert;
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import base.BaseTest;
@@ -9,50 +8,27 @@ import pageObjects.LaunchPage;
 import pageObjects.homePage;
 import pageObjects.registerPage;
 import utilities.ExcelSheetHandling;
+import utilities.TestDataProvider;
 
-import java.util.List;
 import java.util.Map;
 
 public class RegisterDataTest extends BaseTest {
 
-    private final String excelPath = "src/main/resources/ExcelSheet/DsAlgoTestData.xlsx";
-    private ExcelSheetHandling excel = new ExcelSheetHandling(excelPath);
-
-    @DataProvider(name = "registerExcelData")
-    public Object[][] getRegisterData() {
-
-        List<Map<String, String>> allRows = excel.getSheetData("Register");
-
-        Object[][] data = new Object[allRows.size()][1];
-
-        for (int i = 0; i < allRows.size(); i++) {
-
-            Map<String, String> row = allRows.get(i);
-
-            System.out.println("Row " + i +
-                    " | testId: " + row.get("testId") +
-                    " | username: " + row.get("username") +
-                    " | password: " + row.get("password") +
-                    " | ExpectedResult: " + row.get("ExpectedResult"));
-
-            data[i][0] = row;
-        }
-
-        return data;
-    }
-    @Test(dataProvider = "registerExcelData")
+    @Test(dataProvider = "registerExcelData", dataProviderClass = TestDataProvider.class)
     public void verifyRegister(Map<String, String> rowData) {
 
-        String testId = rowData.get("testId");
+    	ExcelSheetHandling excel =
+                new ExcelSheetHandling("src/main/resources/ExcelSheet/DsAlgoTestData.xlsx");
+
         String username = rowData.get("username");
         String password = rowData.get("password");
         String confirmPassword = rowData.get("confirmpassword");
         String expectedResult = rowData.get("ExpectedResult");
 
-        LaunchPage launchPage = new LaunchPage(driver);
+        LaunchPage launchPage = new LaunchPage(getDriver());
         homePage homepage = launchPage.clickGetStarted();
-       // homepage.signOutIfLoggedIn();
-        registerPage registerPage = homepage.clickRegisterLink();
+     
+       registerPage registerPage = homepage.clickRegisterLink();
 
         registerPage.registerUsingExcel(username, password, confirmPassword);
 
@@ -60,7 +36,7 @@ public class RegisterDataTest extends BaseTest {
         switch (expectedResult.trim()) {
 
             case "You are logged in":
-            	homePage home = new homePage(driver);
+            	homePage home = new homePage(getDriver());
 
                 Assert.assertTrue(home.isHomePageDisplayed(),
                         "Expected user to be logged in, but was NOT!");
