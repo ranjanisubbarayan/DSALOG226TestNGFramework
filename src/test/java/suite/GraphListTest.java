@@ -8,11 +8,9 @@ import base.BaseTest;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import driver.DriverFactory;
-import pageObjects.LoginPage;
 import pageObjects.homePage;
 import pageObjects.GraphListPage;
 import pageObjects.LaunchPage;
-import utilities.ConfigReader;
 import utilities.TestDataProvider;
 
 public class GraphListTest extends BaseTest {
@@ -22,7 +20,7 @@ public class GraphListTest extends BaseTest {
     private WebDriver driver;
     LaunchPage launchPage;
     private GraphListPage graphPage;
-    private homePage homepage;
+    homePage homepage;
     private String alertMsg = null;
  
     @BeforeMethod(alwaysRun = true)
@@ -32,34 +30,17 @@ public class GraphListTest extends BaseTest {
         graphPage = new GraphListPage(driver);
         logger.info("Graph Test setup completed");
     }
-    public void loginToApplication() {
-   	 String username = ConfigReader.getProperty("username");
-        String password = ConfigReader.getProperty("password");
-        LaunchPage launchPage = new LaunchPage(getDriver());
-        homepage = launchPage.clickGetStarted();
-
-        if (!homepage.isUserLoggedIn()) {
-            homepage.clickSignInLinkIfPresent();
-            LoginPage loginPage = new LoginPage(getDriver());
-            loginPage.enterUsername(username);
-            loginPage.enterPassword(password);
-            loginPage.clickLoginButton();
-        }
-
-
-   Assert.assertTrue(homepage.isUserLoggedIn(), "User login failed");
-   logger.info("Successfully logged into dsAlgo application");
-}
+  
     @Test( priority = 1,
     	    groups = {"smoke", "login"})
     public void LoginToDsAlgo() {
-    	loginToApplication();
+    	graphPage.loginToApplication();
     }
     
     @Test(priority = 2)
     public void navigateToGraphSection() {
        
-    	  loginToApplication();
+    	graphPage.loginToApplication();
     	graphPage.getstartedGraph();
 
         Assert.assertEquals(
@@ -71,7 +52,7 @@ public class GraphListTest extends BaseTest {
 
     @Test(priority = 3)
     public void openGraphTopicPage() {
-    	  loginToApplication();
+    	graphPage.loginToApplication();
     	  graphPage.getstartedGraph();
         graphPage.clickGraphTopic();
 
@@ -83,7 +64,7 @@ public class GraphListTest extends BaseTest {
 
     @Test(priority = 4)
     public void openGraphTopicTryEditor() {
-    	  loginToApplication();
+    	graphPage.loginToApplication();
           graphPage.getstartedGraph();
           graphPage.clickGraphTopic();
         graphPage.clickTryHere();
@@ -92,7 +73,7 @@ public class GraphListTest extends BaseTest {
 
     @Test(priority = 5)
     public void runInvalidGraphTopicCode() {
-    	  loginToApplication();
+    	graphPage.loginToApplication();
           graphPage.getstartedGraph();
           graphPage.clickGraphTopic();
           graphPage.clickTryHere();
@@ -105,7 +86,7 @@ public class GraphListTest extends BaseTest {
 
     @Test(priority = 6)
     public void openGraphRepresentationsPage() {
-    	  loginToApplication();
+    	graphPage.loginToApplication();
         graphPage.getstartedGraph();
         graphPage.clickGraphRepresentations();
 
@@ -117,7 +98,7 @@ public class GraphListTest extends BaseTest {
 
     @Test(priority = 7)
     public void openGraphRepresentationsTryEditor() {
-    	  loginToApplication();
+    	graphPage.loginToApplication();
     	  graphPage.getstartedGraph();
           graphPage.clickGraphRepresentations();
         graphPage.clickTryHere();
@@ -126,7 +107,10 @@ public class GraphListTest extends BaseTest {
 
     @Test(priority = 8)
     public void runInvalidGraphRepresentationsCode() {
-        
+    	graphPage.loginToApplication();
+        graphPage.getstartedGraph();
+        graphPage.clickGraphRepresentations();
+        graphPage.clickTryHere();
     	graphPage.writeCodeAndRun("print(5 + )");
 
         alertMsg = graphPage.waitForAlertIfPresent();
@@ -138,7 +122,7 @@ public class GraphListTest extends BaseTest {
             dataProvider = "arrayCodeData",
             dataProviderClass = TestDataProvider.class)
     public void runValidGraphCodeUsingDataDriven(String code) throws IOException {
-    	loginToApplication();
+    	graphPage.loginToApplication();
         graphPage.getstartedGraph();
         graphPage.clickGraphRepresentations();
         graphPage.clickTryHere();

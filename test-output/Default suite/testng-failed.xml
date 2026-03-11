@@ -3,13 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="suite.RegisterDataTest">
+      <class name="suite.ArraysListTest">
         <methods>
           <include name="setup"/>
           <include name="tearDown"/>
-          <include name="verifyRegister" invocation-numbers="6"/>
+          <include name="setUp"/>
+          <include name="clickTryHereButton"/>
         </methods>
-      </class> <!-- suite.RegisterDataTest -->
+      </class> <!-- suite.ArraysListTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

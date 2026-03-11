@@ -6,9 +6,7 @@ import org.testng.annotations.*;
 import base.BaseTest;
 import pageObjects.ArrayListPage;
 import pageObjects.LaunchPage;
-import pageObjects.LoginPage;
 import pageObjects.homePage;
-import utilities.ConfigReader;
 import utilities.TestDataProvider;
 
 import org.apache.logging.log4j.LogManager;
@@ -21,7 +19,7 @@ public class ArraysListTest extends BaseTest {
  
     LaunchPage launchPage;
     ArrayListPage arrayListPage;
-    private homePage homepage;
+    homePage homepage;
 
     @BeforeMethod(alwaysRun = true)
     public void setUp() {
@@ -31,35 +29,18 @@ public class ArraysListTest extends BaseTest {
         logger.info("Test setup completed");
     }
    
-    public void loginToApplication() {
-    	 String username = ConfigReader.getProperty("username");
-         String password = ConfigReader.getProperty("password");
-         LaunchPage launchPage = new LaunchPage(getDriver());
-         homepage = launchPage.clickGetStarted();
-
-         if (!homepage.isUserLoggedIn()) {
-             homepage.clickSignInLinkIfPresent();
-             LoginPage loginPage = new LoginPage(getDriver());
-             loginPage.enterUsername(username);
-             loginPage.enterPassword(password);
-             loginPage.clickLoginButton();
-         }
-
-
-    Assert.assertTrue(homepage.isUserLoggedIn(), "User login failed");
-    logger.info("Successfully logged into dsAlgo application");
-}
+ 
     @Test( priority = 1,
     	    groups = {"smoke", "login"})
     public void LoginToDsAlgo() {
-    	loginToApplication();
+    	arrayListPage.loginToApplication();
     }
    
     @Test(priority = 2, groups = {"smoke", "array"})
     public void clickGetStartedArrayPanel() {
     	
     
-     	  loginToApplication();
+    	arrayListPage.loginToApplication();
     	ArrayListPage arrayListPage  = new ArrayListPage(getDriver());
     	arrayListPage.getstartedArray();
         logger.info("Navigated to Array module");
@@ -68,7 +49,7 @@ public class ArraysListTest extends BaseTest {
     @Test(priority = 3, groups = {"smoke", "array"})
     public void verifyArrayPageNavigation() {
     	
-    	loginToApplication();
+    	arrayListPage.loginToApplication();
     	   ArrayListPage arrayListPage  = new ArrayListPage(getDriver());
            arrayListPage.getstartedArray();
     	
@@ -83,7 +64,7 @@ public class ArraysListTest extends BaseTest {
     @Test(priority = 4, groups = {"regression", "array"})
     public void clickArraysInPythonLink() {
     
-    	 loginToApplication();
+    	arrayListPage.loginToApplication();
     	 ArrayListPage arrayListPage = new ArrayListPage(getDriver());
          arrayListPage.getstartedArray();
          arrayListPage.clickArraysInPython();
@@ -98,7 +79,7 @@ public class ArraysListTest extends BaseTest {
     @Test(priority = 5, groups = {"regression", "editor"})
     public void clickTryHereButton() {
     	
-    	loginToApplication();
+    	arrayListPage.loginToApplication();
     	   ArrayListPage arrayListPage = new ArrayListPage(getDriver());
            arrayListPage.getstartedArray();
            arrayListPage.clickArraysInPython();
@@ -113,7 +94,7 @@ public class ArraysListTest extends BaseTest {
     @Test(priority = 6)
     public void runInvalidCodeAndVerifyAlert() {
     
-    	loginToApplication();
+    	arrayListPage.loginToApplication();
     	ArrayListPage arrayListPage = new ArrayListPage(getDriver());
           arrayListPage.getstartedArray();
           arrayListPage.clickArraysInPython();
@@ -128,7 +109,7 @@ public class ArraysListTest extends BaseTest {
     @Test(priority = 7)
     public void runValidCodeAndVerifyOutput() {
     
-    	loginToApplication();
+    	arrayListPage.loginToApplication();
     	 ArrayListPage arrayListPage = new ArrayListPage(getDriver());
          arrayListPage.getstartedArray();
          arrayListPage.clickArraysInPython();
@@ -145,7 +126,7 @@ public class ArraysListTest extends BaseTest {
             dataProviderClass = TestDataProvider.class)
     public void runCodeUsingDataDriven(String code) throws IOException {
     	
-    	loginToApplication();
+    	arrayListPage.loginToApplication();
     	 ArrayListPage arrayListPage = new ArrayListPage(getDriver());
          arrayListPage.getstartedArray();
          arrayListPage.clickArraysInPython();

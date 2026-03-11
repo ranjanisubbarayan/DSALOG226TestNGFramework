@@ -9,10 +9,8 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import base.BaseTest;
 import pageObjects.LaunchPage;
-import pageObjects.LoginPage;
 import pageObjects.StackPage;
 import pageObjects.homePage;
-import utilities.ConfigReader;
 import utilities.TestDataProvider;
 
 public class StacklistTest extends BaseTest {
@@ -21,7 +19,7 @@ public class StacklistTest extends BaseTest {
 
     private WebDriver driver;
     LaunchPage launchPage;
-    private homePage homepage;
+    homePage homepage;
     private StackPage stackPage;
 
     @BeforeMethod(alwaysRun = true)
@@ -32,57 +30,24 @@ public class StacklistTest extends BaseTest {
         logger.info("Stack Test setup completed");
     }
 
-    public void loginToApplication() {
-        String username = ConfigReader.getProperty("username");
-        String password = ConfigReader.getProperty("password");
-
-        homepage = launchPage.clickGetStarted();
-
-        if (!homepage.isUserLoggedIn()) {
-            homepage.clickSignInLinkIfPresent();
-            LoginPage loginPage = new LoginPage(getDriver());
-            loginPage.enterUsername(username);
-            loginPage.enterPassword(password);
-            loginPage.clickLoginButton();
-        }
-
-        Assert.assertTrue(homepage.isUserLoggedIn(), "User login failed");
-        logger.info("Successfully logged into dsAlgo application");
-    }
-
-    public void navigateToStackPage() {
-        loginToApplication();
-        stackPage.clickStackGetStarted();
-        logger.info("Navigated to Stack page");
-    }
-
-    public void navigateToOperationsInStackPage() {
-        navigateToStackPage();
-        stackPage.clickOperationsInStack();
-        logger.info("Navigated to Operations in Stack page");
-    }
-
-    public void navigateToTryEditorFromOperationsInStack() {
-        navigateToOperationsInStackPage();
-        stackPage.clickTryHere();
-        logger.info("Navigated to Try Editor from Operations in Stack page");
-    }
-
+   
+   
     @Test(priority = 1, groups = {"smoke", "login"})
     public void LoginToDsAlgo() {
-        loginToApplication();
+    	stackPage.loginToApplication();
+    	logger.info("Successfully logged into dsAlgo application");
     }
 
     @Test(priority = 2)
     public void clickGetStartedStackPanel() {
-        navigateToStackPage();
+    	stackPage.navigateToStackPage();
         logger.info("Clicked Stack Get Started");
     }
 
     @Test(priority = 3)
     public void verifyStackPageNavigation() {
-        navigateToStackPage();
-
+    	stackPage.navigateToStackPage();
+        logger.info("Navigated to Stack page");
         Assert.assertTrue(
                 stackPage.isStackPageDisplayed(),
                 "User is not on Stack Page"
@@ -92,7 +57,7 @@ public class StacklistTest extends BaseTest {
 
     @Test(priority = 4)
     public void verifyStackPageLoadTime() {
-        loginToApplication();
+    	stackPage.loginToApplication();
 
         long maxTime = 5;
         long startTime = System.currentTimeMillis();
@@ -112,7 +77,7 @@ public class StacklistTest extends BaseTest {
 
     @Test(priority = 5)
     public void verifyStackPageHTTPS() {
-        navigateToStackPage();
+    	stackPage.navigateToStackPage();
 
         String currentUrl = driver.getCurrentUrl();
 
@@ -126,7 +91,7 @@ public class StacklistTest extends BaseTest {
 
     @Test(priority = 6)
     public void verifyStackMainLinksVisible() {
-        navigateToStackPage();
+    	stackPage.navigateToStackPage();
 
         Assert.assertTrue(
                 stackPage.isOperationInStackDisplayed(),
@@ -148,14 +113,15 @@ public class StacklistTest extends BaseTest {
 
     @Test(priority = 7)
     public void clickOperationsInStack() {
-        navigateToStackPage();
+    	stackPage.navigateToStackPage();
         stackPage.clickOperationsInStack();
         logger.info("Clicked Operations in Stack");
     }
 
     @Test(priority = 8)
     public void clickTryHereButton() {
-        navigateToOperationsInStackPage();
+    	stackPage.navigateToOperationsInStackPage();
+    	   logger.info("Navigated to Operations in Stack page");
         stackPage.clickTryHere();
 
         Assert.assertTrue(
@@ -167,8 +133,8 @@ public class StacklistTest extends BaseTest {
 
     @Test(priority = 9)
     public void runInvalidCodeAndVerifyAlert() {
-        navigateToTryEditorFromOperationsInStack();
-
+    	stackPage.navigateToTryEditorFromOperationsInStack();
+    	 logger.info("Navigated to Try Editor from Operations in Stack page");
         stackPage.enterCodeInEditor("print(5 + )");
         stackPage.clickRunButton();
         String alertMsg = stackPage.errorMessageinAlertWindow();
@@ -179,7 +145,7 @@ public class StacklistTest extends BaseTest {
 
     @Test(priority = 10)
     public void runValidCodeAndVerifyOutput() {
-        navigateToTryEditorFromOperationsInStack();
+    	stackPage.navigateToTryEditorFromOperationsInStack();
 
         stackPage.enterCodeInEditor("print(5 + 3)");
         String output = stackPage.seeOutput();
@@ -192,7 +158,7 @@ public class StacklistTest extends BaseTest {
             dataProvider = "arrayCodeData",
             dataProviderClass = TestDataProvider.class)
     public void runCodeUsingExcelData(String line) throws IOException {
-            navigateToTryEditorFromOperationsInStack();
+    	stackPage.navigateToTryEditorFromOperationsInStack();
             stackPage.enterCodeInEditor(line);
         
         String output = stackPage.seeOutput();
@@ -202,7 +168,7 @@ public class StacklistTest extends BaseTest {
 
     @Test(priority = 12)
     public void refreshStackPageAndVerifyNoErrors() {
-        navigateToStackPage();
+    	stackPage.navigateToStackPage();
 
         driver.navigate().refresh();
 

@@ -12,12 +12,15 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import utilities.ConfigReader;
+
 
 
 
 public class LinkedListPage {
 	private WebDriver driver;
-
+	  LaunchPage launchPage;
+	    private homePage homepage;
 	public LinkedListPage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
@@ -123,4 +126,22 @@ public class LinkedListPage {
 	public String getOutput(){
 		return console.getText();
 	}
+	
+	 
+    public void loginToApplication() {
+      	 String username = ConfigReader.getProperty("username");
+           String password = ConfigReader.getProperty("password");
+           LaunchPage launchPage = new LaunchPage(driver);
+           homepage = launchPage.clickGetStarted();
+
+           if (!homepage.isUserLoggedIn()) {
+               homepage.clickSignInLinkIfPresent();
+               LoginPage loginPage = new LoginPage(driver);
+               loginPage.enterUsername(username);
+               loginPage.enterPassword(password);
+               loginPage.clickLoginButton();
+           }
+           
+        }
+
 }

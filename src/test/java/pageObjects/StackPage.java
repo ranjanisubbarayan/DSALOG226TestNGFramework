@@ -11,13 +11,17 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+
+import utilities.ConfigReader;
 import utilities.ExcelSheetHandling;
 
 public class StackPage {
 
     private WebDriver driver;
     private WebDriverWait wait;
-
+    LaunchPage launchPage;
+    private homePage homepage;
+    StackPage stackPage;
     private Map<String, String> stackphyTryEditData;
     
     public StackPage(WebDriver driver) {
@@ -234,4 +238,37 @@ public class StackPage {
 					wait.until(ExpectedConditions.visibilityOf(stackHeader));
 					
 				}	
+				 public void loginToApplication() {
+				        String username = ConfigReader.getProperty("username");
+				        String password = ConfigReader.getProperty("password");
+				        launchPage = new LaunchPage(driver);
+				        homepage = launchPage.clickGetStarted();
+
+				        if (!homepage.isUserLoggedIn()) {
+				            homepage.clickSignInLinkIfPresent();
+				            LoginPage loginPage = new LoginPage(driver);
+				            loginPage.enterUsername(username);
+				            loginPage.enterPassword(password);
+				            loginPage.clickLoginButton();
+				        }
+				 }
+
+				 public void navigateToStackPage() {
+				        loginToApplication();
+				        clickStackGetStarted();
+				       
+				    }
+
+				    public void navigateToOperationsInStackPage() {
+				        navigateToStackPage();
+				        clickOperationsInStack();
+				     
+				    }
+
+				    public void navigateToTryEditorFromOperationsInStack() {
+				        navigateToOperationsInStackPage();
+				        clickTryHere();
+				       
+				    }
+
 }

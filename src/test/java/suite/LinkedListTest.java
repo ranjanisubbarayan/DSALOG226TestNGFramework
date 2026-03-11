@@ -10,10 +10,8 @@ import org.testng.annotations.*;
 import base.BaseTest;
 import driver.DriverFactory;
 import pageObjects.LaunchPage;
-import pageObjects.LoginPage;
 import pageObjects.LinkedListPage;
 import pageObjects.homePage;
-import utilities.ConfigReader;
 import utilities.TestDataProvider;
 
 public class LinkedListTest extends BaseTest {
@@ -22,7 +20,7 @@ public class LinkedListTest extends BaseTest {
 
     private WebDriver driver;
     LaunchPage launchPage;
-    private homePage homepage;
+     homePage homepage;
     private LinkedListPage linkedlistPage;
 
     @BeforeMethod(alwaysRun = true)
@@ -32,42 +30,23 @@ public class LinkedListTest extends BaseTest {
         linkedlistPage = new LinkedListPage(driver);
         logger.info("LinkedList Test setup completed");
     }
-    
-    public void loginToApplication() {
-      	 String username = ConfigReader.getProperty("username");
-           String password = ConfigReader.getProperty("password");
-           LaunchPage launchPage = new LaunchPage(getDriver());
-           homepage = launchPage.clickGetStarted();
-
-           if (!homepage.isUserLoggedIn()) {
-               homepage.clickSignInLinkIfPresent();
-               LoginPage loginPage = new LoginPage(getDriver());
-               loginPage.enterUsername(username);
-               loginPage.enterPassword(password);
-               loginPage.clickLoginButton();
-           }
-           
-
-           Assert.assertTrue(homepage.isUserLoggedIn(), "User login failed");
-           logger.info("Successfully logged into dsAlgo application");
-        }
-
+   
     @Test( priority = 1,
     	    groups = {"smoke", "login"})
     public void LoginToDsAlgo() {
-    	loginToApplication();
+    	linkedlistPage.loginToApplication();
     }
 
     @Test(priority = 2)
     public void clickGetStartedLinkedListPanel() {
-    	 loginToApplication();
+    	linkedlistPage.loginToApplication();
         linkedlistPage.getstartedLinkedList();
         logger.info("Clicked Get Started for LinkedList");
     }
 
     @Test(priority = 3)
     public void verifyLinkedListPageNavigation() {
-    	 loginToApplication();
+    	linkedlistPage.loginToApplication();
     	 linkedlistPage.getstartedLinkedList();
         Assert.assertEquals(
                 linkedlistPage.getLinkedListPageText(),
@@ -79,7 +58,7 @@ public class LinkedListTest extends BaseTest {
 
     @Test(priority = 4)
     public void clickIntroductionLink() {
-    	loginToApplication();
+    	linkedlistPage.loginToApplication();
     	linkedlistPage.getstartedLinkedList();
         linkedlistPage.clickIntroductionLink();
         logger.info("Clicked Introduction link");
@@ -88,7 +67,7 @@ public class LinkedListTest extends BaseTest {
 
     @Test(priority = 6)
     public void runInvalidCodeAndVerifyAlert() throws IOException {
-    	  loginToApplication();
+    	linkedlistPage.loginToApplication();
           linkedlistPage.getstartedLinkedList();
           linkedlistPage.clickIntroductionLink();
           linkedlistPage.clickTryHere();
@@ -102,7 +81,7 @@ public class LinkedListTest extends BaseTest {
 
     @Test(priority = 7)
     public void runValidCodeAndVerifyOutput() throws IOException {
-    	 loginToApplication();
+    	linkedlistPage.loginToApplication();
          linkedlistPage.getstartedLinkedList();
          linkedlistPage.clickIntroductionLink();
          linkedlistPage.clickTryHere();
@@ -120,7 +99,7 @@ public class LinkedListTest extends BaseTest {
             dataProviderClass = TestDataProvider.class)
     public void runCodeUsingExcelData(String Code) throws IOException {
 
-    	loginToApplication();
+    	linkedlistPage.loginToApplication();
     	linkedlistPage.getstartedLinkedList();
     	linkedlistPage.clickIntroductionLink();
     	linkedlistPage.clickTryHere();

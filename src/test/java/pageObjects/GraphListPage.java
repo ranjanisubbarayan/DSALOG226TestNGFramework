@@ -12,6 +12,9 @@ import org.openqa.selenium.support.PageFactory;
 import java.io.IOException;
 import java.time.Duration;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import utilities.ConfigReader;
+
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 
@@ -19,6 +22,8 @@ public class GraphListPage {
 	
 	WebDriver driver;
 	   WebDriverWait wait;
+	   LaunchPage launchPage;
+	    private homePage homepage;
 
 	public GraphListPage(WebDriver driver) {
 		this.driver = driver;
@@ -153,5 +158,21 @@ public class GraphListPage {
 		action.sendKeys(code).perform();
 		btnRun.click();
 	}
+	
+	  public void loginToApplication() {
+		   	 String username = ConfigReader.getProperty("username");
+		        String password = ConfigReader.getProperty("password");
+		        LaunchPage launchPage = new LaunchPage(driver);
+		        homepage = launchPage.clickGetStarted();
+
+		        if (!homepage.isUserLoggedIn()) {
+		            homepage.clickSignInLinkIfPresent();
+		            LoginPage loginPage = new LoginPage(driver);
+		            loginPage.enterUsername(username);
+		            loginPage.enterPassword(password);
+		            loginPage.clickLoginButton();
+		        }
+
+		}
 	
 }
