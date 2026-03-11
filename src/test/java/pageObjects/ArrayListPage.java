@@ -129,43 +129,16 @@ public class ArrayListPage {
         return btnRun.isDisplayed();
     }
 
-	public boolean areAllArrayelementsVisible() {
-	    for (WebElement link : arraypagelements) {
-	        if (!link.isDisplayed()) {
-	            return false;
-	        }
-	    }
-	    return true;
-	}
 	public void writeAndRunLinkedListCode(String code) throws IOException {
 		Actions action=new Actions(driver);
 		action.click(codeEditor).perform();
 		action.sendKeys(code).perform();
 		btnRun.click();
 	}
-	public boolean areAllArrayelementsClickable() {
 
-	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-
-	    for (WebElement link : arraypagelements) {
-	        try {
-	        	wait.until(ExpectedConditions.elementToBeClickable(link));
-	        } catch (TimeoutException e) {
-	        	   return false;
-	        }
-	    }
-	    return true;
-	}
-   
 	   public String getArraysInPythonText() {
 	        return verifyArraysInPython.getText();
 	    }
-	public void writeAndRunArrayListCode(String code) throws IOException {
-		Actions action=new Actions(driver);
-		action.click(codeEditor).perform();
-		action.sendKeys(code).perform();
-		btnRun.click();
-	}
 	public void waitForArrayPage() {
         wait.until(ExpectedConditions.visibilityOf(verifyArrayspage));
     }

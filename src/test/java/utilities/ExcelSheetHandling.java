@@ -56,91 +56,14 @@ public class ExcelSheetHandling {
         return data;
     }
 
-    public Map<String, String> getRowData(String sheetName, String testId) {
-        List<Map<String, String>> allRows = getSheetData(sheetName);
-        for (Map<String, String> row : allRows) {
-            String id = row.get("testId");
-            if (id != null && id.equalsIgnoreCase(testId)) {
-                return row;
-            }
-        }
-        throw new RuntimeException("No data found for testId: " + testId + " in sheet: " + sheetName);
-    }
-
     private String getCellString(Cell cell) {
         if (cell == null) return "";
         DataFormatter formatter = new DataFormatter();
         return formatter.formatCellValue(cell);
     }
-	
-    public static String getCellData(String sheetName, int rowNum, int colNum) {
-        String value = "";
-        try (FileInputStream fis = new FileInputStream(ConfigReader.getProperty("excelPath"));
-             Workbook workbook = new XSSFWorkbook(fis)) {
-            Sheet sheet = workbook.getSheet(sheetName);
-            Row row = sheet.getRow(rowNum);
-            Cell cell = row.getCell(colNum);
-            value = cell.getStringCellValue();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return value;
-    }
-    
-    public List<String> getCodeLines(String sheetName, String testCaseName) {
-    	 List<String> codeLines = new ArrayList<>();
-    	 List<Map<String, String>> allRows = getSheetData(sheetName);
-    	 for (Map<String, String> row : allRows) {
-    		 String testcaseValue = row.get("testcase");
-    		 if (testCaseName.equalsIgnoreCase(testcaseValue)) {
-    			 for (Map.Entry<String, String> cell : row.entrySet()) {
 
-    	                String columnName = cell.getKey(); 
-    	                String cellValue  = cell.getValue();
-    	                if (!columnName.equalsIgnoreCase("testcase") && !cellValue.isBlank()) {
-    	                    codeLines.add(cellValue);
-    	                }
-    	            }
-    	        }
-    	    }
-    	 return codeLines;
-    }
     
     @SuppressWarnings("resource")
-    public List<String> getCodeByColumn(String sheetName, String columnName) {
-
-        List<String> codeLines = new ArrayList<>();
-
-        Sheet sheet = workbook.getSheet(sheetName);
-        if (sheet == null) {
-            throw new RuntimeException("Sheet not found: " + sheetName);
-        }
-
-        Row headerRow = sheet.getRow(0);
-        int columnIndex = -1;
-
-        for (Cell cell : headerRow) {
-            if (cell.getStringCellValue().equalsIgnoreCase(columnName)) {
-                columnIndex = cell.getColumnIndex();
-                break;
-            }
-        }
-
-        if (columnIndex == -1) {
-            throw new RuntimeException("Column not found: " + columnName);
-        }
-
-        for (int i = 1; i <= sheet.getLastRowNum(); i++) {
-            Row row = sheet.getRow(i);
-            if (row != null) {
-                Cell cell = row.getCell(columnIndex, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK);
-                codeLines.add(getCellString(cell));
-            }
-        }
-
-        return codeLines;
-    }
-
 
     public void writeCellData(String sheetName, int rowNum, int colNum, String value) {
         Workbook workbook = null;

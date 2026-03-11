@@ -112,16 +112,8 @@ public class StackPage {
     public boolean isTryEditorDisplayed() {
         return verifyTryEditorPage.isDisplayed();
     }
-	
 					
-		public void clickstack_Getstarted_btn() {
-			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20)); 
-			WebElement stackBtn = wait.until(ExpectedConditions.elementToBeClickable(stackGetStartedBtn));
-			 
-			((JavascriptExecutor) driver).executeScript("arguments[0].click();", stackBtn); 
-			
-			} 		
-			
+
 		public void clickOperationsInStack() { 
 			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
 		    try {
@@ -148,9 +140,6 @@ public class StackPage {
 				((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", practiceLink); 
 				practiceLink.click();				 
 			}	
-			 public void clickTryhereofoperation() throws InterruptedException {
-			        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true); arguments[0].click();", tryHereButton);
-			    }
 
 			    public void clickTryHere() {
 			        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", tryHereButton);
@@ -198,35 +187,7 @@ public class StackPage {
 						    return null; 
 						}
 				}
-				public void readDataFromExcel(String testId) {
-					String path = Paths.get("src/test/resources/ExcelSheet/DsAlgoTestData.xlsx").toString();
-				    ExcelSheetHandling excel = new ExcelSheetHandling(path);
 
-				    System.out.println("Reading Excel Sheet: phythonTryEditor, testId=" + testId);
-
-				    stackphyTryEditData = excel.getRowData("phythonTryEditor", testId);
-
-				    if (stackphyTryEditData == null || stackphyTryEditData.isEmpty()) {
-				        throw new RuntimeException("Excel returned EMPTY/NULL data for sheet 'phythonTryEditor' and testId: " + testId);
-				    }
-				    System.out.println("Loaded Excel row: " + stackphyTryEditData);
-				}
-
-				public void getDataFromExcel() {
-				    String valid = stackphyTryEditData.get("Valid Input");
-				    String invalid = stackphyTryEditData.get("Invalid Input");				    
-				    if (valid != null && !valid.isEmpty()) {
-				        enterCodeInEditor(valid);
-				    }
-				    else if (invalid != null && !invalid.isEmpty()) {
-				        enterCodeInEditor(invalid);
-				    }
-				    else {
-				        throw new RuntimeException("Both Valid Input and Invalid Input columns are empty in Excel!");
-				    }
-				}
-					
-				
 				public String seeOutput() {
 					WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
 					  wait.until(ExpectedConditions.visibilityOf(outputConsole));

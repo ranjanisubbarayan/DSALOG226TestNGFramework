@@ -27,6 +27,6 @@ public class TestListener implements ITestListener {
 
     @Override
     public void onFinish(ITestContext context) {
-        ExtentReportManager.getExtentReports().flush(); // Save the report
+        ExtentReportManager.getExtentReports().flush();
     }
 }

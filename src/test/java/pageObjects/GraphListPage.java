@@ -22,7 +22,6 @@ public class GraphListPage {
 	
 	WebDriver driver;
 	   WebDriverWait wait;
-	   LaunchPage launchPage;
 	    private homePage homepage;
 
 	public GraphListPage(WebDriver driver) {
@@ -108,17 +107,7 @@ public class GraphListPage {
 	    public boolean isGraphRepresentationsTextDisplayed() {
 	        return verifyGraphRepresentationsText.isDisplayed();
 	    }
-	    
-	    public void clickTryHereIfVisible() {
-	        try {
-	        	clickGraphTopic();
-	            wait.until(ExpectedConditions.elementToBeClickable(btnTryEditor)).click();
-	            wait.until(ExpectedConditions.visibilityOf(btnRun));
-	        } catch (Exception e) {
-	            throw new RuntimeException("Try Here button not visible: " + e.getMessage());
-	        }
-	    }
-	
+
 	public void writeCodeAndRun(String code) {
 		Actions actions = new Actions(driver);
 		actions.click(writeCode).perform();
@@ -126,13 +115,6 @@ public class GraphListPage {
 		btnRun.click();
 	}
 
-	
-	public String getAlertTextAndAccept() {
-		Alert a = driver.switchTo().alert();
-		String text = a.getText();
-		a.accept();
-		return text;
-	}
 	public String waitForAlertIfPresent() {
 	    try {
 	       

@@ -114,12 +114,6 @@ public class registerPage {
         return "user_name" + UUID.randomUUID().toString().substring(0, 8);
     }
 
-    public String getGeneratedUsername() { return generatedUsername; }
-
-    public void print_successfullyRegistered() {
-        System.out.println("Registered Successfully: " + alertMessage.getText());
-    }
-
     public void registerUsingExcel(String username, String password, String confirmPassword) {
 
         if (username == null || username.isEmpty()) {
@@ -158,14 +152,4 @@ public class registerPage {
             return "";
         }
     }
-
-    public String getExpectedResult() {
-        if (registerData == null)
-            throw new RuntimeException("Register data not loaded! Call registerUsingTestData() first.");
-        return registerData.get("ExpectedResult");
-    }    
-    public boolean isUsernameFieldVisible() { return register_username.isDisplayed(); }
-    public boolean isPasswordFieldVisible() { return register_password.isDisplayed(); }
-    public boolean isConfirmPasswordFieldVisible() { return register_confirm_password.isDisplayed(); }
-    public boolean isRegisterButtonVisible() { return register_button.isDisplayed(); }
 }
