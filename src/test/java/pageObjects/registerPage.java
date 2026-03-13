@@ -152,4 +152,12 @@ public class registerPage {
             return "";
         }
     }
+    public boolean isAccountCreated() {
+        try {
+            String successMsg = getAlertMessage(); 
+            return successMsg.contains("New Account Created");
+        } catch (Exception e) {
+            return false;
+        }
+    }
 }

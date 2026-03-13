@@ -1,6 +1,5 @@
 package utilities;
 
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -19,28 +18,21 @@ public class TestDataProvider {
             {"print('Hello')", "Hello"}
         };
     }
-    @DataProvider(name = "registerExcelData")
-    public Object[][] getRegisterData() {
-
-        List<Map<String, String>> allRows = excel.getSheetData("Register");
-
-        Object[][] data = new Object[allRows.size()][1];
-
-        for (int i = 0; i < allRows.size(); i++) {
-
-            Map<String, String> row = allRows.get(i);
-
-            System.out.println("Row " + i +
-                    " | testId: " + row.get("testId") +
-                    " | username: " + row.get("username") +
-                    " | password: " + row.get("password") +
-                    " | ExpectedResult: " + row.get("ExpectedResult"));
-
-            data[i][0] = row;
-        }
-
-        return data;
-    }
+//    @DataProvider(name = "registerExcelData")
+//    public Object[][] getRegisterData() {
+//
+//        List<Map<String, String>> allRows = excel.getSheetData("Register");
+//
+//        Object[][] data = new Object[allRows.size()][1];
+//
+//        for (int i = 0; i < allRows.size(); i++) {
+//
+//            Map<String, String> row = allRows.get(i);
+//            data[i][0] = row;
+//        }
+//
+//        return data;
+//    }
     @DataProvider(name = "invalidPythonCode")
     public Object[][] invalidPythonCode() {
         return new Object[][]{
@@ -82,85 +74,94 @@ public class TestDataProvider {
         
     }
     
-    @DataProvider(name = "stacklinks")
-    public Object[][] stackLinks() {
-        return new Object[][]{
-                {"Operations in Stack"},
-                {"Implementation"},
-                {"Applications"},
-                {"Practice Questions"}
-        };
+    @DataProvider(name = "validLoginData")
+    public Object[][] validLoginData() {
+        return filterLoginRowsByTestId("valid");
+    }
+
+    @DataProvider(name = "invalidLoginData")
+    public Object[][] invalidLoginData() {
+        return filterLoginRowsByTestId("invalid");
+    }
+
+    @DataProvider(name = "emptyLoginData")
+    public Object[][] emptyLoginData() {
+        return filterLoginRowsByTestId("empty");
+    }
+
+    @DataProvider(name = "invalidPasswordData")
+    public Object[][] invalidPasswordData() {
+        return filterLoginRowsByTestId("invalidPassword");
+    }
+
+    @DataProvider(name = "invalidUsernameData")
+    public Object[][] invalidUsernameData() {
+        return filterLoginRowsByTestId("invalidUsername");
+    }
+
+    private Object[][] filterLoginRowsByTestId(String testId) {
+        List<Map<String, String>> allRows = excel.getSheetData("Login");
+        List<Map<String, String>> filteredRows = new ArrayList<>();
+
+        for (Map<String, String> row : allRows) {
+            if (testId.equalsIgnoreCase(row.get("testId"))) {
+                filteredRows.add(row);
+            }
+        }
+
+        Object[][] data = new Object[filteredRows.size()][1];
+        for (int i = 0; i < filteredRows.size(); i++) {
+            data[i][0] = filteredRows.get(i);
+        }
+
+        return data;
     }
     
-    @DataProvider(name = "graphlinks")
-    public Object[][] getGraphLinks() {
-
-        return new Object[][]{
-
-                {"Graph"},
-                {"Graph Representations"}
-
-        };
+    @DataProvider(name = "validRegisterData")
+    public Object[][] validRegisterData() {
+        return filterRegisterRowsByScenario("valid");
     }
-    
-    @DataProvider(name = "linkedlistlinks")
-    public Object[][] linkedListLinks() {
-        return new Object[][]{
 
-                {"Introduction"},
-                {"Creating Linked List"},
-                {"Types of Linked List"},
-                {"Implement Linked List in Python"},
-                {"Traversal"},
-                {"Insertion"},
-                {"Deletion"}
-
-        };
+    @DataProvider(name = "emptyRegisterData")
+    public Object[][] emptyRegisterData() {
+        return filterRegisterRowsByScenario("empty");
     }
-    @DataProvider(name = "arraylinks")
-    public Object[][] getArrayLinks() {
 
-        return new Object[][]{
-
-                {"Arrays in Python"},
-                {"Arrays Using List"},
-                {"Basic Operations in Lists"},
-                {"Applications of Array"},
-                {"Practice Questions"}
-
-        };
+    @DataProvider(name = "passwordMismatchData")
+    public Object[][] passwordMismatchData() {
+        return filterRegisterRowsByScenario("password_mismatch");
     }
-    @DataProvider(name = "loginExcelData")
-	public Object[][] getLoginData() {
-	    String path = Paths.get("src/test/resources/ExcelSheet/DsAlgoTestData.xlsx").toString();
-	    ExcelSheetHandling excel = new ExcelSheetHandling(path);
-	    List<Map<String, String>> allRows = excel.getSheetData("Login");
+    private Object[][] filterRegisterRowsByScenario(String scenario) {
+        List<Map<String, String>> allRows = excel.getSheetData("Register");
+        List<Map<String, String>> filteredRows = new ArrayList<>();
 
-	   
-	    List<Map<String, String>> nonEmptyRows = new ArrayList<>();
-	    for (Map<String, String> row : allRows) {
-	        String testId = row.get("testId");
-	        String username = row.get("username");
-	        String password = row.get("password");
+        for (Map<String, String> row : allRows) {
+            String expected = row.get("ExpectedResult");
+            if (expected == null) continue;
 
-	        if ((testId == null || testId.trim().isEmpty()) &&
-	            (username == null || username.trim().isEmpty()) &&
-	            (password == null || password.trim().isEmpty())) {
-	            break; 
-	        }
-	        nonEmptyRows.add(row);
-	    }
+            switch (scenario) {
+                case "valid":
+                    if (expected.contains("New Account Created")) {
+                        filteredRows.add(row);
+                    }
+                    break;
+                case "empty":
+                    if (expected.contains("Please fill out this field")) {
+                        filteredRows.add(row);
+                    }
+                    break;
+                case "password_mismatch":
+                    if (expected.contains("password_mismatch")) {
+                        filteredRows.add(row);
+                    }
+                    break;
+            }
+        }
 
-	   
-	    Object[][] data = new Object[nonEmptyRows.size()][1];
-	    for (int i = 0; i < nonEmptyRows.size(); i++) {
-	        data[i][0] = nonEmptyRows.get(i); 
-	        System.out.println("Row " + i +
-	                " | testId: " + nonEmptyRows.get(i).get("testId") +
-	                " | username: " + nonEmptyRows.get(i).get("username") +
-	                " | password: " + nonEmptyRows.get(i).get("password"));
-	    }
-
-	    return data;
-	}
+        Object[][] data = new Object[filteredRows.size()][1];
+        for (int i = 0; i < filteredRows.size(); i++) {
+            data[i][0] = filteredRows.get(i);
+        }
+        return data;
+    }
 }

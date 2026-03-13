@@ -1,19 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="8" total="10" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="6" passed="5" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-03-11T15:53:15 EDT" name="Default suite" finished-at="2026-03-11T15:53:31 EDT" duration-ms="15681">
+  <suite started-at="2026-03-13T11:40:21 EDT" name="Default suite" finished-at="2026-03-13T11:40:37 EDT" duration-ms="16111">
     <groups>
-      <group name="regression">
-        <method signature="GraphListTest.navigateToGraphSection(java.lang.String)[pri:2, instance:suite.GraphListTest@1a1da881]" name="navigateToGraphSection" class="suite.GraphListTest"/>
-      </group> <!-- regression -->
-      <group name="graph">
-        <method signature="GraphListTest.navigateToGraphSection(java.lang.String)[pri:2, instance:suite.GraphListTest@1a1da881]" name="navigateToGraphSection" class="suite.GraphListTest"/>
-      </group> <!-- graph -->
     </groups>
-    <test started-at="2026-03-11T15:53:15 EDT" name="Default test" finished-at="2026-03-11T15:53:31 EDT" duration-ms="15681">
-      <class name="suite.GraphListTest">
-        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:suite.GraphListTest@1a1da881]" started-at="2026-03-11T15:53:16 EDT" name="setup" finished-at="2026-03-11T15:53:20 EDT" duration-ms="4095" status="PASS">
+    <test started-at="2026-03-13T11:40:21 EDT" name="Default test" finished-at="2026-03-13T11:40:37 EDT" duration-ms="16111">
+      <class name="suite.RegisterDataTest">
+        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:suite.RegisterDataTest@20d7d6fb]" started-at="2026-03-13T11:40:23 EDT" name="setup" finished-at="2026-03-13T11:40:28 EDT" duration-ms="4231" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -24,26 +18,65 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:suite.GraphListTest@1a1da881]" started-at="2026-03-11T15:53:21 EDT" name="setUp" finished-at="2026-03-11T15:53:21 EDT" duration-ms="51" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:suite.RegisterDataTest@20d7d6fb]" started-at="2026-03-13T11:40:28 EDT" name="setUp" finished-at="2026-03-13T11:40:31 EDT" duration-ms="2928" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="navigateToGraphSection(java.lang.String)[pri:2, instance:suite.GraphListTest@1a1da881]" started-at="2026-03-11T15:53:21 EDT" name="navigateToGraphSection" data-provider="graphlinks" finished-at="2026-03-11T15:53:25 EDT" duration-ms="4490" status="PASS">
+        <test-method signature="testValidRegister(java.util.Map)[pri:1, instance:suite.RegisterDataTest@20d7d6fb]" started-at="2026-03-13T11:40:31 EDT" name="testValidRegister" data-provider="validRegisterData" finished-at="2026-03-13T11:40:32 EDT" duration-ms="1088" status="FAIL">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Graph]]>
+                <![CDATA[{testId=validRegister, username=user_name29c8e7d6, password=C5Mha6FkdSAVEN@, confirmpassword=C5Mha6FkdSAVEN@, ExpectedResult=New Account Created}]]>
               </value>
             </param>
           </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Expected: New Account Created, but registration failed. expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Expected: New Account Created, but registration failed. expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:111)
+at org.testng.Assert.failNotEquals(Assert.java:1590)
+at org.testng.Assert.assertTrue(Assert.java:57)
+at suite.RegisterDataTest.testValidRegister(RegisterDataTest.java:35)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:741)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- navigateToGraphSection -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:suite.GraphListTest@1a1da881]" started-at="2026-03-11T15:53:25 EDT" name="tearDown" finished-at="2026-03-11T15:53:26 EDT" duration-ms="296" status="PASS">
+        </test-method> <!-- testValidRegister -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:suite.RegisterDataTest@20d7d6fb]" started-at="2026-03-13T11:40:32 EDT" name="tearDown" finished-at="2026-03-13T11:40:32 EDT" duration-ms="2" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:suite.GraphListTest@1a1da881]" started-at="2026-03-11T15:53:26 EDT" name="setup" finished-at="2026-03-11T15:53:27 EDT" duration-ms="1675" status="PASS">
+        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:suite.RegisterDataTest@20d7d6fb]" started-at="2026-03-13T11:40:32 EDT" name="setup" finished-at="2026-03-13T11:40:32 EDT" duration-ms="103" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -54,26 +87,146 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:suite.GraphListTest@1a1da881]" started-at="2026-03-11T15:53:27 EDT" name="setUp" finished-at="2026-03-11T15:53:27 EDT" duration-ms="3" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:suite.RegisterDataTest@20d7d6fb]" started-at="2026-03-13T11:40:32 EDT" name="setUp" finished-at="2026-03-13T11:40:33 EDT" duration-ms="411" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="navigateToGraphSection(java.lang.String)[pri:2, instance:suite.GraphListTest@1a1da881]" started-at="2026-03-11T15:53:27 EDT" name="navigateToGraphSection" data-provider="graphlinks" finished-at="2026-03-11T15:53:30 EDT" duration-ms="3145" status="PASS">
+        <test-method signature="testEmptyFieldsRegister(java.util.Map)[pri:2, instance:suite.RegisterDataTest@20d7d6fb]" started-at="2026-03-13T11:40:33 EDT" name="testEmptyFieldsRegister" data-provider="emptyRegisterData" finished-at="2026-03-13T11:40:33 EDT" duration-ms="393" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Graph Representations]]>
+                <![CDATA[{testId=emptyUsername, username=, password=C5Mha6FkdSAVEN@, confirmpassword=, ExpectedResult=Please fill out this field}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- navigateToGraphSection -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:suite.GraphListTest@1a1da881]" started-at="2026-03-11T15:53:30 EDT" name="tearDown" finished-at="2026-03-11T15:53:31 EDT" duration-ms="277" status="PASS">
+        </test-method> <!-- testEmptyFieldsRegister -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:suite.RegisterDataTest@20d7d6fb]" started-at="2026-03-13T11:40:33 EDT" name="tearDown" finished-at="2026-03-13T11:40:33 EDT" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- suite.GraphListTest -->
+        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:suite.RegisterDataTest@20d7d6fb]" started-at="2026-03-13T11:40:33 EDT" name="setup" finished-at="2026-03-13T11:40:33 EDT" duration-ms="103" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:suite.RegisterDataTest@20d7d6fb]" started-at="2026-03-13T11:40:33 EDT" name="setUp" finished-at="2026-03-13T11:40:34 EDT" duration-ms="462" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testEmptyFieldsRegister(java.util.Map)[pri:2, instance:suite.RegisterDataTest@20d7d6fb]" started-at="2026-03-13T11:40:34 EDT" name="testEmptyFieldsRegister" data-provider="emptyRegisterData" finished-at="2026-03-13T11:40:34 EDT" duration-ms="293" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{testId=emptyPassword, username=TestNinja, password=, confirmpassword=, ExpectedResult=Please fill out this field}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testEmptyFieldsRegister -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:suite.RegisterDataTest@20d7d6fb]" started-at="2026-03-13T11:40:34 EDT" name="tearDown" finished-at="2026-03-13T11:40:34 EDT" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:suite.RegisterDataTest@20d7d6fb]" started-at="2026-03-13T11:40:34 EDT" name="setup" finished-at="2026-03-13T11:40:34 EDT" duration-ms="101" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:suite.RegisterDataTest@20d7d6fb]" started-at="2026-03-13T11:40:34 EDT" name="setUp" finished-at="2026-03-13T11:40:35 EDT" duration-ms="484" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testEmptyFieldsRegister(java.util.Map)[pri:2, instance:suite.RegisterDataTest@20d7d6fb]" started-at="2026-03-13T11:40:35 EDT" name="testEmptyFieldsRegister" data-provider="emptyRegisterData" finished-at="2026-03-13T11:40:35 EDT" duration-ms="348" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{testId=emptyAllFields, username=, password=, confirmpassword=, ExpectedResult=Please fill out this field}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testEmptyFieldsRegister -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:suite.RegisterDataTest@20d7d6fb]" started-at="2026-03-13T11:40:35 EDT" name="tearDown" finished-at="2026-03-13T11:40:35 EDT" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:suite.RegisterDataTest@20d7d6fb]" started-at="2026-03-13T11:40:35 EDT" name="setup" finished-at="2026-03-13T11:40:35 EDT" duration-ms="115" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:suite.RegisterDataTest@20d7d6fb]" started-at="2026-03-13T11:40:35 EDT" name="setUp" finished-at="2026-03-13T11:40:36 EDT" duration-ms="484" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testPasswordMismatchRegister(java.util.Map)[pri:3, instance:suite.RegisterDataTest@20d7d6fb]" started-at="2026-03-13T11:40:36 EDT" name="testPasswordMismatchRegister" data-provider="passwordMismatchData" finished-at="2026-03-13T11:40:36 EDT" duration-ms="571" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{testId=passwordMismatch1, username=Testuser, password=C5Mha6FkdSAVEN@, confirmpassword=C5Mha6FkdSAVEN@, ExpectedResult=password_mismatch:The two password fields didn’t match}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testPasswordMismatchRegister -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:suite.RegisterDataTest@20d7d6fb]" started-at="2026-03-13T11:40:36 EDT" name="tearDown" finished-at="2026-03-13T11:40:36 EDT" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:suite.RegisterDataTest@20d7d6fb]" started-at="2026-03-13T11:40:36 EDT" name="setup" finished-at="2026-03-13T11:40:36 EDT" duration-ms="95" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:suite.RegisterDataTest@20d7d6fb]" started-at="2026-03-13T11:40:36 EDT" name="setUp" finished-at="2026-03-13T11:40:37 EDT" duration-ms="453" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testPasswordMismatchRegister(java.util.Map)[pri:3, instance:suite.RegisterDataTest@20d7d6fb]" started-at="2026-03-13T11:40:37 EDT" name="testPasswordMismatchRegister" data-provider="passwordMismatchData" finished-at="2026-03-13T11:40:37 EDT" duration-ms="573" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{testId=passwordMismatch2, username=Testuser, password=C5Mha6FkdSAVEN@, confirmpassword=C5Mha6FkdSAVEN@1234, ExpectedResult=password_mismatch:The two password fields didn’t match}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testPasswordMismatchRegister -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:suite.RegisterDataTest@20d7d6fb]" started-at="2026-03-13T11:40:37 EDT" name="tearDown" finished-at="2026-03-13T11:40:37 EDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- suite.RegisterDataTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

@@ -9,11 +9,46 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">Default suite</th></tr>
-<tr><td><a href="#t0">Default test</a></td><td class="num">2</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">15,681</td><td></td><td></td></tr>
+<tr><td><a href="#t0">Default test</a></td><td class="num">5</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">16,111</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="2">suite.GraphListTest</td><td><a href="#m0">navigateToGraphSection</a></td><td rowspan="2">1773258801174</td><td rowspan="2">4490</td></tr><tr class="passedeven"><td><a href="#m1">navigateToGraphSection</a></td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">suite.RegisterDataTest</td><td><a href="#m0">testValidRegister</a></td><td rowspan="1">1773416431438</td><td rowspan="1">1088</td></tr><tr><th colspan="4">Default test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="5">suite.RegisterDataTest</td><td><a href="#m1">testEmptyFieldsRegister</a></td><td rowspan="3">1773416434164</td><td rowspan="3">293</td></tr><tr class="passedeven"><td><a href="#m2">testEmptyFieldsRegister</a></td></tr><tr class="passedeven"><td><a href="#m3">testEmptyFieldsRegister</a></td></tr><tr class="passedeven"><td><a href="#m4">testPasswordMismatchRegister</a></td><td rowspan="2">1773416436193</td><td rowspan="2">571</td></tr><tr class="passedeven"><td><a href="#m5">testPasswordMismatchRegister</a></td></tr></tbody>
 </table>
-<h2>Default test</h2><h3 id="m0">suite.GraphListTest#navigateToGraphSection</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>Graph</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">suite.GraphListTest#navigateToGraphSection</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>Graph Representations</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Default test</h2><h3 id="m0">suite.RegisterDataTest#testValidRegister</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>{testId=validRegister, username=user_name29c8e7d6, password=C5Mha6FkdSAVEN@, confirmpassword=C5Mha6FkdSAVEN@, ExpectedResult=New Account Created}</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: Expected: New Account Created, but registration failed. expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1590)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at suite.RegisterDataTest.testValidRegister(RegisterDataTest.java:35)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">suite.RegisterDataTest#testEmptyFieldsRegister</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>{testId=emptyPassword, username=TestNinja, password=, confirmpassword=, ExpectedResult=Please fill out this field}</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">suite.RegisterDataTest#testEmptyFieldsRegister</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>{testId=emptyUsername, username=, password=C5Mha6FkdSAVEN@, confirmpassword=, ExpectedResult=Please fill out this field}</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m3">suite.RegisterDataTest#testEmptyFieldsRegister</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>{testId=emptyAllFields, username=, password=, confirmpassword=, ExpectedResult=Please fill out this field}</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m4">suite.RegisterDataTest#testPasswordMismatchRegister</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>{testId=passwordMismatch1, username=Testuser, password=C5Mha6FkdSAVEN@, confirmpassword=C5Mha6FkdSAVEN@, ExpectedResult=password_mismatch:The two password fields didn’t match}</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m5">suite.RegisterDataTest#testPasswordMismatchRegister</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>{testId=passwordMismatch2, username=Testuser, password=C5Mha6FkdSAVEN@, confirmpassword=C5Mha6FkdSAVEN@1234, ExpectedResult=password_mismatch:The two password fields didn’t match}</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>
