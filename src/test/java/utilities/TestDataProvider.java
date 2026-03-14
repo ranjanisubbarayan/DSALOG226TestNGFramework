@@ -18,21 +18,7 @@ public class TestDataProvider {
             {"print('Hello')", "Hello"}
         };
     }
-//    @DataProvider(name = "registerExcelData")
-//    public Object[][] getRegisterData() {
-//
-//        List<Map<String, String>> allRows = excel.getSheetData("Register");
-//
-//        Object[][] data = new Object[allRows.size()][1];
-//
-//        for (int i = 0; i < allRows.size(); i++) {
-//
-//            Map<String, String> row = allRows.get(i);
-//            data[i][0] = row;
-//        }
-//
-//        return data;
-//    }
+
     @DataProvider(name = "invalidPythonCode")
     public Object[][] invalidPythonCode() {
         return new Object[][]{
